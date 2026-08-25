@@ -12,9 +12,12 @@ AzerothCore from this repo unless Scott asks later.
 
 ## Status
 
-Documentation first. Design is locked in these files before any engine work.
-v1.0 content ships complete before friend launch. Pacing is discovery and
-gates, not content patches after people are already playing.
+Design is locked enough to build a slice. The build sequence is
+[docs/SLICE.md](docs/SLICE.md). **Current step: 2 — module skeleton.**
+Step 1 isolation is agreed ([docs/DEPLOY.md](docs/DEPLOY.md)).
+
+v1.0 content still ships complete before friend launch. Pacing is
+discovery and gates, not content patches.
 
 Repair broken docs: `bash bootstrap.sh`
 
@@ -57,6 +60,8 @@ break, wake in the morgue, and go again. Character persists. Haul does not.
 | [WORLD.md](WORLD.md) | District network, gates, expedition flow |
 | [CONTENT.md](CONTENT.md) | Items, clones, crafting chains, MPQ |
 | [docs/TODO.md](docs/TODO.md) | Open work |
+| [docs/SLICE.md](docs/SLICE.md) | Build sequence (one step at a time) |
+| [docs/DEPLOY.md](docs/DEPLOY.md) | Step 1: isolate the server from AICraft |
 | [docs/BRAINSTORM.md](docs/BRAINSTORM.md) | Conversation archive / repair reference |
 | [docs/AGENT-INSTRUCTIONS.md](docs/AGENT-INSTRUCTIONS.md) | How future agents should work this repo |
 

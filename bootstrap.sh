@@ -25,9 +25,12 @@ AzerothCore from this repo unless Scott asks later.
 
 ## Status
 
-Documentation first. Design is locked in these files before any engine work.
-v1.0 content ships complete before friend launch. Pacing is discovery and
-gates, not content patches after people are already playing.
+Design is locked enough to build a slice. The build sequence is
+[docs/SLICE.md](docs/SLICE.md). **Current step: 2 — module skeleton.**
+Step 1 isolation is agreed ([docs/DEPLOY.md](docs/DEPLOY.md)).
+
+v1.0 content still ships complete before friend launch. Pacing is
+discovery and gates, not content patches.
 
 Repair broken docs: `bash bootstrap.sh`
 
@@ -70,6 +73,8 @@ break, wake in the morgue, and go again. Character persists. Haul does not.
 | [WORLD.md](WORLD.md) | District network, gates, expedition flow |
 | [CONTENT.md](CONTENT.md) | Items, clones, crafting chains, MPQ |
 | [docs/TODO.md](docs/TODO.md) | Open work |
+| [docs/SLICE.md](docs/SLICE.md) | Build sequence (one step at a time) |
+| [docs/DEPLOY.md](docs/DEPLOY.md) | Step 1: isolate the server from AICraft |
 | [docs/BRAINSTORM.md](docs/BRAINSTORM.md) | Conversation archive / repair reference |
 | [docs/AGENT-INSTRUCTIONS.md](docs/AGENT-INSTRUCTIONS.md) | How future agents should work this repo |
 
@@ -918,10 +923,9 @@ FRACTURED_CONTENT
 cat > docs/TODO.md << 'FRACTURED_TODO'
 # Fractured — Open work
 
-Documentation is the current job. This list is the remaining design
-surface before implementation. TBD belongs on **numbers and IDs**, not
-on whether a system exists.
+Build sequence lives in `docs/SLICE.md`. Do not skip ahead.
 
+TBD belongs on **numbers and IDs**, not on whether a system exists.
 Uncheck as documents (or later modules) actually land. Do not delete a
 line to make the project look finished.
 
@@ -960,16 +964,16 @@ line to make the project look finished.
 - [ ] **MPQ Tier A file list** — actual filenames for load screens,
       meter icons, core item icons.
 
-## Implementation (later, not AICraft)
+## Implementation (not AICraft)
 
-- [ ] **AC module skeleton** — survival meters, Gate, Journal Record.
-- [ ] **Deploy pipeline separate from AICraft** — own box, own data
-      path, own restart habits. Do not bolt Fractured onto AiCraft-WotLK
-      ops.
+- [x] **Deploy pipeline separate from AICraft** — spec in
+      `docs/DEPLOY.md`. Isolation agreed. Clone/build waits for Step 2.
+- [ ] **AC module skeleton** — Step 2. Survival meters, Gate, Journal
+      Record. Empty hooks are fine; compile-and-login is the point.
 
 ## Explicitly not on this list
 
-- Configuring or building AzerothCore until Scott asks.
+- Building AzerothCore during Step 1.
 - Fixing AutoBalance for “Scott + 9 bots in Molten Core” (AiCraft-WotLK
   only).
 - Post-launch content patches as a substitute for L14.
@@ -1107,8 +1111,8 @@ Read this before touching the repo.
 
 Fractured (`scotthare81/Fractured`) is a separate private project. Do
 **not** touch AiCraft-WotLK. Do not add Fractured SQL, scripts, MPQ,
-or docs there. Do not mix deploy/ops. Do not configure or build
-AzerothCore unless Scott explicitly asks in this repo.
+or docs there. Do not mix deploy/ops. Follow `docs/SLICE.md` for when
+AzerothCore work is allowed (not during Step 1).
 
 ## Do not paste giant handoff blocks
 
@@ -1124,6 +1128,8 @@ Never “fix” markdown by copying nested fences out of a conversation.
 | `WORLD.md` | District network, gates, expedition flow, map IDs |
 | `CONTENT.md` | Items, clones, chains, MPQ, implementation notes |
 | `docs/TODO.md` | Open work |
+| `docs/SLICE.md` | Build sequence; current step |
+| `docs/DEPLOY.md` | Server isolation from AICraft |
 | `docs/BRAINSTORM.md` | Why decisions happened; not a competing spec |
 | `README.md` | Pitch, status, index |
 
@@ -1146,16 +1152,191 @@ run the seeder instead of hand-merging fragments.
 If you change design, change the heredocs in `bootstrap.sh` **and**
 regenerate, or the next repair will wipe your edit.
 
-## Scope while docs-first
+## Scope
 
-- Complete and correct documentation.
+- Follow `docs/SLICE.md`. Finish the current step before the next.
+- Do not clone, configure, or build AzerothCore during Step 1.
+- Do not touch AiCraft-WotLK (`/home/scott/aicraft-wotlk` or related).
 - TBD only for numbers and IDs not yet decided.
-- No silent implementation in some other repo.
-
-When Scott asks what to tackle next, the intended menu is: **gate
-matrix**, **material graph**, **district bible**, or **module skeleton**
-(skeleton still not in AICraft).
+- If you change a generated markdown file, change the heredoc in
+  `bootstrap.sh` too.
 FRACTURED_AGENT
+
+# ---------------------------------------------------------------------------
+# docs/SLICE.md
+# ---------------------------------------------------------------------------
+cat > docs/SLICE.md << 'FRACTURED_SLICE'
+# Fractured — Build sequence
+
+Go **one step at a time**. Finish the current step before starting the
+next. The 29-space network, MPQ polish, and mystery leads wait until
+the loop is playable.
+
+| Step | Name | Done when |
+|------|------|-----------|
+| 1 | Own server | Isolation spec agreed; tree is not AICraft |
+| 2 | Module skeleton | Empty Fractured module compiles in *this* project |
+| 3 | Three spaces | Sanctuary, Mouth, Cut have map IDs and a one-pager each |
+| 4 | The tax | Hunger / Thirst / Corruption, sit/channel, tiny bags, forage / butcher |
+| 5 | One Record line | First butcher writes a learned fact, not a quest |
+
+**Current step: 2.** Step 1 isolation is agreed (`docs/DEPLOY.md`).
+
+## Step 1 — Own server
+
+Isolate Fractured from AICraft. Same machine is allowed. Same
+directory, database, ports, restarter, or modules folder is not.
+
+See `docs/DEPLOY.md`. Do not clone or build AzerothCore in this step.
+
+## Step 2 — Module skeleton
+
+After isolation is agreed: an empty module in this repo (or in the
+Fractured server tree, referenced from this repo) with hooks for
+survival meters, Gate (bots blocked), and death → morgue. Compile is
+the point. Behavior can be stubs.
+
+## Step 3 — Three spaces
+
+Reuse obscure WotLK instance maps. Assign real map/instance IDs for
+**Sanctuary**, **Mouth**, and **Cut** only. One-pager each. Leave
+every other district TBD.
+
+## Step 4 — The tax
+
+Crude survival: meters, sit/channel food and water, ~6 bag slots,
+forage a deer analog, butcher with knife 5278. Death drops the haul.
+Character persists. Wake in the morgue.
+
+## Step 5 — One Record line
+
+After the first successful butcher, the Journal Record logs that the
+meat is venison (or the species you actually butchered). No “go do
+X.” That proves L10.
+
+## Not a step yet
+
+Full gate matrix, 12 underlayer names, lead pool, Nursery / Edge,
+Sanctuary upgrade costs, co-op Gate UX, AutoBalance tuning, MPQ Tier
+A file list. Write those when the slice exists, not before.
+FRACTURED_SLICE
+
+# ---------------------------------------------------------------------------
+# docs/DEPLOY.md
+# ---------------------------------------------------------------------------
+cat > docs/DEPLOY.md << 'FRACTURED_DEPLOY'
+# Fractured — Deploy (Step 1)
+
+Own server. Not AICraft. This step is **isolation**, not a compile.
+
+Do not clone AzerothCore, do not run CMake, and do not copy modules
+into `/home/scott/aicraft-wotlk` (or `aicraft`, `aicraft-progression`,
+`aicraft-wotlk-migrate`). Sign off the defaults below, then Step 2
+can introduce a module skeleton.
+
+## Goal
+
+A worldserver that cannot take down, overwrite, or restart AICraft.
+Friends can later have both realms; ops must never be one folder.
+
+## Recommended defaults
+
+Say yes to these or change one line. Do not invent a third tree.
+
+| Decision | Default |
+|----------|---------|
+| Machine | Same box as AICraft is OK |
+| Git repo | `/home/scott/fractured` (docs + later modules) |
+| Server tree | `/home/scott/fractured-server` (binaries, conf, logs) |
+| Auth | **Separate** `authserver` (own login port) |
+| Databases | Own MySQL *names* on the existing MySQL; own user |
+| Client extract | Read-only share of 3.3.5a maps/dbc later is OK |
+| Writable data | Never shared with AICraft |
+
+Separate auth is the boring kind of isolation: Fractured realm ID can
+be 1 on its own auth. Sharing AICraft’s auth is nicer for friends
+later and is a **later** change, not Step 1.
+
+## Never
+
+- Put Fractured worldserver, conf, or modules inside any `aicraft*`
+  directory
+- Share `characters` or `world` databases with AICraft
+- Share a restarter, systemd unit, or `screen` session with AICraft
+- Symlink this repo into an AICraft `modules/` folder
+- Restart AICraft to “just test” Fractured
+- Commit server binaries, `data/`, or MPQ blobs into this git repo
+
+## Paths
+
+```
+/home/scott/fractured              git repo (this project)
+/home/scott/fractured-server       server tree (not git)
+/home/scott/aicraft-wotlk          AICraft — do not touch
+```
+
+`fractured-server` is allowed to exist as an empty directory in Step
+1. AzerothCore source and build dirs go *under it* in a later step,
+not under `/home/scott/fractured` until we choose a modules layout
+in Step 2.
+
+## Ports
+
+If AICraft uses AzerothCore defaults, Fractured uses the next ports
+so both can run at once. If AICraft already took a port, pick another
+and write it here — do not steal AICraft’s.
+
+| Service | AICraft typical | Fractured |
+|---------|-----------------|-----------|
+| authserver | 3724 | 3725 |
+| worldserver | 8085 | 8086 |
+| SOAP | 7878 | 7879 |
+| MySQL | 3306 (shared daemon) | 3306 (same daemon, different DB names) |
+
+Client `realmlist.wtf` for Fractured will point at the Fractured
+auth port (3725 in this table), not at AICraft’s.
+
+## Databases
+
+Same MySQL daemon is fine. Names and user are not.
+
+| Database | Name |
+|----------|------|
+| Login | `fractured_auth` |
+| Characters | `fractured_characters` |
+| World | `fractured_world` |
+| MySQL user | `fractured` |
+
+Passwords stay out of git (see `.gitignore`). Put them in
+`/home/scott/fractured-server` conf later, never in this repo.
+
+## Realm
+
+| Field | Value |
+|-------|-------|
+| Realm name | Fractured |
+| Realm ID | 1 (own auth) |
+| Address | TBD when we bind a host (localhost is enough for Scott-only) |
+
+Player-facing realm name is original IP. Do not call it a WoW realm
+pun.
+
+## Restarter
+
+Fractured gets its own start/stop habit: own systemd unit **or** own
+script in `/home/scott/fractured-server`, not an extra line in an
+AICraft script. Write the actual unit in a later step, after a binary
+exists.
+
+## What “Step 1 done” means
+
+- [x] Isolation spec written (this file)
+- [x] Scott agrees the defaults (or writes the diffs)
+- [x] `/home/scott/fractured-server` exists and is not an AICraft path
+- [x] No AzerothCore clone/build has started for Fractured
+
+When those are true, go to **Step 2** in `docs/SLICE.md`.
+FRACTURED_DEPLOY
 
 # ---------------------------------------------------------------------------
 # .gitignore
@@ -1235,5 +1416,6 @@ FRACTURED_GITIGNORE
 echo "Fractured docs seeded in ${ROOT}"
 echo "Files:"
 wc -l README.md DESIGN.md WORLD.md CONTENT.md \
-  docs/TODO.md docs/BRAINSTORM.md docs/AGENT-INSTRUCTIONS.md \
+  docs/TODO.md docs/SLICE.md docs/DEPLOY.md \
+  docs/BRAINSTORM.md docs/AGENT-INSTRUCTIONS.md \
   .gitignore bootstrap.sh

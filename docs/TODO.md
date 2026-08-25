@@ -1,9 +1,8 @@
 # Fractured — Open work
 
-Documentation is the current job. This list is the remaining design
-surface before implementation. TBD belongs on **numbers and IDs**, not
-on whether a system exists.
+Build sequence lives in `docs/SLICE.md`. Do not skip ahead.
 
+TBD belongs on **numbers and IDs**, not on whether a system exists.
 Uncheck as documents (or later modules) actually land. Do not delete a
 line to make the project look finished.
 
@@ -42,16 +41,16 @@ line to make the project look finished.
 - [ ] **MPQ Tier A file list** — actual filenames for load screens,
       meter icons, core item icons.
 
-## Implementation (later, not AICraft)
+## Implementation (not AICraft)
 
-- [ ] **AC module skeleton** — survival meters, Gate, Journal Record.
-- [ ] **Deploy pipeline separate from AICraft** — own box, own data
-      path, own restart habits. Do not bolt Fractured onto AiCraft-WotLK
-      ops.
+- [x] **Deploy pipeline separate from AICraft** — spec in
+      `docs/DEPLOY.md`. Isolation agreed. Clone/build waits for Step 2.
+- [ ] **AC module skeleton** — Step 2. Survival meters, Gate, Journal
+      Record. Empty hooks are fine; compile-and-login is the point.
 
 ## Explicitly not on this list
 
-- Configuring or building AzerothCore until Scott asks.
+- Building AzerothCore during Step 1.
 - Fixing AutoBalance for “Scott + 9 bots in Molten Core” (AiCraft-WotLK
   only).
 - Post-launch content patches as a substitute for L14.

@@ -6,8 +6,8 @@ Read this before touching the repo.
 
 Fractured (`scotthare81/Fractured`) is a separate private project. Do
 **not** touch AiCraft-WotLK. Do not add Fractured SQL, scripts, MPQ,
-or docs there. Do not mix deploy/ops. Do not configure or build
-AzerothCore unless Scott explicitly asks in this repo.
+or docs there. Do not mix deploy/ops. Follow `docs/SLICE.md` for when
+AzerothCore work is allowed (not during Step 1).
 
 ## Do not paste giant handoff blocks
 
@@ -23,6 +23,8 @@ Never “fix” markdown by copying nested fences out of a conversation.
 | `WORLD.md` | District network, gates, expedition flow, map IDs |
 | `CONTENT.md` | Items, clones, chains, MPQ, implementation notes |
 | `docs/TODO.md` | Open work |
+| `docs/SLICE.md` | Build sequence; current step |
+| `docs/DEPLOY.md` | Server isolation from AICraft |
 | `docs/BRAINSTORM.md` | Why decisions happened; not a competing spec |
 | `README.md` | Pitch, status, index |
 
@@ -45,12 +47,11 @@ run the seeder instead of hand-merging fragments.
 If you change design, change the heredocs in `bootstrap.sh` **and**
 regenerate, or the next repair will wipe your edit.
 
-## Scope while docs-first
+## Scope
 
-- Complete and correct documentation.
+- Follow `docs/SLICE.md`. Finish the current step before the next.
+- Do not clone, configure, or build AzerothCore during Step 1.
+- Do not touch AiCraft-WotLK (`/home/scott/aicraft-wotlk` or related).
 - TBD only for numbers and IDs not yet decided.
-- No silent implementation in some other repo.
-
-When Scott asks what to tackle next, the intended menu is: **gate
-matrix**, **material graph**, **district bible**, or **module skeleton**
-(skeleton still not in AICraft).
+- If you change a generated markdown file, change the heredoc in
+  `bootstrap.sh` too.
