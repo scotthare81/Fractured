@@ -1249,6 +1249,9 @@ Scott can run a **dev** instance without touching the **live** friend
 realm. Friends can later have both Fractured and AICraft; ops stay in
 separate folders.
 
+Live and dev share **one Fractured login** so both realms show on the
+same character-select list. They do not share world or characters.
+
 ## Recommended defaults
 
 | Decision | Default |
@@ -1256,17 +1259,18 @@ separate folders.
 | Machine | Same box as AICraft is OK |
 | Git repo | `/home/scott/fractured` (docs + `src/mod-fractured`) |
 | Server tree | `/home/scott/fractured-server` |
-| Auth | **Separate** `authserver` per Fractured instance (live and dev) |
-| Databases | Own MySQL names; live and dev do not share characters/world |
+| Auth | **One** Fractured `authserver` on **3725** (live + dev in the same realm list) |
+| Databases | Shared login DB; live and dev do not share characters/world |
 | Client extract | Read-only share under `fractured-server/data` |
-| Writable data | Never shared with AICraft; live and dev do not share logs/conf |
+| Writable data | Never shared with AICraft; live and dev do not share logs/world conf |
 
 ## Never
 
 - Put Fractured worldserver, conf, or modules inside any `aicraft*`
   directory
-- Share `characters` or `world` databases with AICraft
+- Share `auth`, `characters`, or `world` databases with AICraft
 - Share live and dev `characters` / `world` databases with each other
+  (they **do** share Fractured `auth` so both realms show in one list)
 - Share a restarter, systemd unit, or `screen` session with AICraft
 - Symlink this repo into an AICraft `modules/` folder
 - Restart AICraft to “just test” Fractured
@@ -1285,9 +1289,11 @@ separate folders.
   src/azerothcore                        clone AC here (not yet)
   data/                                  shared 3.3.5a extract (read-only)
     maps/  dbc/  vmaps/  mmaps/
-  live/                                  friend-facing run dir
+  auth/                                  one Fractured login (port 3725)
+    etc/  logs/
+  live/                                  friend-facing world (port 8086)
     etc/  logs/  crashdumps/
-  dev/                                   Scott development run dir
+  dev/                                   Scott development world (port 8087)
     etc/  logs/  crashdumps/
   build-live/                            CMake out-of-tree (later)
   build-dev/                             CMake out-of-tree (later)
@@ -1318,50 +1324,56 @@ it here — do not steal AICraft’s.
 
 | Service | AICraft typical | Fractured live | Fractured dev |
 |---------|-----------------|----------------|---------------|
-| authserver | 3724 | 3725 | 3726 |
+| authserver | 3724 | **3725** (shared) | **3725** (same process) |
 | worldserver | 8085 | 8086 | 8087 |
 | SOAP | 7878 | 7879 | 7880 |
 | HTTP tools | — | — | **8780** |
 | MySQL | 3306 | 3306 (same daemon) | 3306 (same daemon) |
 
-- **Live** (3725 / 8086) is the friend realm. Client `realmlist.wtf`
-  for friends points at **3725**.
-- **Dev** (3726 / 8087) is Scott’s instance. Own realmlist or a second
-  realm line pointing at **3726**.
+- **One Fractured auth** on **3725**. Client `realmlist.wtf` points
+  there once. After login, **Fractured** and **Fractured Dev** both
+  appear on the realm list.
+- **Live** world is 8086. **Dev** world is 8087. Two worldservers,
+  one login.
+- Do not put Fractured auth on AICraft’s 3724.
 - **8780** is the Fractured **dev HTTP** port: local tools, later
   Journal mock, anything that is not auth/world/SOAP. Do not bind
   worldserver there.
 
 ## Databases
 
-Same MySQL daemon is fine. Names and user are not. Live and dev are
-separate so a bad SQL on dev cannot wipe friends.
+Same MySQL daemon is fine. Names are not. Live and dev **share
+login**. They do not share characters or world, so a bad SQL on dev
+cannot wipe friend characters.
 
 | Role | Live | Dev |
 |------|------|-----|
-| Login | `fractured_auth` | `fractured_dev_auth` |
+| Login | `fractured_auth` (shared) | `fractured_auth` (same) |
 | Characters | `fractured_characters` | `fractured_dev_characters` |
 | World | `fractured_world` | `fractured_dev_world` |
-| MySQL user | `fractured` | `fractured_dev` |
+| MySQL user | `fractured` | `fractured` (same user is fine) |
 
-Passwords stay out of git. Put them in `live/etc` and `dev/etc`, never
-in this repo.
+Passwords stay out of git. Auth conf lives in `auth/etc`. World conf
+lives in `live/etc` and `dev/etc`.
 
 ## Realms
+
+Two rows in the same `auth.realmlist` table. One `authserver`.
 
 | Field | Live | Dev |
 |-------|------|-----|
 | Realm name | Fractured | Fractured Dev |
-| Realm ID | 1 (own auth) | 1 (own auth) |
+| Realm ID | 1 | 2 |
 | Address | TBD (localhost is enough for Scott-only) | 127.0.0.1 |
+| World port | 8086 | 8087 |
 
 Player-facing names stay original IP. Do not use a WoW realm pun.
 
 ## Restarter
 
-Live and dev each get their own start/stop habit under
-`fractured-server`, not an extra line in an AICraft script. Write the
-units after binaries exist.
+One restarter for Fractured **auth**, plus one each for live and dev
+**world**. All under `fractured-server`, not an extra line in an
+AICraft script. Write the units after binaries exist.
 
 ## Module
 

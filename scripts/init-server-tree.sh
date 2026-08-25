@@ -7,6 +7,8 @@ ROOT="${FRACTURED_SERVER_ROOT:-/home/scott/fractured-server}"
 
 mkdir -p \
   "$ROOT/src" \
+  "$ROOT/auth/etc" \
+  "$ROOT/auth/logs" \
   "$ROOT/data/maps" \
   "$ROOT/data/dbc" \
   "$ROOT/data/vmaps" \
@@ -20,14 +22,14 @@ mkdir -p \
   "$ROOT/build-live" \
   "$ROOT/build-dev"
 
-if [[ ! -f "$ROOT/README" ]]; then
-  cat > "$ROOT/README" << 'EOF'
+cat > "$ROOT/README" << 'EOF'
 Fractured server tree. Not AICraft.
 
   src/azerothcore   clone AzerothCore here (later)
   data/             shared 3.3.5a extract (read-only)
-  live/             friend-facing run dir
-  dev/              Scott development run dir
+  auth/             one login on port 3725 (live + dev realm list)
+  live/             friend-facing world (8086)
+  dev/              Scott development world (8087)
   build-live/       CMake build (live)
   build-dev/        CMake build (dev)
 
@@ -35,7 +37,6 @@ Module: /home/scott/fractured/src/mod-fractured
 Link:   bash /home/scott/fractured/scripts/link-module.sh
 Ports:  /home/scott/fractured/docs/DEPLOY.md
 EOF
-fi
 
 echo "Server tree ready under $ROOT"
 find "$ROOT" -maxdepth 2 -type d | sort
