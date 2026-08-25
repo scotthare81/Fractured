@@ -1,111 +1,142 @@
-# Fractured — Deploy (Step 1)
+# Fractured — Deploy
 
-Own server. Not AICraft. This step is **isolation**, not a compile.
+Own server. Not AICraft. Step 1 isolation is agreed. This file also
+holds the **live vs dev** tree and ports (Step 2).
 
-Do not clone AzerothCore, do not run CMake, and do not copy modules
-into `/home/scott/aicraft-wotlk` (or `aicraft`, `aicraft-progression`,
-`aicraft-wotlk-migrate`). Sign off the defaults below, then Step 2
-can introduce a module skeleton.
+Do not copy modules, conf, or restarters into `/home/scott/aicraft-wotlk`
+(or `aicraft`, `aicraft-progression`, `aicraft-wotlk-migrate`).
 
 ## Goal
 
 A worldserver that cannot take down, overwrite, or restart AICraft.
-Friends can later have both realms; ops must never be one folder.
+Scott can run a **dev** instance without touching the **live** friend
+realm. Friends can later have both Fractured and AICraft; ops stay in
+separate folders.
 
 ## Recommended defaults
-
-Say yes to these or change one line. Do not invent a third tree.
 
 | Decision | Default |
 |----------|---------|
 | Machine | Same box as AICraft is OK |
-| Git repo | `/home/scott/fractured` (docs + later modules) |
-| Server tree | `/home/scott/fractured-server` (binaries, conf, logs) |
-| Auth | **Separate** `authserver` (own login port) |
-| Databases | Own MySQL *names* on the existing MySQL; own user |
-| Client extract | Read-only share of 3.3.5a maps/dbc later is OK |
-| Writable data | Never shared with AICraft |
-
-Separate auth is the boring kind of isolation: Fractured realm ID can
-be 1 on its own auth. Sharing AICraft’s auth is nicer for friends
-later and is a **later** change, not Step 1.
+| Git repo | `/home/scott/fractured` (docs + `src/mod-fractured`) |
+| Server tree | `/home/scott/fractured-server` |
+| Auth | **Separate** `authserver` per Fractured instance (live and dev) |
+| Databases | Own MySQL names; live and dev do not share characters/world |
+| Client extract | Read-only share under `fractured-server/data` |
+| Writable data | Never shared with AICraft; live and dev do not share logs/conf |
 
 ## Never
 
 - Put Fractured worldserver, conf, or modules inside any `aicraft*`
   directory
 - Share `characters` or `world` databases with AICraft
+- Share live and dev `characters` / `world` databases with each other
 - Share a restarter, systemd unit, or `screen` session with AICraft
 - Symlink this repo into an AICraft `modules/` folder
 - Restart AICraft to “just test” Fractured
-- Commit server binaries, `data/`, or MPQ blobs into this git repo
+- Commit server binaries, `data/` extracts, or MPQ blobs into this git
+  repo
 
-## Paths
+## Folder structure
 
 ```
-/home/scott/fractured              git repo (this project)
-/home/scott/fractured-server       server tree (not git)
-/home/scott/aicraft-wotlk          AICraft — do not touch
+/home/scott/fractured                    git repo
+  src/mod-fractured                      AC module (this project)
+  scripts/init-server-tree.sh
+  scripts/link-module.sh
+
+/home/scott/fractured-server             ops root (not git)
+  src/azerothcore                        clone AC here (not yet)
+  data/                                  shared 3.3.5a extract (read-only)
+    maps/  dbc/  vmaps/  mmaps/
+  live/                                  friend-facing run dir
+    etc/  logs/  crashdumps/
+  dev/                                   Scott development run dir
+    etc/  logs/  crashdumps/
+  build-live/                            CMake out-of-tree (later)
+  build-dev/                             CMake out-of-tree (later)
+
+/home/scott/aicraft-wotlk                AICraft — do not touch
 ```
 
-`fractured-server` is allowed to exist as an empty directory in Step
-1. AzerothCore source and build dirs go *under it* in a later step,
-not under `/home/scott/fractured` until we choose a modules layout
-in Step 2.
+Create the empty tree:
+
+```bash
+bash /home/scott/fractured/scripts/init-server-tree.sh
+```
+
+After AC is cloned into `src/azerothcore`:
+
+```bash
+bash /home/scott/fractured/scripts/link-module.sh
+```
+
+That symlink is the only legal module wire-up. AzerothCore source and
+build dirs stay under `fractured-server`, not under the git repo.
 
 ## Ports
 
-If AICraft uses AzerothCore defaults, Fractured uses the next ports
-so both can run at once. If AICraft already took a port, pick another
-and write it here — do not steal AICraft’s.
+If AICraft uses AzerothCore defaults, Fractured uses the next ports so
+all three can run at once. If a port is taken, pick another and write
+it here — do not steal AICraft’s.
 
-| Service | AICraft typical | Fractured |
-|---------|-----------------|-----------|
-| authserver | 3724 | 3725 |
-| worldserver | 8085 | 8086 |
-| SOAP | 7878 | 7879 |
-| MySQL | 3306 (shared daemon) | 3306 (same daemon, different DB names) |
+| Service | AICraft typical | Fractured live | Fractured dev |
+|---------|-----------------|----------------|---------------|
+| authserver | 3724 | 3725 | 3726 |
+| worldserver | 8085 | 8086 | 8087 |
+| SOAP | 7878 | 7879 | 7880 |
+| HTTP tools | — | — | **8780** |
+| MySQL | 3306 | 3306 (same daemon) | 3306 (same daemon) |
 
-Client `realmlist.wtf` for Fractured will point at the Fractured
-auth port (3725 in this table), not at AICraft’s.
+- **Live** (3725 / 8086) is the friend realm. Client `realmlist.wtf`
+  for friends points at **3725**.
+- **Dev** (3726 / 8087) is Scott’s instance. Own realmlist or a second
+  realm line pointing at **3726**.
+- **8780** is the Fractured **dev HTTP** port: local tools, later
+  Journal mock, anything that is not auth/world/SOAP. Do not bind
+  worldserver there.
 
 ## Databases
 
-Same MySQL daemon is fine. Names and user are not.
+Same MySQL daemon is fine. Names and user are not. Live and dev are
+separate so a bad SQL on dev cannot wipe friends.
 
-| Database | Name |
-|----------|------|
-| Login | `fractured_auth` |
-| Characters | `fractured_characters` |
-| World | `fractured_world` |
-| MySQL user | `fractured` |
+| Role | Live | Dev |
+|------|------|-----|
+| Login | `fractured_auth` | `fractured_dev_auth` |
+| Characters | `fractured_characters` | `fractured_dev_characters` |
+| World | `fractured_world` | `fractured_dev_world` |
+| MySQL user | `fractured` | `fractured_dev` |
 
-Passwords stay out of git (see `.gitignore`). Put them in
-`/home/scott/fractured-server` conf later, never in this repo.
+Passwords stay out of git. Put them in `live/etc` and `dev/etc`, never
+in this repo.
 
-## Realm
+## Realms
 
-| Field | Value |
-|-------|-------|
-| Realm name | Fractured |
-| Realm ID | 1 (own auth) |
-| Address | TBD when we bind a host (localhost is enough for Scott-only) |
+| Field | Live | Dev |
+|-------|------|-----|
+| Realm name | Fractured | Fractured Dev |
+| Realm ID | 1 (own auth) | 1 (own auth) |
+| Address | TBD (localhost is enough for Scott-only) | 127.0.0.1 |
 
-Player-facing realm name is original IP. Do not call it a WoW realm
-pun.
+Player-facing names stay original IP. Do not use a WoW realm pun.
 
 ## Restarter
 
-Fractured gets its own start/stop habit: own systemd unit **or** own
-script in `/home/scott/fractured-server`, not an extra line in an
-AICraft script. Write the actual unit in a later step, after a binary
-exists.
+Live and dev each get their own start/stop habit under
+`fractured-server`, not an extra line in an AICraft script. Write the
+units after binaries exist.
 
-## What “Step 1 done” means
+## Module
 
-- [x] Isolation spec written (this file)
-- [x] Scott agrees the defaults (or writes the diffs)
+Source: `/home/scott/fractured/src/mod-fractured`
+Stubs: survival tick, `go_fractured_gate`, death → morgue messages.
+Compile happens when AC is cloned and linked. That is still Step 2;
+the skeleton is in git now.
+
+## Step 1 (done)
+
+- [x] Isolation spec written
+- [x] Scott agrees the defaults
 - [x] `/home/scott/fractured-server` exists and is not an AICraft path
-- [x] No AzerothCore clone/build has started for Fractured
-
-When those are true, go to **Step 2** in `docs/SLICE.md`.
+- [x] No AzerothCore clone/build had started during Step 1

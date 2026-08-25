@@ -27,6 +27,7 @@ Never “fix” markdown by copying nested fences out of a conversation.
 | `docs/DEPLOY.md` | Server isolation from AICraft |
 | `docs/BRAINSTORM.md` | Why decisions happened; not a competing spec |
 | `README.md` | Pitch, status, index |
+| `src/mod-fractured` | Fractured AC module (stubs until later steps) |
 
 If two files disagree, fix them together and update the heredocs in
 `bootstrap.sh` so the next seed cannot resurrect the wrong version.
@@ -50,8 +51,9 @@ regenerate, or the next repair will wipe your edit.
 ## Scope
 
 - Follow `docs/SLICE.md`. Finish the current step before the next.
-- Do not clone, configure, or build AzerothCore during Step 1.
-- Do not touch AiCraft-WotLK (`/home/scott/aicraft-wotlk` or related).
+- Module source lives in `src/mod-fractured`. Server tree is
+  `/home/scott/fractured-server` (live + dev). Never AICraft.
+- Clone AzerothCore only under `fractured-server/src/azerothcore`.
 - TBD only for numbers and IDs not yet decided.
 - If you change a generated markdown file, change the heredoc in
   `bootstrap.sh` too.

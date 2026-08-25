@@ -14,7 +14,8 @@ AzerothCore from this repo unless Scott asks later.
 
 Design is locked enough to build a slice. The build sequence is
 [docs/SLICE.md](docs/SLICE.md). **Current step: 2 — module skeleton.**
-Step 1 isolation is agreed ([docs/DEPLOY.md](docs/DEPLOY.md)).
+Step 1 isolation is agreed. Live/dev tree and ports:
+[docs/DEPLOY.md](docs/DEPLOY.md). Module: `src/mod-fractured`.
 
 v1.0 content still ships complete before friend launch. Pacing is
 discovery and gates, not content patches.
@@ -64,6 +65,7 @@ break, wake in the morgue, and go again. Character persists. Haul does not.
 | [docs/DEPLOY.md](docs/DEPLOY.md) | Step 1: isolate the server from AICraft |
 | [docs/BRAINSTORM.md](docs/BRAINSTORM.md) | Conversation archive / repair reference |
 | [docs/AGENT-INSTRUCTIONS.md](docs/AGENT-INSTRUCTIONS.md) | How future agents should work this repo |
+| [src/mod-fractured](src/mod-fractured) | AzerothCore module (Step 2 stubs) |
 
 `bootstrap.sh` regenerates the markdown files and `.gitignore` from the
 canonical heredocs in this repo. If a paste handoff truncates a table, run

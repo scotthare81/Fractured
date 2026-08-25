@@ -19,14 +19,17 @@ the loop is playable.
 Isolate Fractured from AICraft. Same machine is allowed. Same
 directory, database, ports, restarter, or modules folder is not.
 
-See `docs/DEPLOY.md`. Do not clone or build AzerothCore in this step.
+See `docs/DEPLOY.md`. Isolation is agreed. Live/dev folders and
+ports are in that file. Do not clone AzerothCore in this step.
 
 ## Step 2 — Module skeleton
 
-After isolation is agreed: an empty module in this repo (or in the
-Fractured server tree, referenced from this repo) with hooks for
-survival meters, Gate (bots blocked), and death → morgue. Compile is
-the point. Behavior can be stubs.
+After isolation is agreed: an empty module in this repo
+(`src/mod-fractured`) with hooks for survival meters, Gate (bots
+blocked), and death → morgue. Live vs dev run dirs and ports live in
+`docs/DEPLOY.md`. Compile is the point once AC is cloned under
+`fractured-server/src/azerothcore` and linked with
+`scripts/link-module.sh`. Behavior can be stubs.
 
 ## Step 3 — Three spaces
 
