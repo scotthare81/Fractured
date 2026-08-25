@@ -1259,7 +1259,7 @@ same character-select list. They do not share world or characters.
 | Machine | Same box as AICraft is OK |
 | Git repo | `/home/scott/fractured` (docs + `src/mod-fractured`) |
 | Server tree | `/home/scott/fractured-server` |
-| Auth | **One** Fractured `authserver` on **3725** (live + dev in the same realm list) |
+| Auth | **One** Fractured `authserver` on **3724** (stock client port; live + dev in the same realm list) |
 | Databases | Shared login DB; live and dev do not share characters/world |
 | Client extract | Read-only share under `fractured-server/data` |
 | Writable data | Never shared with AICraft; live and dev do not share logs/world conf |
@@ -1289,7 +1289,7 @@ same character-select list. They do not share world or characters.
   src/azerothcore                        clone AC here (not yet)
   data/                                  shared 3.3.5a extract (read-only)
     maps/  dbc/  vmaps/  mmaps/
-  auth/                                  one Fractured login (port 3725)
+  auth/                                  one Fractured login (port 3724)
     etc/  logs/
   live/                                  friend-facing world (port 8086)
     etc/  logs/  crashdumps/
@@ -1318,24 +1318,24 @@ build dirs stay under `fractured-server`, not under the git repo.
 
 ## Ports
 
-If AICraft uses AzerothCore defaults, Fractured uses the next ports so
-all three can run at once. If a port is taken, pick another and write
-it here — do not steal AICraft’s.
+On this box AICraft auth is **3734**. Fractured takes the stock client
+port **3724** so an unpatched 3.3.5 client can log in. Do not steal
+AICraft’s 3734.
 
-| Service | AICraft typical | Fractured live | Fractured dev |
-|---------|-----------------|----------------|---------------|
-| authserver | 3724 | **3725** (shared) | **3725** (same process) |
-| worldserver | 8085 | 8086 | 8087 |
-| SOAP | 7878 | 7879 | 7880 |
+| Service | AICraft on this box | Fractured live | Fractured dev |
+|---------|---------------------|----------------|---------------|
+| authserver | 3734 | **3724** (shared) | **3724** (same process) |
+| worldserver | (AICraft world, not 8086) | 8086 | 8087 |
+| SOAP | — | 7879 | 7880 |
 | HTTP tools | — | — | **8780** |
-| MySQL | 3306 | 3306 (same daemon) | 3306 (same daemon) |
+| MySQL | 127.0.0.1:3307 | 3306 (Fractured daemon) | 3306 (same daemon) |
 
-- **One Fractured auth** on **3725**. Client `realmlist.wtf` points
-  there once. After login, **Fractured** and **Fractured Dev** both
-  appear on the realm list.
+- **One Fractured auth** on **3724** (stock 3.3.5 client port). Client
+  `realmlist.wtf` points at the hostname only; the client always uses
+  3724. After login, **Fractured** and **Fractured Dev** both appear
+  on the realm list.
 - **Live** world is 8086. **Dev** world is 8087. Two worldservers,
-  one login.
-- Do not put Fractured auth on AICraft’s 3724.
+  one Fractured login. Not AICraft’s auth (3734).
 - **8780** is the Fractured **dev HTTP** port: local tools, later
   Journal mock, anything that is not auth/world/SOAP. Do not bind
   worldserver there.

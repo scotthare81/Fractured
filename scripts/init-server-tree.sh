@@ -27,7 +27,7 @@ Fractured server tree. Not AICraft.
 
   src/azerothcore   clone AzerothCore here (later)
   data/             shared 3.3.5a extract (read-only)
-  auth/             one login on port 3725 (live + dev realm list)
+  auth/             one login on port 3724 (live + dev realm list)
   live/             friend-facing world (8086)
   dev/              Scott development world (8087)
   build-live/       CMake build (live)
