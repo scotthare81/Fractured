@@ -96,6 +96,16 @@ by importing raid-with-bots assumptions into Wild districts.
 
 Fractured is a separate repo (`scotthare81/Fractured`). Do not mix ops.
 
+## Disk
+
+The always-on external drive on the server is the right home for
+`fractured-server` (clone, two CMake builds, map extract). The git
+repo stays on the internal disk. MySQL datadir stays on the internal
+disk. Logical path remains `/home/scott/fractured-server` as a
+symlink so a dead USB cannot hang AICraft boot (`nofail` + Fractured
+units require the mount). Do the move before AC clone. Details:
+`docs/DEPLOY.md`.
+
 ## Cooking
 
 No levels. Quality in, weighted out. Model C: 70% standard / 20% good /

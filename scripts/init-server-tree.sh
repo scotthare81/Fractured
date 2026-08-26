@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Create /home/scott/fractured-server live+dev folders. Idempotent.
+# Create Fractured live+dev folders. Idempotent.
+# Default logical path is /home/scott/fractured-server (may be a
+# symlink onto the always-on external disk; see docs/DEPLOY.md).
 # Does not clone AzerothCore. Does not touch AICraft.
 set -euo pipefail
 
@@ -25,6 +27,9 @@ mkdir -p \
 cat > "$ROOT/README" << 'EOF'
 Fractured server tree. Not AICraft.
 
+  Logical path: /home/scott/fractured-server
+  Real tree may live on the always-on external disk (symlink).
+
   src/azerothcore   clone AzerothCore here (later)
   data/             shared 3.3.5a extract (read-only)
   auth/             one login on port 3724 (live + dev realm list)
@@ -36,6 +41,7 @@ Fractured server tree. Not AICraft.
 Module: /home/scott/fractured/src/mod-fractured
 Link:   bash /home/scott/fractured/scripts/link-module.sh
 Ports:  /home/scott/fractured/docs/DEPLOY.md
+Disk:   /home/scott/fractured/docs/DEPLOY.md (external drive)
 EOF
 
 echo "Server tree ready under $ROOT"

@@ -44,8 +44,9 @@ line to make the project look finished.
 ## Implementation (not AICraft)
 
 - [x] **Deploy pipeline separate from AICraft** — spec in
-      `docs/DEPLOY.md`. Isolation agreed. Live/dev folders and ports
-      written. Clone/build AC still waits for the rest of Step 2.
+      `docs/DEPLOY.md`. Isolation agreed. Live/dev folders, ports,
+      and external-disk ops tree written. Clone/build AC still waits
+      for the rest of Step 2.
 - [ ] **AC module skeleton** — Step 2. Source in `src/mod-fractured`
       (stubs: meters, Gate, morgue). Compile after AC clone +
       `scripts/link-module.sh`.

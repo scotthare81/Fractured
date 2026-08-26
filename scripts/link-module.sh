@@ -3,6 +3,7 @@
 # Never run this against AICraft.
 set -euo pipefail
 
+# FRACTURED_AC may follow a symlink onto the always-on external disk.
 REPO="${FRACTURED_REPO:-/home/scott/fractured}"
 AC="${FRACTURED_AC:-/home/scott/fractured-server/src/azerothcore}"
 MOD_SRC="$REPO/src/mod-fractured"

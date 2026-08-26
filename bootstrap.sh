@@ -969,8 +969,9 @@ line to make the project look finished.
 ## Implementation (not AICraft)
 
 - [x] **Deploy pipeline separate from AICraft** — spec in
-      `docs/DEPLOY.md`. Isolation agreed. Live/dev folders and ports
-      written. Clone/build AC still waits for the rest of Step 2.
+      `docs/DEPLOY.md`. Isolation agreed. Live/dev folders, ports,
+      and external-disk ops tree written. Clone/build AC still waits
+      for the rest of Step 2.
 - [ ] **AC module skeleton** — Step 2. Source in `src/mod-fractured`
       (stubs: meters, Gate, morgue). Compile after AC clone +
       `scripts/link-module.sh`.
@@ -1085,6 +1086,16 @@ by importing raid-with-bots assumptions into Wild districts.
 
 Fractured is a separate repo (`scotthare81/Fractured`). Do not mix ops.
 
+## Disk
+
+The always-on external drive on the server is the right home for
+`fractured-server` (clone, two CMake builds, map extract). The git
+repo stays on the internal disk. MySQL datadir stays on the internal
+disk. Logical path remains `/home/scott/fractured-server` as a
+symlink so a dead USB cannot hang AICraft boot (`nofail` + Fractured
+units require the mount). Do the move before AC clone. Details:
+`docs/DEPLOY.md`.
+
 ## Cooking
 
 No levels. Quality in, weighted out. Model C: 70% standard / 20% good /
@@ -1161,7 +1172,9 @@ regenerate, or the next repair will wipe your edit.
 
 - Follow `docs/SLICE.md`. Finish the current step before the next.
 - Module source lives in `src/mod-fractured`. Server tree is
-  `/home/scott/fractured-server` (live + dev). Never AICraft.
+  `/home/scott/fractured-server` (live + dev). That path may be a
+  symlink onto the always-on external disk (`docs/DEPLOY.md`).
+  Never AICraft.
 - Clone AzerothCore only under `fractured-server/src/azerothcore`.
 - TBD only for numbers and IDs not yet decided.
 - If you change a generated markdown file, change the heredoc in
@@ -1257,10 +1270,10 @@ same character-select list. They do not share world or characters.
 | Decision | Default |
 |----------|---------|
 | Machine | Same box as AICraft is OK |
-| Git repo | `/home/scott/fractured` (docs + `src/mod-fractured`) |
-| Server tree | `/home/scott/fractured-server` |
+| Git repo | `/home/scott/fractured` (docs + `src/mod-fractured`) — **internal disk** |
+| Server tree | `/home/scott/fractured-server` logical path; **real tree on the always-on external disk** |
 | Auth | **One** Fractured `authserver` on **3724** (stock client port; live + dev in the same realm list) |
-| Databases | Shared login DB; live and dev do not share characters/world |
+| Databases | Shared login DB; live and dev do not share characters/world; **MySQL datadir stays internal** |
 | Client extract | Read-only share under `fractured-server/data` |
 | Writable data | Never shared with AICraft; live and dev do not share logs/world conf |
 
@@ -1276,16 +1289,75 @@ same character-select list. They do not share world or characters.
 - Restart AICraft to “just test” Fractured
 - Commit server binaries, `data/` extracts, or MPQ blobs into this git
   repo
+- Put the Fractured MySQL datadir on the USB / external disk
+- Let a dead USB hang boot so AICraft cannot start
+
+## Disk (external drive)
+
+**Yes — move `fractured-server`. Do not move the git repo. Do not
+move MySQL.**
+
+The internal disk already hosts AICraft. Fractured’s space hit is the
+ops tree: AzerothCore clone, two CMake builds, and the 3.3.5a extract.
+That is tens of gigabytes once compile + extract land. The git repo is
+small. Do this **now**, while the tree is still empty.
+
+Keep the **logical** path `/home/scott/fractured-server` so scripts do
+not bake in a USB mount. Put the real tree on the always-on disk and
+symlink. Isolation is still path-based: the symlink must not land
+under any `aicraft*` directory.
+
+| What | External disk? | Why |
+|------|----------------|-----|
+| `/home/scott/fractured` | No | Tiny; git, editors, agents |
+| `/home/scott/fractured-server` (whole tree) | **Yes** | Clone, `build-live/`, `build-dev/`, `data/` |
+| Fractured MySQL datadir (port 3306) | No | Latency and crash safety |
+| AICraft paths | Do not touch | Isolation. Do not also *depend* on this USB |
+
+USB 3 SSD is the comfortable case. USB HDD is still worth it for
+space; compiles and map load will be slower. USB 2.0 spinning rust is
+a last resort for live.
+
+Mount by UUID in fstab with `nofail` so a missing disk does not hang
+boot and take AICraft down. Fractured restarters must
+`RequiresMountsFor=` that mount. Disable USB autosuspend for the
+device.
+
+Do not create `fractured-server` on the empty mountpoint while the
+disk is unplugged: writes would land on the internal disk and vanish
+when the real filesystem mounts. Leave the unmounted mountpoint
+root-owned so that cannot happen by accident.
+
+`init-server-tree.sh` honors `FRACTURED_SERVER_ROOT` if you would
+rather point at the real path. The default logical path stays
+`/home/scott/fractured-server`.
+
+Example (Scott fills in the mount):
+
+```bash
+# External disk already mounted at /mnt/<disk> (UUID in fstab, nofail)
+sudo mkdir -p /mnt/<disk>/fractured-server
+sudo chown scott:scott /mnt/<disk>/fractured-server
+
+# If the empty internal tree already exists, replace it with a symlink
+rsync -aH /home/scott/fractured-server/ /mnt/<disk>/fractured-server/
+mv /home/scott/fractured-server /home/scott/fractured-server.bak
+ln -s /mnt/<disk>/fractured-server /home/scott/fractured-server
+
+bash /home/scott/fractured/scripts/init-server-tree.sh
+# After a sanity check: rm -rf /home/scott/fractured-server.bak
+```
 
 ## Folder structure
 
 ```
-/home/scott/fractured                    git repo
+/home/scott/fractured                    git repo (internal disk)
   src/mod-fractured                      AC module (this project)
   scripts/init-server-tree.sh
   scripts/link-module.sh
 
-/home/scott/fractured-server             ops root (not git)
+/home/scott/fractured-server             ops root — symlink onto external disk
+  → /mnt/<disk>/fractured-server
   src/azerothcore                        clone AC here (not yet)
   data/                                  shared 3.3.5a extract (read-only)
     maps/  dbc/  vmaps/  mmaps/
@@ -1301,7 +1373,7 @@ same character-select list. They do not share world or characters.
 /home/scott/aicraft-wotlk                AICraft — do not touch
 ```
 
-Create the empty tree:
+Create the empty tree (through the symlink, after the disk is mounted):
 
 ```bash
 bash /home/scott/fractured/scripts/init-server-tree.sh
@@ -1373,7 +1445,8 @@ Player-facing names stay original IP. Do not use a WoW realm pun.
 
 One restarter for Fractured **auth**, plus one each for live and dev
 **world**. All under `fractured-server`, not an extra line in an
-AICraft script. Write the units after binaries exist.
+AICraft script. Write the units after binaries exist. Those units
+must `RequiresMountsFor=` the external disk mount.
 
 ## Module
 
@@ -1388,6 +1461,8 @@ the skeleton is in git now.
 - [x] Scott agrees the defaults
 - [x] `/home/scott/fractured-server` exists and is not an AICraft path
 - [x] No AzerothCore clone/build had started during Step 1
+- [ ] Real ops tree moved onto the always-on external disk (symlink
+      the logical path; MySQL and git stay internal)
 FRACTURED_DEPLOY
 
 # ---------------------------------------------------------------------------
