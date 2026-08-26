@@ -28,7 +28,7 @@ cat > "$ROOT/README" << 'EOF'
 Fractured server tree. Not AICraft.
 
   Logical path: /home/scott/fractured-server
-  Real tree may live on the always-on external disk (symlink).
+  Real tree may live on the 2TB USB 3 SSD (symlink).
 
   src/azerothcore   clone AzerothCore here (later)
   data/             shared 3.3.5a extract (read-only)
@@ -41,7 +41,7 @@ Fractured server tree. Not AICraft.
 Module: /home/scott/fractured/src/mod-fractured
 Link:   bash /home/scott/fractured/scripts/link-module.sh
 Ports:  /home/scott/fractured/docs/DEPLOY.md
-Disk:   /home/scott/fractured/docs/DEPLOY.md (external drive)
+Disk:   /home/scott/fractured/docs/DEPLOY.md (2TB USB 3 SSD)
 EOF
 
 echo "Server tree ready under $ROOT"

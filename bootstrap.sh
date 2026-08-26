@@ -1088,12 +1088,13 @@ Fractured is a separate repo (`scotthare81/Fractured`). Do not mix ops.
 
 ## Disk
 
-The always-on external drive on the server is the right home for
+Scott’s always-on **2TB USB 3 SSD** is the right home for
 `fractured-server` (clone, two CMake builds, map extract). The git
 repo stays on the internal disk. MySQL datadir stays on the internal
 disk. Logical path remains `/home/scott/fractured-server` as a
 symlink so a dead USB cannot hang AICraft boot (`nofail` + Fractured
-units require the mount). Do the move before AC clone. Details:
+units require the mount). Do the move before AC clone. USB 3 SSD is
+fast enough that friend-facing latency is a non-issue. Details:
 `docs/DEPLOY.md`.
 
 ## Cooking
@@ -1173,7 +1174,7 @@ regenerate, or the next repair will wipe your edit.
 - Follow `docs/SLICE.md`. Finish the current step before the next.
 - Module source lives in `src/mod-fractured`. Server tree is
   `/home/scott/fractured-server` (live + dev). That path may be a
-  symlink onto the always-on external disk (`docs/DEPLOY.md`).
+  symlink onto the 2TB USB 3 SSD (`docs/DEPLOY.md`).
   Never AICraft.
 - Clone AzerothCore only under `fractured-server/src/azerothcore`.
 - TBD only for numbers and IDs not yet decided.
@@ -1271,7 +1272,7 @@ same character-select list. They do not share world or characters.
 |----------|---------|
 | Machine | Same box as AICraft is OK |
 | Git repo | `/home/scott/fractured` (docs + `src/mod-fractured`) — **internal disk** |
-| Server tree | `/home/scott/fractured-server` logical path; **real tree on the always-on external disk** |
+| Server tree | `/home/scott/fractured-server` logical path; **real tree on the 2TB USB 3 SSD** |
 | Auth | **One** Fractured `authserver` on **3724** (stock client port; live + dev in the same realm list) |
 | Databases | Shared login DB; live and dev do not share characters/world; **MySQL datadir stays internal** |
 | Client extract | Read-only share under `fractured-server/data` |
@@ -1314,9 +1315,14 @@ under any `aicraft*` directory.
 | Fractured MySQL datadir (port 3306) | No | Latency and crash safety |
 | AICraft paths | Do not touch | Isolation. Do not also *depend* on this USB |
 
-USB 3 SSD is the comfortable case. USB HDD is still worth it for
-space; compiles and map load will be slower. USB 2.0 spinning rust is
-a last resort for live.
+The disk is Scott’s **2TB USB 3 SSD**, always plugged in. That is
+the comfortable case: 2TB dwarfs clone + dual builds + extract.
+Friend-facing ping and combat are unchanged (MySQL stays internal).
+Worldserver start and first zone load may be a hair slower than
+internal NVMe because USB is still a slower bus; after maps are in
+RAM cache it will not hitch like a USB HDD would. Compiles are a
+bit slower than on the internal SSD. Not a reason to stay on the
+internal disk.
 
 Mount by UUID in fstab with `nofail` so a missing disk does not hang
 boot and take AICraft down. Fractured restarters must
@@ -1461,8 +1467,8 @@ the skeleton is in git now.
 - [x] Scott agrees the defaults
 - [x] `/home/scott/fractured-server` exists and is not an AICraft path
 - [x] No AzerothCore clone/build had started during Step 1
-- [ ] Real ops tree moved onto the always-on external disk (symlink
-      the logical path; MySQL and git stay internal)
+- [ ] Real ops tree moved onto the 2TB USB 3 SSD (symlink the
+      logical path; MySQL and git stay internal)
 FRACTURED_DEPLOY
 
 # ---------------------------------------------------------------------------

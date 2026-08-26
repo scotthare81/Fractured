@@ -53,7 +53,7 @@ regenerate, or the next repair will wipe your edit.
 - Follow `docs/SLICE.md`. Finish the current step before the next.
 - Module source lives in `src/mod-fractured`. Server tree is
   `/home/scott/fractured-server` (live + dev). That path may be a
-  symlink onto the always-on external disk (`docs/DEPLOY.md`).
+  symlink onto the 2TB USB 3 SSD (`docs/DEPLOY.md`).
   Never AICraft.
 - Clone AzerothCore only under `fractured-server/src/azerothcore`.
 - TBD only for numbers and IDs not yet decided.

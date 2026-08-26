@@ -22,7 +22,7 @@ same character-select list. They do not share world or characters.
 |----------|---------|
 | Machine | Same box as AICraft is OK |
 | Git repo | `/home/scott/fractured` (docs + `src/mod-fractured`) — **internal disk** |
-| Server tree | `/home/scott/fractured-server` logical path; **real tree on the always-on external disk** |
+| Server tree | `/home/scott/fractured-server` logical path; **real tree on the 2TB USB 3 SSD** |
 | Auth | **One** Fractured `authserver` on **3724** (stock client port; live + dev in the same realm list) |
 | Databases | Shared login DB; live and dev do not share characters/world; **MySQL datadir stays internal** |
 | Client extract | Read-only share under `fractured-server/data` |
@@ -65,9 +65,14 @@ under any `aicraft*` directory.
 | Fractured MySQL datadir (port 3306) | No | Latency and crash safety |
 | AICraft paths | Do not touch | Isolation. Do not also *depend* on this USB |
 
-USB 3 SSD is the comfortable case. USB HDD is still worth it for
-space; compiles and map load will be slower. USB 2.0 spinning rust is
-a last resort for live.
+The disk is Scott’s **2TB USB 3 SSD**, always plugged in. That is
+the comfortable case: 2TB dwarfs clone + dual builds + extract.
+Friend-facing ping and combat are unchanged (MySQL stays internal).
+Worldserver start and first zone load may be a hair slower than
+internal NVMe because USB is still a slower bus; after maps are in
+RAM cache it will not hitch like a USB HDD would. Compiles are a
+bit slower than on the internal SSD. Not a reason to stay on the
+internal disk.
 
 Mount by UUID in fstab with `nofail` so a missing disk does not hang
 boot and take AICraft down. Fractured restarters must
