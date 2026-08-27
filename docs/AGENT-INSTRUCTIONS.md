@@ -51,7 +51,8 @@ regenerate, or the next repair will wipe your edit.
 ## Scope
 
 - Follow `docs/SLICE.md`. Finish the current step before the next.
-- Module source lives in `src/mod-fractured`. Server tree is
+- Module source lives in `src/mod-fractured`. Scott’s desktop is
+  Linux; compile there for now. On the game box the server tree is
   `/home/scott/fractured-server` (live + dev). That path may be a
   symlink onto the 2TB USB 3 SSD (`docs/DEPLOY.md`).
   Never AICraft.

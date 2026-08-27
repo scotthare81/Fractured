@@ -1088,14 +1088,16 @@ Fractured is a separate repo (`scotthare81/Fractured`). Do not mix ops.
 
 ## Disk
 
-Scott’s always-on **2TB USB 3 SSD** is the right home for
-`fractured-server` (clone, two CMake builds, map extract). The git
-repo stays on the internal disk. MySQL datadir stays on the internal
-disk. Logical path remains `/home/scott/fractured-server` as a
-symlink so a dead USB cannot hang AICraft boot (`nofail` + Fractured
-units require the mount). Do the move before AC clone. USB 3 SSD is
-fast enough that friend-facing latency is a non-issue. Details:
-`docs/DEPLOY.md`.
+Scott’s desktop is Linux — compile and playtest there for now. The
+game server’s always-on **2TB USB 3 SSD** is the right home for
+`fractured-server` when friends need a realm (clone, two CMake
+builds, map extract). On that box the git repo stays on the internal
+disk. MySQL datadir stays on the internal disk. Logical path remains
+`/home/scott/fractured-server` as a symlink so a dead USB cannot hang
+AICraft boot (`nofail` + Fractured units require the mount). Plant
+the server tree on the USB disk before AC clone on that box. USB 3
+SSD is fast enough that friend-facing latency is a non-issue.
+Details: `docs/DEPLOY.md`.
 
 ## Cooking
 
@@ -1172,7 +1174,8 @@ regenerate, or the next repair will wipe your edit.
 ## Scope
 
 - Follow `docs/SLICE.md`. Finish the current step before the next.
-- Module source lives in `src/mod-fractured`. Server tree is
+- Module source lives in `src/mod-fractured`. Scott’s desktop is
+  Linux; compile there for now. On the game box the server tree is
   `/home/scott/fractured-server` (live + dev). That path may be a
   symlink onto the 2TB USB 3 SSD (`docs/DEPLOY.md`).
   Never AICraft.
@@ -1217,7 +1220,8 @@ After isolation is agreed: an empty module in this repo
 blocked), and death → morgue. Live vs dev run dirs and ports live in
 `docs/DEPLOY.md`. Compile is the point once AC is cloned under
 `fractured-server/src/azerothcore` and linked with
-`scripts/link-module.sh`. Behavior can be stubs.
+`scripts/link-module.sh`. Scott’s desktop is Linux; that compile can
+happen there. Behavior can be stubs.
 
 ## Step 3 — Three spaces
 
@@ -1266,13 +1270,30 @@ separate folders.
 Live and dev share **one Fractured login** so both realms show on the
 same character-select list. They do not share world or characters.
 
+## Workstation
+
+Scott’s desktop is **Linux**. Work there for now.
+
+Clone this git repo, run `scripts/init-server-tree.sh`, clone
+AzerothCore under that tree, link the module, compile, localhost
+playtest. The game box’s internal disk and AICraft stay untouched.
+
+A desktop worldserver is Scott-only. It is **not** Fractured Dev
+(8087). Live + dev + shared auth on 3724 land on the always-on server
+when friends need them.
+
+When that happens: put `fractured-server` on the server’s 2TB USB 3
+SSD (see Disk). Rebuild on the server if CPU/OS differ; rsync is fine
+if they match. Extract maps once, on the machine that will actually
+run worldserver — do not extract twice if you can help it.
+
 ## Recommended defaults
 
 | Decision | Default |
 |----------|---------|
-| Machine | Same box as AICraft is OK |
-| Git repo | `/home/scott/fractured` (docs + `src/mod-fractured`) — **internal disk** |
-| Server tree | `/home/scott/fractured-server` logical path; **real tree on the 2TB USB 3 SSD** |
+| Machine | Linux **desktop** for work now. Always-on **server** (USB 3 SSD) when friends need a realm. Same box as AICraft is OK for that later. |
+| Git repo | `/home/scott/fractured` (docs + `src/mod-fractured`) — clone on the desktop; on the server keep it on **internal disk** |
+| Server tree | Desktop `~/fractured-server` for now. On the game box: `/home/scott/fractured-server` logical path on the **2TB USB 3 SSD** |
 | Auth | **One** Fractured `authserver` on **3724** (stock client port; live + dev in the same realm list) |
 | Databases | Shared login DB; live and dev do not share characters/world; **MySQL datadir stays internal** |
 | Client extract | Read-only share under `fractured-server/data` |
@@ -1295,13 +1316,15 @@ same character-select list. They do not share world or characters.
 
 ## Disk (external drive)
 
-**Yes — move `fractured-server`. Do not move the git repo. Do not
-move MySQL.**
+**On the game server: put `fractured-server` on the USB 3 SSD. Do
+not put the git repo or MySQL there.**
 
 The internal disk already hosts AICraft. Fractured’s space hit is the
 ops tree: AzerothCore clone, two CMake builds, and the 3.3.5a extract.
 That is tens of gigabytes once compile + extract land. The git repo is
-small. Do this **now**, while the tree is still empty.
+small. When this tree **first lands on the game server**, put it on
+the USB 3 SSD **before** cloning AC there. Until then, the Linux
+desktop is the right place to compile.
 
 Keep the **logical** path `/home/scott/fractured-server` so scripts do
 not bake in a USB mount. Put the real tree on the always-on disk and
@@ -1467,8 +1490,9 @@ the skeleton is in git now.
 - [x] Scott agrees the defaults
 - [x] `/home/scott/fractured-server` exists and is not an AICraft path
 - [x] No AzerothCore clone/build had started during Step 1
-- [ ] Real ops tree moved onto the 2TB USB 3 SSD (symlink the
-      logical path; MySQL and git stay internal)
+- [ ] Real ops tree on the game box lives on the 2TB USB 3 SSD
+      (symlink the logical path; MySQL and git stay internal). Not
+      required while Scott is compiling on the Linux desktop.
 FRACTURED_DEPLOY
 
 # ---------------------------------------------------------------------------

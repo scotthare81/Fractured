@@ -98,14 +98,16 @@ Fractured is a separate repo (`scotthare81/Fractured`). Do not mix ops.
 
 ## Disk
 
-Scott’s always-on **2TB USB 3 SSD** is the right home for
-`fractured-server` (clone, two CMake builds, map extract). The git
-repo stays on the internal disk. MySQL datadir stays on the internal
-disk. Logical path remains `/home/scott/fractured-server` as a
-symlink so a dead USB cannot hang AICraft boot (`nofail` + Fractured
-units require the mount). Do the move before AC clone. USB 3 SSD is
-fast enough that friend-facing latency is a non-issue. Details:
-`docs/DEPLOY.md`.
+Scott’s desktop is Linux — compile and playtest there for now. The
+game server’s always-on **2TB USB 3 SSD** is the right home for
+`fractured-server` when friends need a realm (clone, two CMake
+builds, map extract). On that box the git repo stays on the internal
+disk. MySQL datadir stays on the internal disk. Logical path remains
+`/home/scott/fractured-server` as a symlink so a dead USB cannot hang
+AICraft boot (`nofail` + Fractured units require the mount). Plant
+the server tree on the USB disk before AC clone on that box. USB 3
+SSD is fast enough that friend-facing latency is a non-issue.
+Details: `docs/DEPLOY.md`.
 
 ## Cooking
 

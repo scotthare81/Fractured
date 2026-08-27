@@ -29,7 +29,8 @@ After isolation is agreed: an empty module in this repo
 blocked), and death → morgue. Live vs dev run dirs and ports live in
 `docs/DEPLOY.md`. Compile is the point once AC is cloned under
 `fractured-server/src/azerothcore` and linked with
-`scripts/link-module.sh`. Behavior can be stubs.
+`scripts/link-module.sh`. Scott’s desktop is Linux; that compile can
+happen there. Behavior can be stubs.
 
 ## Step 3 — Three spaces
 
