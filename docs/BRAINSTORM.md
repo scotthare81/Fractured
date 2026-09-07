@@ -96,6 +96,19 @@ by importing raid-with-bots assumptions into Wild districts.
 
 Fractured is a separate repo (`scotthare81/Fractured`). Do not mix ops.
 
+## Disk
+
+Scott’s desktop is Linux — compile and playtest there for now. The
+game server’s always-on **2TB USB 3 SSD** is the right home for
+`fractured-server` when friends need a realm (clone, two CMake
+builds, map extract). On that box the git repo stays on the internal
+disk. MySQL datadir stays on the internal disk. Logical path remains
+`/home/scott/fractured-server` as a symlink so a dead USB cannot hang
+AICraft boot (`nofail` + Fractured units require the mount). Plant
+the server tree on the USB disk before AC clone on that box. USB 3
+SSD is fast enough that friend-facing latency is a non-issue.
+Details: `docs/DEPLOY.md`.
+
 ## Cooking
 
 No levels. Quality in, weighted out. Model C: 70% standard / 20% good /
