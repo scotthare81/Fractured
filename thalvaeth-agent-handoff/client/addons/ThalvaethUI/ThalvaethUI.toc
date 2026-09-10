@@ -1,0 +1,8 @@
+## Interface: 30300
+## Title: Thal'vaeth UI
+## Notes: Creature journal, vigor bar, no nameplates helper
+## Author: Scott Hare
+## Version: 0.1.0
+
+Core.lua
+Journal.lua
