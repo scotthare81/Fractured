@@ -28,7 +28,7 @@ Raw **materials / currency** (hide, sinew, ashbloom, salt, resin, tusk, raw meat
 ## Cooking, trades & the satchel
 
 - **Cooking** turns raw meat → stew (quality-in → weighted-out, **no levels**). Cooked lasts longer than raw.
-- **Trades** (no skill levels): Fieldcraft/Butcher, Cooking, Stitching (no magic heal), Brewing/Ash-craft.
+- **Trades** (no skill levels): Fieldcraft/Butcher, Cooking, Stitching (no magic heal), Brewing/Ash-craft. Recipes, discovery + stations, durability/mend: [CRAFTING.md](CRAFTING.md).
 - **Raw meat** rides in the **satchel** with a spoil timer — eat it or render it (tallow / bait / trade) before it turns. Full bag vs satchel split: [ECONOMY.md](ECONOMY.md).
 
 ## Spawn kit (Remnant)

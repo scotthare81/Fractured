@@ -24,8 +24,8 @@
 ## Items & crafting
 
 - [x] `MATERIALS.md` — raw catalog (dropped / foraged / mined / scavenged, incl. reclaimed metals)
-- [ ] `CRAFTING.md` — recipes: food, drink, water/liquid refining, components, smelt/forge chains, discovery system
-- [ ] `GEAR.md` — upgrade-only gear/weapons (no drops), slots, upgrade axes, durability
+- [x] `CRAFTING.md` — recipes (food/drink/refining/smelt/forge), discovery (fragments + experiment/hints), stations, durability/mend
+- [ ] `GEAR.md` — upgrade-only gear/weapons (no drops), slots, upgrade axes, per-slot wear rates
 - [ ] Assign per-item IDs in the 61xxx material bands
 
 ## Economy

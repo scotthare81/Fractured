@@ -239,7 +239,7 @@ The "find" reward that replaces gear drops (`GEAR.md`, TODO). Feeds the discover
 
 ## Related
 
-- `CRAFTING.md` — what these become (recipes, food, drink, refining) — *next pass*
+- [CRAFTING.md](CRAFTING.md) — what these become (recipes, food, drink, refining)
 - [ECONOMY.md](ECONOMY.md) — barter tiers, keepers, satchel
 - [SURVIVAL.md](SURVIVAL.md) — Hunger / Thirst / Infection the materials feed
 - [CREATURES.md](CREATURES.md) — what drops what
