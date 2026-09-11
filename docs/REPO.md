@@ -63,5 +63,5 @@ Point Cursor Cloud Agent runs at **Fractured**, branch `cursor/*-0472`. Do not r
 
 ## Related
 
-- [HANDOFF.md](../HANDOFF.md)
+- [HANDOFF.md](../thalvaeth-agent-handoff/HANDOFF.md)
 - [AGENT-INSTRUCTIONS.md](AGENT-INSTRUCTIONS.md)

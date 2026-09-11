@@ -22,7 +22,7 @@ Between runs — stash, stitch, plan. **Brill-grey**, readable sky (MPQ).
 | Bounds | ~120y AT (90001) |
 | Phase | **1** |
 
-See [client/mpq/README.md](../client/mpq/README.md) for Hearthglen recolor.
+See [client/mpq/README.md](../thalvaeth-agent-handoff/client/mpq/README.md) for Hearthglen recolor.
 
 ---
 
@@ -118,4 +118,4 @@ Cold runs are what turn **warmth** from optional comfort into a gate — and pus
 - [RUN-GATES.md](RUN-GATES.md)
 - [CHAR-CREATE.md](CHAR-CREATE.md)
 - [GEAR.md](GEAR.md)
-- [HANDOFF.md](../HANDOFF.md)
+- [HANDOFF.md](../thalvaeth-agent-handoff/HANDOFF.md)

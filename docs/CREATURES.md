@@ -374,4 +374,4 @@ Data/plumbing gaps found while writing this:
 - [NAMES.md](NAMES.md) — locked names
 - [L4D-INSPIRED.md](L4D-INSPIRED.md) — pacing vocabulary
 - [APTITUDES.md](APTITUDES.md) — Remnant counters (Still Breath, Short Burst, …)
-- [HANDOFF.md](../HANDOFF.md)
+- [HANDOFF.md](../thalvaeth-agent-handoff/HANDOFF.md)
