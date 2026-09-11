@@ -1,6 +1,6 @@
 # Agent instructions
 
-**Repo:** Push to **Fractured** (`scotthare81/Fractured`) only — never AiCraft-WotLK. See [REPO.md](REPO.md).
+**Repo:** Push to **Thal'vaeth** (`scotthare81/Thalvaeth`) only — never AiCraft-WotLK. See [REPO.md](REPO.md).
 
 Read [NAMES.md](NAMES.md) for locked player-facing labels. Read [CREATURES.md](CREATURES.md) for all mob work.
 

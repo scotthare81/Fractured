@@ -1,14 +1,14 @@
-# Thal'vaeth — Fractured
+# Thal'vaeth
 
 Survival-horror extraction on AzerothCore 3.3.5a.
 
-**Git home:** [Fractured](https://github.com/scotthare81/Fractured) — **not** AiCraft-WotLK. See [docs/REPO.md](../docs/REPO.md).
+**Git home:** [Thal'vaeth](https://github.com/scotthare81/Thalvaeth) — **not** AiCraft-WotLK. See [docs/REPO.md](../docs/REPO.md).
 
 ## Quick start
 
 ```bash
 chmod +x bootstrap.sh thalvaeth-agent-handoff/scripts/push-fractured.sh
-./bootstrap.sh /path/to/Fractured ~/Wow/Interface/AddOns
+./bootstrap.sh /path/to/Thalvaeth ~/Wow/Interface/AddOns
 ```
 
 ## Layout

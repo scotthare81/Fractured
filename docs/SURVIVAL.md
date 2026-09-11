@@ -33,7 +33,7 @@ The other three meters all feed **into** Vigor. Neglect them and your pool shrin
 
 - Rises when **plague creatures wound you** (the humanoid roster). Persistent run health makes fights **attrition**, so trading blows accrues Infection.
 - **Cured by Stitch Kit + tinctures** (Brewing) — sit/channel + materials; the same no-magic-heal discipline that closes wounds ([CONTENT.md](CONTENT.md)).
-- **Neglect** erodes **Vigor max** and ticks you down. At full it becomes **Fevered** — a heavy slow/weak state (the near-death "Fractured"), still not an instant kill, but usually a death sentence out here.
+- **Neglect** erodes **Vigor max** and ticks you down. At full it becomes **Fevered** — a heavy slow/weak state (the near-death fail state), still not an instant kill, but usually a death sentence out here.
 
 ---
 

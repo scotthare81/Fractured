@@ -1,8 +1,10 @@
-# Git repository — Fractured
+# Git repository — Thal'vaeth
 
-**Thal'vaeth work belongs in [Fractured](https://github.com/scotthare81/Fractured), not AiCraft-WotLK.**
+**Thal'vaeth work belongs in [Thal'vaeth](https://github.com/scotthare81/Thalvaeth), not AiCraft-WotLK.**
 
-AiCraft is the Playerbots / homeserver fork. Fractured is Scott's Thal'vaeth / custom-content fork.
+AiCraft is the Playerbots / homeserver fork. Thal'vaeth is Scott's custom-content fork.
+
+> Repo renamed **Fractured → Thalvaeth** (GitHub repo names can't hold the apostrophe; the world stays *Thal'vaeth*). GitHub redirects the old URL, so existing clones/remotes keep working.
 
 ---
 
@@ -10,54 +12,49 @@ AiCraft is the Playerbots / homeserver fork. Fractured is Scott's Thal'vaeth / c
 
 | Remote | URL | Use |
 |--------|-----|-----|
-| `fractured` | `https://github.com/scotthare81/Fractured.git` | **Push all Thal'vaeth work here** |
+| `thalvaeth` | `https://github.com/scotthare81/Thalvaeth.git` | **Push all Thal'vaeth work here** |
 | `origin` | AiCraft-WotLK | Do not open Thal'vaeth PRs against this repo |
 
 ---
 
 ## Cloud agent push access
 
-Cursor Cloud pushes as **`wiz-cursor-gh-bot`** (display name: Wiz Cursor Bot). On `scotthare81/Fractured`, add that account as a **collaborator with Write** (Settings → Collaborators), or grant the [Cursor GitHub App](https://github.com/apps/cursor) access to this repo. Making the repo public is not enough.
+Cursor Cloud pushes as **`wiz-cursor-gh-bot`** (display name: Wiz Cursor Bot). On `scotthare81/Thalvaeth`, add that account as a **collaborator with Write** (Settings → Collaborators), or grant the [Cursor GitHub App](https://github.com/apps/cursor) access to this repo. Making the repo public is not enough.
 
 ---
 
 ## One-time setup (repo owner)
 
-If `Fractured` does not exist yet on GitHub:
+If `Thalvaeth` does not exist yet on GitHub:
 
-1. Create a **private** repo: `scotthare81/Fractured`
+1. Create a **private** repo: `scotthare81/Thalvaeth`
 2. Recommended base: fork **AiCraft-WotLK** `main` (or mod-playerbots AzerothCore `Playerbot` branch)
-3. Add remote and push the Thal'vaeth branch:
+3. Add remote and push:
 
 ```bash
-git remote add fractured https://github.com/scotthare81/Fractured.git
-git push -u fractured cursor/thalvaeth-implementation-0472:main
-# or keep feature branch:
-git push -u fractured cursor/thalvaeth-implementation-0472
+git remote add thalvaeth https://github.com/scotthare81/Thalvaeth.git
+git push -u thalvaeth <branch>:main
 ```
 
-4. Open PRs on **Fractured** only.
+4. Open PRs on **Thal'vaeth** only.
 5. Close any draft Thal'vaeth PR on AiCraft-WotLK.
-
-Helper script (from repo root): `./thalvaeth-agent-handoff/scripts/push-fractured.sh`
 
 ---
 
-## Layout in Fractured
+## Layout
 
 | Path | Contents |
 |------|----------|
-| `thalvaeth-agent-handoff/` | Design docs, pending SQL, C++ stubs, client addon (this package) |
-| `data/sql/updates/pending_db_*` | Applied via `bootstrap.sh` when integrating |
-| `src/server/scripts/Custom/` | Applied C++ after bootstrap |
-
-`bootstrap.sh` copies handoff artifacts into a local Fractured tree for build/test.
+| `docs/` | Design canon + ops |
+| `thalvaeth-agent-handoff/` | Implementation package: pending SQL, C++ stubs, client addon (awaiting integration) |
+| `data/sql/updates/pending_db_*` | Where the pending SQL lands on integration |
+| `src/server/scripts/Custom/` | Where the C++ lands on integration |
 
 ---
 
 ## Cloud agents
 
-Point Cursor Cloud Agent runs at **Fractured**, branch `cursor/*-0472`. Do not register Thal'vaeth PRs against AiCraft.
+Point Cursor Cloud Agent runs at **Thal'vaeth**. Do not register Thal'vaeth PRs against AiCraft.
 
 ---
 

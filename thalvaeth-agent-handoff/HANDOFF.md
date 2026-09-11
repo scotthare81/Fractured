@@ -61,7 +61,7 @@ See [docs/TODO.md](../docs/TODO.md).
 ## Agent rules
 
 - SQL: `pending_db_*` only  
-- **Git: Fractured** (`scotthare81/Fractured`) — not AiCraft-WotLK ([REPO.md](../docs/REPO.md))  
+- **Git: Thal'vaeth** (`scotthare81/Thalvaeth`) — not AiCraft-WotLK ([REPO.md](../docs/REPO.md))  
 - No build unless Scott asks  
 
 **End.**

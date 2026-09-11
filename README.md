@@ -1,10 +1,10 @@
-# Fractured
+# Thal'vaeth
 
 **Solo survival-horror extraction on the AzerothCore WotLK 3.3.5a engine. Original IP.**
 
 You are a **Remnant** — one of the last who still walks the Wild. Leave the **Thal'vaeth Monastery**, run a walled district (first: **Rotwood**), scavenge and survive, and extract before Hunger, Thirst, Infection, or a wound you can't stitch drops you. Death costs your **haul**, not your character. Then you go again.
 
-> The world is **Thal'vaeth**; the project is **Fractured**. **Engine only** — every player-facing name, item, and system is original IP (no WoW names in what players see).
+> **Thal'vaeth** — engine only. Every player-facing name, item, and system is original IP (no WoW names in what players see).
 
 ## Design docs (canon) → [`docs/`](docs/)
 
@@ -38,7 +38,7 @@ You are a **Remnant** — one of the last who still walks the Wild. Leave the **
 
 ## Build
 
-Engine only — you need a full **AzerothCore 3.3.5a** checkout plus a client-data extract, with Fractured's module/scripts/SQL layered on top. See [`docs/DEPLOY.md`](docs/DEPLOY.md). Not buildable from this repo alone.
+Engine only — you need a full **AzerothCore 3.3.5a** checkout plus a client-data extract, with the Thal'vaeth module/scripts/SQL layered on top. See [`docs/DEPLOY.md`](docs/DEPLOY.md). Not buildable from this repo alone.
 
 ---
 
