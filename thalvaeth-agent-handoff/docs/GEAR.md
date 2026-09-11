@@ -56,6 +56,46 @@ Armour climbs **weight classes**, each gated by a discovery and each a **build i
 
 So light armour (cloth/leather) is the **stealth/hauler** — quiet past Sleepers, cheap on Vigor; **plate** is the **fighter** who trades silence and stamina for staying alive in a stand-up fight. The body piece sets the class; other slots match its weight.
 
+### The armour ladder — entry to endgame
+
+Each class is gated by a discovery ([CRAFTING.md](CRAFTING.md)); within a class you climb named tiers by upgrading (materials + a found diagram), and every piece still rolls an **invisible quality** ([ITEMS.md](ITEMS.md) — *"well-stitched"* vs *"patched"*). Heavier tiers = more mitigation & Infection-resist, but more **Vigor** drain, more **noise**, and less speed.
+
+**Cloth — start, no gate**
+
+| Tier | Name | Made from | Feel |
+|------|------|-----------|------|
+| Entry | **Rag Armour** | rags (starting kit) | ~no protection; silent; free Vigor |
+| Top | **Quilted Coat** (gambeson) | cloth + padding + thread | Light protection; still quiet; also the **base layer** under mail/plate |
+
+**Leather — gate: Tanning** *(the stealth / mobility line)*
+
+| Tier | Name | Made from | Feel |
+|------|------|-----------|------|
+| Entry | **Boiled Leather** | cured hide + cord | Light protection; quiet; cheap Vigor |
+| Mid | **Studded Leather** | leather + rivets/studs | More cover; a touch heavier/louder |
+| Endgame | **Hardened Leather** (lamellar) | heavy leather + bone/tusk plates | Strong *for its weight* — the stealth build's endgame |
+
+**Mail — gate: Smelting / Iron** *(the balanced middle; worn over a quilted base)*
+
+| Tier | Name | Made from | Feel |
+|------|------|-----------|------|
+| Entry | **Ring Mail** | salvaged iron rings + leather | Medium protection + some Infection-resist; heavier |
+| Mid | **Riveted Chain** | drawn wire → riveted rings | Better coverage |
+| Endgame | **Splinted Mail** | mail + iron splints | Top mail; bridges toward plate |
+
+**Plate — gate: Steelworking** *(the fighter's line; over mail + gambeson)*
+
+| Tier | Name | Made from | Feel |
+|------|------|-----------|------|
+| Entry | **Half-Plate** | steel plates over mail | High protection + best Infection-resist; heavy (big Vigor drain, loud, slow) |
+| Endgame | **Full Plate** | full steel harness | Max mitigation & Infection-resist; slowest, loudest, most Vigor-hungry |
+
+**No single "best."** There isn't one endgame set — there's an endgame **per playstyle**: **Hardened Leather** for the silent, Vigor-light runner; **Full Plate** for the stand-and-fight tank; **Splinted Mail** for the balance. Your armour *is* your build.
+
+**Layering.** Mail and plate sit over a **Quilted Coat** — so cloth never goes obsolete, it becomes the underlayer. The **warmth layer** (shirt/tabard/neck) is separate and independent of class (above).
+
+**Sets, not pieces.** The **body** piece sets the class; cowl, wraps, waders, boots, and pack come in matching weights (a leather set has leather boots and cowl). You can mix — a mail body with a light cowl — at a coherence cost: every heavier piece adds to your total Vigor drain and noise. Worn armour is free on **bulk**; a spare set in the bag is bulky/huge by class ([ECONOMY.md](ECONOMY.md)).
+
 ---
 
 ## Slots & upgrade axes (couple to survival)
