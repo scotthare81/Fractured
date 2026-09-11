@@ -159,6 +159,7 @@ Finished items/components sit in the **60xxx** band; IDs TBD. Organized by stati
 | Padding | Fur / cloth | Warmth lining |
 | Padded Shirt | Padding + cloth | **Warmth** (shirt slot) |
 | Fur Mantle | Pelt + cord | **Warmth** + weather (tabard slot) |
+| Fur Scarf / Muffler | Pelt + cloth | **Warmth** + face cover (neck slot) |
 
 ### F. Forge / Workbench → tools, weapons, gear frames
 

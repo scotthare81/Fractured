@@ -99,9 +99,23 @@ Rotwood (phase 2, Duskwood fog, gated segments)
 
 ---
 
+## Future run environments (proposed)
+
+Runs past Rotwood get their own **environment + hazard**, answered by loadout (the gate philosophy — waders for wet, warmth for cold, …). Two on the table:
+
+| Run | Hazard | Loadout answer | Source (outdoor, map 0 EK) |
+|-----|--------|----------------|----------------------------|
+| **Snow / cold** | Cold taxes Vigor/Hunger; exposure | **Warmth layer** (shirt / tabard / neck) becomes a real **gate** — [GEAR.md](GEAR.md) | Alterac Mountains / Dun Morogh (snow zones, MPQ recolor) |
+| **Fog** | Heavy fog cuts sight — dread + Stalker/Sleeper lean harder | Light, quiet, nerve; extends the Duskwood/Mor'Ladim fog tech (`SetRunFog`) | Deep Duskwood / moor / swamp |
+
+Cold runs are what turn **warmth** from optional comfort into a gate — and push "cold" toward a tracked environmental factor ([GEAR.md](GEAR.md) Open). Per-district naming still applies (`<District> <Kind>` — a frost hound, etc.; [NAMES.md](NAMES.md)), original IP.
+
+---
+
 ## Related
 
 - [NAMES.md](NAMES.md)
 - [RUN-GATES.md](RUN-GATES.md)
 - [CHAR-CREATE.md](CHAR-CREATE.md)
+- [GEAR.md](GEAR.md)
 - [HANDOFF.md](../HANDOFF.md)

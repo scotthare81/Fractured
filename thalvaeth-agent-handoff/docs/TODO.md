@@ -10,6 +10,7 @@
 - [ ] Strip vanilla spawns (incl. Nightbane worgen) inside Rotwood AT
 - [ ] Director segment gate open hooks
 - [ ] Tune fence ring coords in GM mode
+- [ ] Future runs (proposed): snow/cold (warmth gate) + fog (visibility) — `MAPS.md`; decide if cold is tracked
 
 ## Creatures
 
