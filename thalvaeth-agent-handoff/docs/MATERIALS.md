@@ -71,8 +71,8 @@ Reframed WoW ore veins. No fantasy ore. Two ways to get metal: **scavenge worked
 | Material | Tier | Source | Used for → |
 |----------|------|--------|-----------|
 | Grave Salt | Common | Salt-crust node | Preserve meat, brine, tanning |
-| Ash | Common | Any fire | Lye, tanning, tea base, fertilizer |
-| Charcoal | Common | Burn wood low-air | Smelt fuel, **water filter**, tincture |
+| Ash | Common | **Any open fire** (byproduct — *not* charcoal) | Lye, tanning, tea base, fertilizer |
+| Charcoal | Common | **Char good wood in a low-air pit/kiln** (never an open fire) | Smelt fuel, **water filter**, tincture |
 | Soot | Common | Fire | Ink, pigment |
 | Potash / Lye | Uncommon | Leach ash | Soap, tanning, **wound wash** |
 | Chalk-lime slaked | Uncommon | Burn chalk | Mortar, de-hair hide |
@@ -85,9 +85,9 @@ Rotwood is a forest — wood is everywhere, quality varies.
 
 | Material | Tier | Source | Used for → |
 |----------|------|--------|-----------|
-| Deadwood | Common | Deadfall | Fuel, hafts, stakes, fences |
+| Deadwood | Common | Deadfall | Fuel, **charcoal (good wood)**, hafts, stakes, fences |
 | Green Wood | Common | Living tree | Bows, poles, springs |
-| Rotwood (punk) | Common | Rotten trunks (Rotwood) | Tinder, slow-burn, poor fuel |
+| Rotwood (punk) | Common | Rotten trunks (Rotwood) | Tinder, slow-burn, poor fuel — **poor charcoal** |
 | Bark | Common | Strip tree | Tannin (tanning), cordage, tinder |
 | Pitch / Resin | Common | Bark/sap | Glue, torches, waterproofing, **Resin Lure** |
 | Sap | Common | Tap tree | Sugar, drink base (liquids) |
@@ -222,6 +222,7 @@ The "find" reward that replaces gear drops (`GEAR.md`, TODO). Feeds the discover
 - **Antiseptics → Infection:** silver, vinegar, spirits, alum, charcoal, fenwort, fevermint — real-world grim medicine, no magic. These are why Brewing/Stitching can cure Infection.
 - **Preservation → spoil clock:** salt, brine, smoke, vinegar slow the meat/liquid timers ([SURVIVAL.md](SURVIVAL.md)).
 - **Plague risk:** harvesting human/plague parts (plaguebone, rotten sinew) raises Infection — a real risk/reward on stripping the dead.
+- **Charcoal ≠ ash:** charcoal is *only* a deliberate low-air char of good Deadwood (a charcoal pit/kiln) and **gates the forge**; an open fire yields **Ash**, never charcoal. Rotwood punk makes poor charcoal. See [CRAFTING.md](CRAFTING.md).
 - **Currency:** any of these can be bartered ([ECONOMY.md](ECONOMY.md)); spending vs crafting is the choice.
 
 ---

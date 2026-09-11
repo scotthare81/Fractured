@@ -64,7 +64,7 @@ Finished items/components sit in the **60xxx** band; IDs TBD. Organized by stati
 | Tallow / Oil | Fat (render at cookfire) | Cooking, lamps, soap, waterproof |
 | Thread | Rags / plant fiber (spin) | Stitching |
 | Cord → Rope | Sinew / vine / bark (twist) | Bindings, snares, climbing |
-| Charcoal | Wood, low-air burn | Smelt fuel, **water filter**, tincture |
+| Charcoal | Good **Deadwood** in a **charcoal pit/kiln** (low-air char) | Smelt fuel, **water filter**, tincture |
 | Iron / Copper Ingot | Ore + Charcoal (smelt) | Blades, plates, tools |
 | Steel | Iron + Charcoal (hotter smelt) | Best blades, springs |
 | Bronze | Copper + Tin (alloy) | Fittings, tools |
@@ -73,6 +73,8 @@ Finished items/components sit in the **60xxx** band; IDs TBD. Organized by stati
 | Whetstone | Rough Stone + Grit (shape) | Sharpen blades |
 | Bone Needle / Buttons | Bone (carve) | Stitching, fasteners |
 | Pitch / Tar | Bark / resin (boil) | Waterproof, torch, Resin Lure |
+
+> **Charcoal, the one right way.** Charcoal is made **only** at a **charcoal pit/kiln** — a deliberate *low-air char* of good **Deadwood**. An open cookfire (or any burning) yields **Ash**, never charcoal; **Rotwood punk** gives poor charcoal. This is intentional: charcoal is the fuel that **gates the forge** (`Ore → smelt → Ingot`), so it must be a real craft, not a free byproduct. No recipe may produce charcoal from an open fire.
 
 ### B. Water & liquid refining (Cookfire / Ash-still)
 
