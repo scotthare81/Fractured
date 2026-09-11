@@ -18,4 +18,5 @@ Stress Director: invisible, no pressure meter v1. Safe pockets: sparse, once per
 
 ## Related
 
+- [DIRECTOR.md](DIRECTOR.md) — full run pacing
 - [CREATURES.md](CREATURES.md)

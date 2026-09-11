@@ -313,7 +313,7 @@ The Director is invisible (no pressure meter v1). Budget bands map to who shows 
 | Setpiece | **Sleeper** (placed) |
 | Post-peak | Scavenger only |
 
-Noise inputs (Hustle, lockpick fail, Short Burst) weight **Ghoul** and **Stalker** up. Pacing rationale: [L4D-INSPIRED.md](L4D-INSPIRED.md).
+Noise inputs (Hustle, lockpick fail, Short Burst) weight **Ghoul** and **Stalker** up. Pacing rationale: [L4D-INSPIRED.md](L4D-INSPIRED.md); full run pacing: [DIRECTOR.md](DIRECTOR.md).
 
 ---
 

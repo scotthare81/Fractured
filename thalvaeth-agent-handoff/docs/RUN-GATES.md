@@ -64,6 +64,8 @@ OnRunStart()              → close all segment gates; apply SetRunFog; clear pe
 
 Creature health **persists within a run** — no out-of-combat regen, no evade heal-to-full. The Director holds the per-GUID last-known-HP map and clears it on `OnRunStart`. Spec: [CREATURES.md → Persistent run health](CREATURES.md#persistent-run-health--no-damage-revive).
 
+Full run pacing (rhythm, heat/noise, segments): [DIRECTOR.md](DIRECTOR.md).
+
 ---
 
 ## Related
