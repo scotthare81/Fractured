@@ -21,6 +21,13 @@
 - [ ] Animal layer (90101+) — Rotwood Boar / Hound (worg model) / Deer / Hare, rare Rotwood Tusker; drops feed Hunger + barter
 - [x] Animal naming convention `<District> <Kind>` locked in `NAMES.md`
 
+## Items & crafting
+
+- [x] `MATERIALS.md` — raw catalog (dropped / foraged / mined / scavenged, incl. reclaimed metals)
+- [ ] `CRAFTING.md` — recipes: food, drink, water/liquid refining, components, smelt/forge chains, discovery system
+- [ ] `GEAR.md` — upgrade-only gear/weapons (no drops), slots, upgrade axes, durability
+- [ ] Assign per-item IDs in the 61xxx material bands
+
 ## Economy
 
 - [ ] `ECONOMY.md` — tiered barter (no coin), material ladder, Monastery keepers

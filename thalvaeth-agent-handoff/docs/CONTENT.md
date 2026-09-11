@@ -12,7 +12,7 @@ Custom items start at **60001**. Never reuse vanilla IDs.
 | 60004 | Resin Lure | Future: distract Caller |
 | 60005 | Small Brown Pouch | Starter bag (4496 reskin OK) |
 
-Raw **materials / currency** (hide, sinew, ashbloom, salt, resin, tusk, raw meat, …) are their own band, defined with the barter ladder in [ECONOMY.md](ECONOMY.md). Every one doubles as a crafting reagent (L7) — spend it or craft it.
+Raw **materials / currency** (hide, sinew, ashbloom, salt, resin, tusk, raw meat, ore/metal, …) get their own catalog in [MATERIALS.md](MATERIALS.md) — dropped, foraged, mined, scavenged. Every one doubles as a crafting reagent (L7) — spend it or craft it; the barter tiers are in [ECONOMY.md](ECONOMY.md).
 
 ## Survival clocks
 
