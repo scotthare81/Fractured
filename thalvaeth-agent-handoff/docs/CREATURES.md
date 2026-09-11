@@ -171,6 +171,8 @@ Director-expensive. Each special is **one legible rule**, implemented in `Thalva
 | Counter | You cannot outrace its slot — kite inside the leash, Stitch Kit before you commit, **Short Burst** past once it's low |
 | Director | Corridor/extract gatekeeper (setpiece-adjacent) |
 
+> **Keeps its wounds.** On leash it returns to its post but **retains HP** — a chipped gatekeeper stays chipped. See [Persistent run health](#persistent-run-health--no-damage-revive).
+
 ### Broken Snare — 90006 · *the hook*
 
 | Field | Value |
@@ -193,11 +195,45 @@ Director-expensive. Each special is **one legible rule**, implemented in `Thalva
 | Counter | Turn and **force** the fight (it flees on the first solid hit); don't Hustle away — noise weights the peak |
 | Director | Always-on unease between fights |
 
+> **Keeps its wounds.** The flee must be a *stay-in-run disengage*, not a true evade — a Stalker you shot to half re-stalks you at half. See [Persistent run health](#persistent-run-health--no-damage-revive).
+
 ### Watcher — *proposed, deferred* (line in the sand)
 
 Not in the shipped catalog (would be **90011**). Neutral-until-provoked seated humanoid; rushes at Ghoul speed when a player crosses a marked line or shines light. DisplayID **15513** (seated). Keep it for after the POC — logged in **Open** below.
 
 ---
+
+## Persistent run health — no damage revive
+
+**Rule (locked direction):** inside a run, damage you deal to a Wild creature **sticks**. A live creature never regenerates or resets to full. Shoot an Edge Stalker to half, it flees at half and re-stalks you at half. Chip a Patchwork Brute, back off, and it's still chipped when you come back. Health only resets when the creature **dies** or the **run ends** (extract or death → the district respawns fresh).
+
+This makes the run one continuous attrition encounter (L4D-style — [L4D-INSPIRED.md](L4D-INSPIRED.md)): hit-and-run is a real tactic, every shot/aptitude spend matters, and a wounded thing *staying* wounded is the horror — not a health-bar that heals the moment you look away.
+
+### Why it doesn't happen by default
+
+AzerothCore revives creature damage two ways. Both must be switched off for the run band (90001–90010):
+
+| Cause | Default behavior | Fix |
+|-------|------------------|-----|
+| **Out-of-combat regen** | A creature out of combat ticks back to full in a few seconds | Data: `creature_template.RegenHealth = 0` |
+| **Evade / reset heal** | On leash, lost target, or home return the creature evades and is restored to **full** | Code: run creatures must not full-heal on evade/reset — retain current HP |
+
+Today both fire: the **Brute** calls `EnterEvadeMode()` on its 12y leash (→ full heal + teleport home), and the **Stalker**'s flee can drop combat and evade. `RegenHealth` is on by default for the whole band.
+
+### Implementation approach (not yet built)
+
+1. **Data — kill OOC regen.** Set `RegenHealth = 0` on 90001–90010 in `rev_thalvaeth_creature_catalog.sql` (or the `CREATURE_FLAG_EXTRA_NO_HEALTH_REGEN` extra flag). One line, no code.
+2. **AI — kill evade heal.** Give run creatures a shared base (`ThalvaethCreatureAI`) whose evade/reset **keeps current health** instead of `SetFullHealth()`:
+   - **Edge Stalker** — flee becomes a *stay-in-run disengage*, not a true evade, so HP carries while it re-stalks.
+   - **Patchwork Brute** — returns to post on leash but **retains HP**.
+3. **Director — remembered HP (belt-and-suspenders).** The Director holds a per-GUID last-known-health map for live run creatures; if anything would reset one to full (evade edge cases, phase/grid churn), it clamps back. Cleared on `OnRunStart` — [RUN-GATES.md](RUN-GATES.md).
+
+### Boundaries & edge cases
+
+- **Run-scoped, not permanent.** Persistence lasts the active run; extract/death resets the district and spawns fresh (phase 2) — [MAPS.md](MAPS.md).
+- **Summoned waves are exempt.** Caller Scavengers spawn `TEMPSUMMON_TIMED_DESPAWN_OUT_OF_COMBAT` — they despawn, not attrition-persist. Intended: they're pressure, not a health pool.
+- **Setpiece Sleeper.** You can pre-soften a Sleeper before waking it — or fail and pay full price. Intended.
+- **Kite-safety tradeoff (Scott).** With no evade-heal, chip → retreat → repeat carries no risk. That's *intended* attrition for a solo run — but if a gatekeeper (e.g. the Brute) should heal only when you fully leave its segment, flag it. Logged in Open.
 
 ## District display swaps (alts)
 
@@ -298,6 +334,7 @@ Tuning:
 | Ghoul vs Stumbler as fast fodder | One or both |
 | Rare vermin in underlayer | Rat OK as minority? |
 | Stalker offensive kit | Pure pace v1, or add a poke that doesn't break the "never closer" read? |
+| Kite-safe attrition | With persistent health (no evade-heal), chip-and-retreat is risk-free — OK for all, or should the Brute / gatekeepers heal only on a full segment-leave? |
 
 Data/plumbing gaps found while writing this:
 
@@ -306,6 +343,7 @@ Data/plumbing gaps found while writing this:
 | `ability_map` mostly `NULL` | Only Rafter/Caller/Snare are populated; add the **Proposed** rows above so the journal can name every observed ability |
 | `silhouette_icon` unset | Catalog column exists but all rows default 0 — needed for the Unknown-tier journal silhouette ([CREATURE-JOURNAL.md](CREATURE-JOURNAL.md)) |
 | `observed_abilities` not written | The journal's Engaged tier records max HP but never records which abilities you saw — abilities can't yet surface per-player |
+| Damage revives on reset | `RegenHealth` is on for the band, and Brute leash + Stalker flee evade-heal to full — needs the [Persistent run health](#persistent-run-health--no-damage-revive) fix |
 | Watcher not authored | Reserve **90011** if we keep it |
 
 ---

@@ -17,6 +17,7 @@
 - [x] POC spawns in Rotwood (phase 2)
 - [ ] Sleeper damage tune
 - [ ] MPQ Sleeper eyes
+- [ ] Persistent run health — `RegenHealth=0` (90001–90010); base AI keeps HP on evade/reset (Brute leash, Stalker flee); Director last-HP clamp; clear on `OnRunStart`
 
 ## Journal / UI
 

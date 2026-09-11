@@ -59,8 +59,10 @@ Custom entries **91001–91010** in `rev_thalvaeth_run_gates.sql`.
 ```
 OnSegmentClear(segmentId) → open gate_segment for segmentId+1
 OnExtractReady()          → open gate_extract
-OnRunStart()              → close all segment gates; apply SetRunFog
+OnRunStart()              → close all segment gates; apply SetRunFog; clear persistent-HP map
 ```
+
+Creature health **persists within a run** — no out-of-combat regen, no evade heal-to-full. The Director holds the per-GUID last-known-HP map and clears it on `OnRunStart`. Spec: [CREATURES.md → Persistent run health](CREATURES.md#persistent-run-health--no-damage-revive).
 
 ---
 
