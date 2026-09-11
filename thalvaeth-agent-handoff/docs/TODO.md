@@ -25,8 +25,8 @@
 
 - [ ] `ECONOMY.md` — tiered barter (no coin), material ladder, Monastery keepers
 - [x] Corruption replaced by **Infection** (plague raises, Stitch/tincture cures)
-- [ ] Infection tuning — rise rate, cure cost, debuff thresholds
-- [ ] Survival interlock — how Hunger / Thirst / Vigor / Infection couple (see `CONTENT.md`)
+- [x] Survival interlock — `SURVIVAL.md` (Vigor hub; meters erode Vigor; collapse-only fail)
+- [ ] Survival tuning — Vigor field ceiling + walk trickle; Hunger/Thirst tick vs exertion; Infection rise/cure/Fevered thresholds
 - [ ] Gather satchel — allow-list, size + upgrade curve, lost-on-death
 - [ ] Survival clocks — Hunger + Thirst tuning; raw-meat spoil timer
 

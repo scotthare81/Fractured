@@ -23,6 +23,8 @@ Raw **materials / currency** (hide, sinew, ashbloom, salt, resin, tusk, raw meat
 | **Vigor** | In | Stamina pool per segment; no magic regen ([APTITUDES.md](APTITUDES.md)) |
 | **Infection** | In (replaces Corruption) | Plague creatures raise it (combat/wounds); Stitching / tinctures cure it; too high = debuffs |
 
+**How they interlock** — meters erode Vigor; Vigor collapse is the only hard fail: [SURVIVAL.md](SURVIVAL.md).
+
 ## Cooking, trades & the satchel
 
 - **Cooking** turns raw meat → stew (quality-in → weighted-out, **no levels**). Cooked lasts longer than raw.
