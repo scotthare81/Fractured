@@ -2,7 +2,7 @@
 
 ## Item band
 
-Custom items start at **60001**. Never reuse vanilla IDs.
+Custom items start at **60001**. Never reuse vanilla IDs. Full finished/found catalog: [ITEMS.md](ITEMS.md).
 
 | ID | Name | Role |
 |----|------|------|

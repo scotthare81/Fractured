@@ -19,6 +19,7 @@ Rules that hold for every entry:
 | **Node** | Fixed gather point (mine/cut/quarry) | Satchel | Ore veins, mining/stone nodes |
 | **Forage** | Free anywhere; yield by district | Satchel | Herb nodes + on-the-fly picks |
 | **Drop** | Butcher animals / strip the dead | Satchel (meat perishable) | Creature loot |
+| **Fishing** | Line / rod / net / trap at water | Satchel (fish perishable) | Fishing spots (ponds/streams) |
 | **Scavenge** | Search containers, wrecks, corpses | Satchel / main bag | Chests, junk, refuse |
 
 ---
@@ -116,6 +117,8 @@ Reframed WoW herb nodes + on-the-fly picks. Some edible, some medicinal, some **
 | Wild Grain | Common | Grass seed | Flour → bread/porridge (Hunger) |
 | Rosehip / Berries | Common | Bramble | Food, a little Thirst; spoils |
 | Edible Mushroom | Common | Shaded ground | Food — **some poisonous** (discovery) |
+| Gravecap | Uncommon | Shaded ground | **Poison** ingredient — deadly to eat |
+| Palecap | Uncommon | Damp ground | **Poison** ingredient |
 | Lichen | Common | Rock/bark | Famine food, dye |
 
 ---
@@ -165,6 +168,8 @@ Animal-only (you don't eat people). Eat, cook, or render before it turns ([SURVI
 | Tusker Meat | Uncommon | Tusker | Best, rich |
 | Offal / Organs | Common | any beast | Risky food or **bait** |
 | Marrow | Common | bone | Rich broth/food |
+| Raw Fish | Common | fishing (ponds/streams) | Cook / smoke; fish oil; bait |
+| Roe | Common | fishing | Bait or food |
 
 ---
 
@@ -240,6 +245,7 @@ The "find" reward that replaces gear drops (`GEAR.md`, TODO). Feeds the discover
 
 ## Related
 
+- [ITEMS.md](ITEMS.md) — the finished/found item catalog these feed
 - [CRAFTING.md](CRAFTING.md) — what these become (recipes, food, drink, refining)
 - [ECONOMY.md](ECONOMY.md) — barter tiers, keepers, satchel
 - [SURVIVAL.md](SURVIVAL.md) — Hunger / Thirst / Infection the materials feed

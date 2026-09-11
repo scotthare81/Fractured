@@ -210,6 +210,7 @@ Every node here is a **choice**: the same Charcoal smelts a blade *or* filters w
 
 ## Related
 
+- [ITEMS.md](ITEMS.md) — the finished/found item catalog (with invisible quality tiers)
 - [MATERIALS.md](MATERIALS.md) — the raw inputs
 - [SURVIVAL.md](SURVIVAL.md) — Hunger / Thirst / Vigor / Infection these feed
 - [ECONOMY.md](ECONOMY.md) — materials are also currency; repair competes with barter
