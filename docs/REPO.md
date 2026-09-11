@@ -46,9 +46,8 @@ git push -u thalvaeth <branch>:main
 | Path | Contents |
 |------|----------|
 | `docs/` | Design canon + ops |
-| `thalvaeth-agent-handoff/` | Implementation package: pending SQL, C++ stubs, client addon (awaiting integration) |
-| `data/sql/updates/pending_db_*` | Where the pending SQL lands on integration |
-| `src/server/scripts/Custom/` | Where the C++ lands on integration |
+| `src/mod-thalvaeth/` | The AzerothCore module — C++ (`src/`), SQL (`data/sql/`), conf, and the ThalvaethUI addon (`client/`) |
+| `scripts/` | Server-tree, module-link, and push helpers |
 
 ---
 
@@ -60,5 +59,4 @@ Point Cursor Cloud Agent runs at **Thal'vaeth**. Do not register Thal'vaeth PRs 
 
 ## Related
 
-- [HANDOFF.md](../thalvaeth-agent-handoff/HANDOFF.md)
 - [AGENT-INSTRUCTIONS.md](AGENT-INSTRUCTIONS.md)

@@ -49,4 +49,4 @@ The whole start is crude — a blade and rags. Everything else is crafted/upgrad
 
 ## SQL
 
-Pending world updates for items live beside creature SQL in `server/sql/pending_db_world/` (add when item templates are authored).
+Pending world updates for items live beside creature SQL in `src/mod-thalvaeth/data/sql/updates/pending_db_world/` (add when item templates are authored).

@@ -71,5 +71,5 @@ Full run pacing (rhythm, heat/noise, segments): [DIRECTOR.md](DIRECTOR.md).
 ## Related
 
 - [MAPS.md](MAPS.md)
-- `server/sql/pending_db_world/rev_thalvaeth_run_gates.sql`
-- `server/scripts/ThalvaethRunGates.cpp`
+- `src/mod-thalvaeth/data/sql/updates/pending_db_world/rev_thalvaeth_run_gates.sql`
+- `src/mod-thalvaeth/src/ThalvaethRunGates.cpp`

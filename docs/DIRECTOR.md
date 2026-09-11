@@ -2,7 +2,7 @@
 
 The **Stress Director** shapes the tension of a run. It is **invisible** — no pressure meter, no on-screen state in v1 ([L4D-INSPIRED.md](L4D-INSPIRED.md)). It decides *what spawns, when, and how loud a run gets*, so a run breathes instead of being a flat corridor of mobs.
 
-Engine: `server/scripts/ThalvaethDirector.{h,cpp}` (a stub today — waves + fog); the full model below is the target.
+Engine: `src/mod-thalvaeth/src/ThalvaethDirector.{h,cpp}` (a stub today — waves + fog); the full model below is the target.
 
 ---
 

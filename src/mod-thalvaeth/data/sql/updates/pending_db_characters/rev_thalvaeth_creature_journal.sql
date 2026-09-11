@@ -1,5 +1,5 @@
 -- Thal'vaeth — player creature journal (characters DB)
--- Copy to thalvaeth-server fork: data/sql/updates/pending_db_characters/
+-- Module SQL (mod-thalvaeth) — applies via module data/sql, or copy to core: data/sql/updates/pending_db_characters/
 
 DROP TABLE IF EXISTS `thalvaeth_player_creature_journal`;
 CREATE TABLE `thalvaeth_player_creature_journal` (

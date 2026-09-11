@@ -114,9 +114,20 @@ public:
     }
 };
 
+// Folded-in Thal'vaeth content scripts (creature AI, journal, run gates).
+void AddSC_thalvaeth_creatures();
+void AddSC_thalvaeth_creature_journal();
+void AddSC_thalvaeth_run_gates();
+
 void AddThalvaethScripts()
 {
+    // Module systems (survival meters, Gate, morgue — stubs)
     new ThalvaethWorldScript();
     new ThalvaethPlayerScript();
     new ThalvaethGateScript();
+
+    // Content scripts
+    AddSC_thalvaeth_creatures();
+    AddSC_thalvaeth_creature_journal();
+    AddSC_thalvaeth_run_gates();
 }
