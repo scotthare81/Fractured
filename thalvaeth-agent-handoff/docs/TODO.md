@@ -18,6 +18,15 @@
 - [ ] Sleeper damage tune
 - [ ] MPQ Sleeper eyes
 - [ ] Persistent run health — `RegenHealth=0` (90001–90010); base AI keeps HP on evade/reset (Brute leash, Stalker flee); Director last-HP clamp; clear on `OnRunStart`
+- [ ] Animal layer (90101+) — Boar, Gaunt Hound (worg rename), Rotwood Deer/Hare, rare Tusker; drops feed Hunger + barter
+- [ ] Lock animal names in `NAMES.md` (confirm Gaunt Hound / Tusker)
+
+## Economy
+
+- [ ] `ECONOMY.md` — tiered barter (no coin), material ladder, Monastery keepers
+- [ ] Decide Corruption: keep / replace with Rot / Dread / drop
+- [ ] Gather satchel — allow-list, size + upgrade curve, lost-on-death
+- [ ] Survival clocks — Hunger + Thirst tuning; raw-meat spoil timer
 
 ## Journal / UI
 
