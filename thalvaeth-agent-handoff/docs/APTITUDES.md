@@ -30,6 +30,21 @@ No talent tree: your aptitude kit **is your equipped charms** — mundane focuse
 | Ash Pouch | Root Ash | **Ash** + pouch |
 | Emberleaf Cord | Short Burst | **Emberleaf** + tallow |
 
+### Passive charms (trade a slot for a perk)
+
+Instead of an aptitude, a slot can hold a **passive charm** — a small always-on perk. Same craft/find/upgrade rules; invisible quality scales the amount.
+
+| Charm | Effect | Made from |
+|-------|--------|-----------|
+| Deep-Lung Token | **+ Vigor pool** | Carved bone + cord |
+| Ward Fetish | **+ Infection-resist** | **Silver** + dried herb |
+| Warm Fetish | + Warmth (stacks with the warmth layer) | Fur + sinew |
+| Porter's Strap | + Carry (bulk capacity) | Leather + buckle |
+| Steady Cord | + Butcher / craft yield | Sinew + bone |
+| Keepsake | Minor found perk (varies) | Found in runs |
+
+So a two-slot loadout might be **two aptitudes** (Still Breath + Short Burst), **one of each** (Veil Skip + Deep-Lung Token), or **two passives** (Ward Fetish + Porter's Strap) for a heavy-hauler fighter. Your charms are your subclass.
+
 ### Proposed aptitudes / charms (depth — TBD)
 
 | Aptitude | Charm | Does |

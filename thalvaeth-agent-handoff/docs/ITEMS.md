@@ -194,7 +194,7 @@ Crude Dagger (start) → Flint/Bone → Iron Knife → Steel Blade → **fork:**
 
 Rag Armour (start) → Leather → Mail → Plate — full **entry-to-endgame tier ladder** (Boiled/Studded/Hardened Leather · Ring/Riveted/Splinted Mail · Half/Full Plate) in [GEAR.md](GEAR.md). Cowl · Wraps · Waders · Boots · Pack · **Shirt / Tabard / Neck warmth** · Charm ×2.
 
-**Charms (aptitude items)** — worn in the 2 charm slots ([APTITUDES.md](APTITUDES.md)): aptitude charms **Stillstone** (Still Breath), **Veil Sachet** (Veil Skip), **Ash Pouch** (Root Ash), **Emberleaf Cord** (Short Burst); or **passive charms** (Vigor-pool token, Infection-resist, warmth). Invisible quality + upgradeable like gear.
+**Charms (aptitude items)** — worn in the 2 charm slots ([APTITUDES.md](APTITUDES.md)): aptitude charms **Stillstone** (Still Breath), **Veil Sachet** (Veil Skip), **Ash Pouch** (Root Ash), **Emberleaf Cord** (Short Burst); or **passive charms** — Deep-Lung Token (+Vigor), Ward Fetish (+Infection-resist), Warm Fetish, Porter's Strap (+carry), Steady Cord (+yield). Invisible quality + upgradeable like gear.
 
 ---
 
