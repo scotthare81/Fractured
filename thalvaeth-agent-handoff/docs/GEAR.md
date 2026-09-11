@@ -61,7 +61,9 @@ So light armour (cloth/leather) is the **stealth/hauler** — quiet past Sleeper
 | Slot | Piece | Upgrade axes → |
 |------|-------|----------------|
 | Head | Cowl/Hood | Noise ↓ (sneak → Vigor economy), light |
-| Body | Coat (cloth→plate) | Mitigation, **Infection-resist**, warmth (Thirst/heat) |
+| Body | Coat (cloth→plate) | Mitigation, **Infection-resist**, some warmth |
+| **Shirt** | Under-layer (padded/fur) | **Warmth** — independent of armour class |
+| **Tabard** | Over-wrap / mantle | **Warmth** + sheds weather |
 | Hands | Wraps/Gloves | Butcher yield, grip, mend efficiency |
 | Legs/waist | Waders | Wet districts, carry |
 | Feet | Boots | Noise, footing/speed |
@@ -71,6 +73,8 @@ So light armour (cloth/leather) is the **stealth/hauler** — quiet past Sleeper
 | Charm | aptitude items | Unlock/boost aptitudes, Vigor pool ([APTITUDES.md](APTITUDES.md)) |
 
 The same fixed kit becomes a **stealth** build (low-noise cowl/boots/leather), a **fighter** (plate + heavy blade), or a **hauler** (pack/carry) — build diversity from upgrade choices, every upgrade a materials decision against barter and consumables.
+
+> **Warmth layer (shirt & tabard slots).** WotLK's cosmetic **shirt** and **tabard** slots are otherwise dead, so we co-opt them for a **warmth layer** — a padded/fur under-shirt plus a mantle/wrap over-layer, crafted from fur/pelt/padding ([CRAFTING.md](CRAFTING.md)). Warmth is deliberately **independent of armour class** so a light-armour stealth build isn't forced into plate to stay warm. It's an **environmental fit** (like waders for wet): it offsets **cold** (night, weather, cold districts) that would otherwise tax Vigor/Hunger — and in **heat** (Burn spaces) *too much* warmth backfires into Thirst. Either slot works; both stack for deep cold.
 
 ---
 
@@ -93,6 +97,7 @@ The same fixed kit becomes a **stealth** build (low-noise cowl/boots/leather), a
 | Diagram gating | Which upgrade tiers are experiment-able vs diagram-only |
 | Charm/aptitude coupling | How aptitude items sit in the charm slot |
 | Tier count | Confirm 4 vs 3 steps per line |
+| Cold as a factor | Warmth is an environmental fit for now — decide if cold becomes a tracked factor/meter |
 
 ---
 

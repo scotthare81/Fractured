@@ -157,6 +157,8 @@ Finished items/components sit in the **60xxx** band; IDs TBD. Organized by stati
 | Oilcloth | Cloth + Oil/Pitch | Waterproof → waders, packs |
 | Patch | Leather/Cloth scraps | Repair gear |
 | Padding | Fur / cloth | Warmth lining |
+| Padded Shirt | Padding + cloth | **Warmth** (shirt slot) |
+| Fur Mantle | Pelt + cord | **Warmth** + weather (tabard slot) |
 
 ### F. Forge / Workbench → tools, weapons, gear frames
 
