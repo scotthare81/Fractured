@@ -1,5 +1,5 @@
 -- Thal'vaeth — creature catalog + Wild templates (world DB)
--- Copy to thalvaeth-server fork: data/sql/updates/pending_db_world/
+-- Module SQL (mod-thalvaeth) — applies via module data/sql, or copy to core: data/sql/updates/pending_db_world/
 -- Entry band 90001–90010. Display IDs per docs/CREATURES.md (locked).
 
 -- ---------------------------------------------------------------------------

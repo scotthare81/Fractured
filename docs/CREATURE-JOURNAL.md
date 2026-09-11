@@ -5,10 +5,10 @@ The creature journal is the **bestiary** — the Remnant's private field notes o
 **Bestiary content + roster:** [CREATURES.md](CREATURES.md) — humanoid-first, mundane bodies, spell-like **abilities** OK.
 
 Shipped implementation this doc describes:
-`server/sql/pending_db_world/rev_thalvaeth_creature_catalog.sql` (catalog),
-`server/sql/pending_db_characters/rev_thalvaeth_creature_journal.sql` (per-player state),
-`server/scripts/ThalvaethCreatureJournal.cpp` (tier hooks + addon sync),
-`client/addons/ThalvaethUI/` (panel).
+`src/mod-thalvaeth/data/sql/updates/pending_db_world/rev_thalvaeth_creature_catalog.sql` (catalog),
+`src/mod-thalvaeth/data/sql/updates/pending_db_characters/rev_thalvaeth_creature_journal.sql` (per-player state),
+`src/mod-thalvaeth/src/ThalvaethCreatureJournal.cpp` (tier hooks + addon sync),
+`src/mod-thalvaeth/client/ThalvaethUI/` (panel).
 
 ---
 
@@ -102,7 +102,7 @@ Player = **Remnant**. Wild humanoids ≠ Remnants — the journal describes *the
 | Sighted | Name, sighted line, tag word; abilities hidden |
 | Engaged | Adds "Observed HP", and an ability list that fills in as you witness skills |
 
-The panel lives in `client/addons/ThalvaethUI/` (stub). It never renders a "next objective," a map ping, or a route — it is a notebook, not a quest tracker.
+The panel lives in `src/mod-thalvaeth/client/ThalvaethUI/` (stub). It never renders a "next objective," a map ping, or a route — it is a notebook, not a quest tracker.
 
 ---
 
@@ -137,7 +137,7 @@ Wire format: `THALVAETH\t<opcode>~<payload>`. Only entries in the catalog band (
 | Wire `observed_abilities` | Capture spell→`ability_map` key on cast/receipt at the Engaged tier |
 | Populate `ability_map` | Add the proposed rows (Sleeper/Brute/Stalker/fodder) in [CREATURES.md](CREATURES.md) |
 | Set `silhouette_icon` | Per-entry Unknown-tier icons (all default 0 today) |
-| Journal panel UI | `client/addons/ThalvaethUI/` still a stub ([TODO.md](TODO.md)) |
+| Journal panel UI | `src/mod-thalvaeth/client/ThalvaethUI/` still a stub ([TODO.md](TODO.md)) |
 | "Sighted" fidelity | Confirm mouseover vs target-only, and the 25y radius, feel right in play |
 
 ---
@@ -147,4 +147,3 @@ Wire format: `THALVAETH\t<opcode>~<payload>`. Only entries in the catalog band (
 - [CREATURES.md](CREATURES.md) — full roster, AI behavior, ability spell map
 - [NAMES.md](NAMES.md) — locked names
 - [APTITUDES.md](APTITUDES.md) — how the Remnant answers what the journal records
-- [HANDOFF.md](../thalvaeth-agent-handoff/HANDOFF.md)

@@ -9,9 +9,9 @@ Wild threats are **mostly human-shaped** — scavengers, drifters, brutes, squat
 **Player** = Remnant. Wild humans are **not** Remnants — they're what's left out here.
 
 This file is the roster source of truth. It matches the shipped data:
-`server/sql/pending_db_world/rev_thalvaeth_creature_catalog.sql` (catalog + `creature_template`),
-`server/sql/pending_db_world/rev_thalvaeth_fodder_smartai.sql` (fodder), and
-`server/scripts/ThalvaethCreatures.cpp` (specials). Journal tiers: [CREATURE-JOURNAL.md](CREATURE-JOURNAL.md).
+`src/mod-thalvaeth/data/sql/updates/pending_db_world/rev_thalvaeth_creature_catalog.sql` (catalog + `creature_template`),
+`src/mod-thalvaeth/data/sql/updates/pending_db_world/rev_thalvaeth_fodder_smartai.sql` (fodder), and
+`src/mod-thalvaeth/src/ThalvaethCreatures.cpp` (specials). Journal tiers: [CREATURE-JOURNAL.md](CREATURE-JOURNAL.md).
 
 ---
 
@@ -374,4 +374,3 @@ Data/plumbing gaps found while writing this:
 - [NAMES.md](NAMES.md) — locked names
 - [L4D-INSPIRED.md](L4D-INSPIRED.md) — pacing vocabulary
 - [APTITUDES.md](APTITUDES.md) — Remnant counters (Still Breath, Short Burst, …)
-- [HANDOFF.md](../thalvaeth-agent-handoff/HANDOFF.md)
