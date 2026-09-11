@@ -45,6 +45,12 @@ Player = **Remnant**. Class shown as Remnant in UI (Rogue chassis).
 
 ---
 
+## Survival meters (player-facing)
+
+**Hunger · Thirst · Vigor · Infection.** (Infection replaces the retired "Corruption"; never call it "Rot" — Rotwood owns that word.)
+
+---
+
 ## Animals (per-district)
 
 Fauna are named **`<District> <Kind>`** — the run you're in supplies the prefix. Mainstays are **Hound** (predator) and **Boar** (forage beast).

@@ -78,7 +78,7 @@ Documentation notes so nobody wires gold back in:
 
 | Item | Notes |
 |------|--------|
-| **Infection meter** | Replaces Corruption (decided). Plague creatures raise it; Stitching / tinctures cure it; too high = debuffs. **Name working: Fester** (not "Rot" — Rotwood owns it); alts Canker / Gangrene / Miasma. Brewing teas now target it. |
+| Infection tuning | Meter is named + in (replaces Corruption). Open: rise rate per plague hit, cure cost, debuff thresholds. Brewing teas target it. |
 | Animal names | Convention **`<District> <Kind>`** locked (Rotwood Hound / Boar / Deer / Hare / Tusker) — [NAMES.md](NAMES.md) |
 | Node placement | Which gather nodes seed Rotwood, and density per segment ([RUN-GATES.md](RUN-GATES.md)) |
 | Satchel size / upgrade curve | Starting slots and Stitcher upgrade steps |
