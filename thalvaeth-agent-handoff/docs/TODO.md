@@ -47,6 +47,11 @@
 - [x] Journal table + addon wire stub
 - [ ] Journal panel UI
 
+## Aptitudes & charms
+
+- [x] Charm/aptitude items — charms grant aptitudes (2 slots; aptitude vs passive); craft from materials; invisible quality; upgradeable
+- [ ] Confirm charm slot count; pick which proposed aptitudes (Night Eyes / Iron Gut / Deadened Step / Steady Hand / Second Wind) ship v1
+
 ## Core
 
 - [ ] Spell strip + Remnant first login

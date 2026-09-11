@@ -188,7 +188,9 @@ Crude Dagger (start) → Fitted Knife → Steel Blade → **fork:** dual-wield 1
 
 ## 12. Armour & worn gear → [GEAR.md](GEAR.md)
 
-Rag Armour (start) → Leather → Mail → Plate. Cowl · Wraps · Waders · Boots · Pack · **Shirt / Tabard / Neck warmth** · Charm.
+Rag Armour (start) → Leather → Mail → Plate. Cowl · Wraps · Waders · Boots · Pack · **Shirt / Tabard / Neck warmth** · Charm ×2.
+
+**Charms (aptitude items)** — worn in the 2 charm slots ([APTITUDES.md](APTITUDES.md)): aptitude charms **Stillstone** (Still Breath), **Veil Sachet** (Veil Skip), **Ash Pouch** (Root Ash), **Emberleaf Cord** (Short Burst); or **passive charms** (Vigor-pool token, Infection-resist, warmth). Invisible quality + upgradeable like gear.
 
 ---
 

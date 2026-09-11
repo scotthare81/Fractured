@@ -71,7 +71,7 @@ So light armour (cloth/leather) is the **stealth/hauler** — quiet past Sleeper
 | Back | Pack | Main-bag slots **+ satchel size** |
 | Main hand | Blade (see Weapons) | Damage/speed/reach/bleed/butcher |
 | Utility | whetstone / torch / focus | Situational |
-| Charm | aptitude items | Unlock/boost aptitudes, Vigor pool ([APTITUDES.md](APTITUDES.md)) |
+| Charm ×2 | aptitude / passive charms | Run up to 2 aptitudes, **or** trade a slot for a Vigor / Infection-resist / warmth perk ([APTITUDES.md](APTITUDES.md)) |
 
 The same fixed kit becomes a **stealth** build (low-noise cowl/boots/leather), a **fighter** (plate + heavy blade), or a **hauler** (pack/carry) — build diversity from upgrade choices, every upgrade a materials decision against barter and consumables.
 
@@ -96,7 +96,7 @@ The same fixed kit becomes a **stealth** build (low-noise cowl/boots/leather), a
 | Slot list | Confirm final slots (dedicated skinning-knife/off-hand for 2H builds?) |
 | Wear rates | Per-slot degrade + sharpen/mend costs |
 | Diagram gating | Which upgrade tiers are experiment-able vs diagram-only |
-| Charm/aptitude coupling | How aptitude items sit in the charm slot |
+| Charm slots | 2 slots, aptitude vs passive — pinned in [APTITUDES.md](APTITUDES.md); confirm count |
 | Tier count | Confirm 4 vs 3 steps per line |
 | Cold as a factor | Warmth is an environmental fit for now — **snow runs** would make cold a real gate; decide if cold becomes a tracked factor/meter ([MAPS.md](MAPS.md)) |
 
