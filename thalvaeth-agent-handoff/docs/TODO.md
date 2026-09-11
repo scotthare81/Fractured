@@ -25,6 +25,7 @@
 
 - [x] `MATERIALS.md` — raw catalog (dropped / foraged / mined / scavenged, incl. reclaimed metals)
 - [x] `CRAFTING.md` — recipes (food/drink/refining/smelt/forge), discovery (fragments + experiment/hints), stations, durability/mend
+- [x] Discovery tree pinned — Tier 0 given vs milestone gates (Charcoal→Forge spine; tanning, brewing, distilling, preservation, waterproofing)
 - [ ] `GEAR.md` — upgrade-only gear/weapons (no drops), slots, upgrade axes, per-slot wear rates
 - [ ] Assign per-item IDs in the 61xxx material bands
 

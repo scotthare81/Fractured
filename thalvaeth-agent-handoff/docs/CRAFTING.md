@@ -21,6 +21,31 @@ Unknown recipes are **blanked** in the Record (the same Unknown→learned feel a
 
 ---
 
+## Discovery tree — pinned milestone gates
+
+**Born knowing (Tier 0, never gated):** crude butcher, campfire roast, **crude boil** (drinkable water), firestart (flint), crude bandage, forage. You can eat, warm up, drink, and stop bleeding from the first minute.
+
+Everything else is **discovered** (recipe fragment or experiment-with-hints). Pinned gates and what each opens — *which specific recipe sits under a gate is tunable; the gates + dependencies are the lock:*
+
+| Discovery | Unlocks | Needs first | Where |
+|-----------|---------|-------------|-------|
+| Rendering | Fat → Tallow / Oil (light, waterproof, soap, food) | — | Cookfire |
+| Cordage | Cord → Rope (bindings, snares, climbing) | — | Field |
+| Preservation (salt / smoke) | Jerky, smoked meat, pemmican, pickling — **long-shelf food** that beats the spoil clock | Salt | Cookfire |
+| Tanning | Hide → Leather / Heavy Leather (armor, straps, waders base) | Salt | Stitch table |
+| Brewing | Ash-still medicine: **Ash Tea ↓ Infection**, salves, poultices | — | Ash-still |
+| **Charcoal (char pit)** | **The forge gate** — smelting + all metalwork; plus charcoal water-filter & tincture base | — | Charcoal pit |
+| Water purification (filter) | Pure water — removes the raw-water **Infection** risk | **Charcoal** | Cookfire |
+| Distilling | **Spirits** (strong antiseptic, fuel), distilled water | Brewing | Ash-still |
+| Waterproofing | Oilcloth → **waders**, sealed packs (wet districts) | Rendering | Stitch table |
+| Advanced apothecary | Tinctures, antiseptic wash, styptics, wards, lures | Brewing (+ Distilling for the strong stuff) | Ash-still |
+| Smelting → Iron | Iron Ingot → iron blades, plates, tools, **metal repair** | **Charcoal** | Forge |
+| Steelworking | Steel → best blades, springs | Smelting | Forge |
+| Alloying (Bronze) | Bronze fittings, tools | **Charcoal** | Forge |
+| Trap-making | Snares / traps → catch small game, slow enemies | Cordage / Wire | Field / Workbench |
+
+**The spine:** **Charcoal** is the pivot — it gates the entire **Forge** branch (Iron → Steel → Bronze, all metal gear and metal repair) *and* the best water purification. Early Remnants live off butcher / cook / stitch / brew and leather; **metal is an earned mid-game unlock**. Tanning opens leather armor; Brewing + Distilling open real Infection medicine; Preservation is what lets you run longer without your food rotting.
+
 ## Stations (Monastery) vs field
 
 Deep crafting needs a **station at home**. In a run you only get **crude** versions.
