@@ -16,6 +16,10 @@ Every craftable carries a **hidden quality** (the Model C roll — low→high) t
 
 The same holds for everything — food restore, tincture potency, blade sharpness & durability, armour mitigation. Quality = **input quality + the roll** (no skill levels — L8): a fresh Tusker haunch reads toward *"hearty,"* stringy hound meat toward *"thin."* You judge by feel and flavour text, never a badge (L9/L10).
 
+## Bulk — how much space it takes
+
+Alongside quality, every item has a hidden **bulk 1 / 2 / 4**: small (herbs, vials, daggers, charms) · bulky (1H weapons, coats, waders, a raw haunch) · huge (2H weapons, plate, big tools, a carcass quarter). Bags and the satchel are **bulk pools** and **worn gear is free** — only carried items count. Full model + the "capacity now, true footprint grid later" plan: [ECONOMY.md](ECONOMY.md).
+
 ---
 
 ## 1. Components & refined stock

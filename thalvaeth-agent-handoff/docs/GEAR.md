@@ -35,6 +35,8 @@ Everyone starts with the **crude dagger** and climbs a shared early line: `Crude
 
 **The butcher-tool tension:** a knife stays useful no matter what. Dual-daggers do double duty (combat + butchering); a 2H build trades harvest convenience for raw power and must carry a dedicated skinning knife. That's a real build decision, not just a damage number.
 
+**Carried bulk:** a **two-handed** weapon is *huge* (bulk 4), a **1H** is *bulky* (2), a **dagger** is *small* (1) — so dual-daggers are cheap to stow, a greataxe is a real haul. Worn/wielded gear is free; only spares in the bag count ([ECONOMY.md](ECONOMY.md)).
+
 **Weapon upgrade axes:** damage · speed · reach · bleed · butcher yield · durability.
 **Materials:** haft (deadwood/green wood), edge (iron → steel → bronze), inlay (bone/tusk/fang for grips & weight).
 **Durability:** blades dull with use → **sharpen** (whetstone, field-ok) or **mend** (forge). Broken = heavy penalty, never lost ([CRAFTING.md](CRAFTING.md)).

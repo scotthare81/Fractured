@@ -31,6 +31,8 @@
 - [x] `ITEMS.md` — made & found catalog (crafting→breaking), invisible quality tiers, + fishing, expanded forage/mushrooms, traps, poisons
 - [ ] Gear tuning — per-slot wear rates, tier count (3 vs 4), diagram gating, skinning-knife slot for 2H builds
 - [ ] Item tuning — per-item IDs (60xxx), poison balance, fish/trap yields, mushroom tells
+- [x] Bulk model — items have bulk 1/2/4; bags/satchel are bulk pools (worn = free); v1 = capacity budget
+- [ ] Fancy grid inventory (future) — footprint UI in ThalvaethUI + server-side virtual inventory (bulk values become footprints)
 - [ ] Assign per-item IDs in the 61xxx material bands
 
 ## Economy

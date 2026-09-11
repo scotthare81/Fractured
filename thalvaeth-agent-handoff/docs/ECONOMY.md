@@ -35,7 +35,7 @@ Maps onto the trades (see [CONTENT.md](CONTENT.md)). No gold prices — each kee
 
 ## Carrying it home — bags & satchel
 
-Two containers, a hard line between them. The **satchel** holds raw materials so foraging doesn't eat your survival slots. The **main bag** (~6) holds everything that keeps you alive or that you'd fight over.
+Two containers, a hard line between them. The **satchel** holds raw materials so foraging doesn't eat your survival space. The **main bag** (a small bulk pool) holds everything that keeps you alive or that you'd fight over.
 
 | **Satchel** — raw trade / craft materials | **Main bag** — survival, tools, valuables |
 |-------------------------------------------|-------------------------------------------|
@@ -50,6 +50,20 @@ Satchel rules:
 - **Lost on death**, like the rest of the haul — a big gather run wiped by a bad death has to sting.
 - **Bounded and upgradeable** (the Stitcher sells satchel expansions) — you still can't hoard a whole district in one trip.
 - **Curated allow-list** — only raw materials qualify (the left column). Finished consumables, tools, gear, and valuables never go in it.
+
+### Bulk — items take space by size
+
+Capacity is measured in **bulk**, not raw slots. Every item has a hidden **bulk 1 / 2 / 4**:
+
+| Bulk | Feel | Examples |
+|------|------|----------|
+| **1** | small | herbs, mushrooms, vials, tinctures, thread, cord, daggers, charms, ammo, small components |
+| **2** | bulky | 1H weapons, coats, waders, rope, tools, a raw haunch, a full waterskin |
+| **4** | huge | two-handed weapons, plate pieces, big tools (axe/pick), a carcass quarter |
+
+Bags and the satchel are **bulk pools** (upgradeable), so a greataxe eats what four herbs would. **Worn gear is free** — only *carried* items count against bulk. This makes bulk diegetic: you feel the weight of hauling something big out of a run.
+
+**Now vs later.** v1 enforces bulk as a **capacity budget** (a server-checked number — simple). The **fancy version renders it as a true footprint grid** (a 2×2 sword sitting in your pack), which needs a custom addon inventory + a server-side virtual inventory (see `ITEMS.md` / TODO). The bulk values are identical either way — **the budget now is the grid's foundation.**
 
 ---
 
