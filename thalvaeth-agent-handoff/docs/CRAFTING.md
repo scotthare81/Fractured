@@ -15,6 +15,8 @@ Unknown recipes are **blanked** in the Record (the same Unknown→learned feel a
 2. **Experiment with hints** (the hours engine). Slot materials at a station and **attempt**. A valid combo succeeds and logs to the Record (*"You learned to boil bark into pitch"*). A near-miss gives a **hint, not a wall** — *"needed a binder," "too wet," "not enough heat."* Crafting becomes deduction, not blind brute-force.
 3. **Recipe fragments & taught knowledge** (deep/gated). Fragments, diagrams, and keeper's notes found in runs ([MATERIALS.md](MATERIALS.md) §10) hint or unlock specific recipes; keepers teach whole branches for materials. The deep and rare recipes live here, so runs pull you out to **discover**, not to loot gear.
 
+**Milestone discoveries gate whole tiers.** Some recipes are *not* bootstrapped — you must discover them, and doing so unlocks a capability. The marquee one is **Charcoal**: you don't start knowing it, and until you discover it (a recipe fragment or the right low-air experiment) the **forge and all metalworking stay locked** (`Ore → smelt → Ingot` needs charcoal). Tanning→leather and distilling→spirits gate the same way. This is where a lot of the "hours of discovery" lives — the tech opens up as you learn it.
+
 **Quality — Model C.** Same recipe, better inputs → weighted-better result: roughly **70% standard / 20% good / 10% best**. Quality-in still gates the band (a poor carcass can't roll "best"). No levels.
 
 ---
@@ -74,7 +76,7 @@ Finished items/components sit in the **60xxx** band; IDs TBD. Organized by stati
 | Bone Needle / Buttons | Bone (carve) | Stitching, fasteners |
 | Pitch / Tar | Bark / resin (boil) | Waterproof, torch, Resin Lure |
 
-> **Charcoal, the one right way.** Charcoal is made **only** at a **charcoal pit/kiln** — a deliberate *low-air char* of good **Deadwood**. An open cookfire (or any burning) yields **Ash**, never charcoal; **Rotwood punk** gives poor charcoal. This is intentional: charcoal is the fuel that **gates the forge** (`Ore → smelt → Ingot`), so it must be a real craft, not a free byproduct. No recipe may produce charcoal from an open fire.
+> **Charcoal, the one right way.** Charcoal is made **only** at a **charcoal pit/kiln** — a deliberate *low-air char* of good **Deadwood**. An open cookfire (or any burning) yields **Ash**, never charcoal; **Rotwood punk** gives poor charcoal. And you must **discover** it first — it is **not known at start** (a recipe fragment or the right low-air experiment). Until then, no charcoal — and no forge. This is intentional: charcoal is the fuel that **gates all metalworking** (`Ore → smelt → Ingot`), so it must be a discovered, real craft — never a free byproduct, and never from an open fire.
 
 ### B. Water & liquid refining (Cookfire / Ash-still)
 

@@ -222,7 +222,7 @@ The "find" reward that replaces gear drops (`GEAR.md`, TODO). Feeds the discover
 - **Antiseptics → Infection:** silver, vinegar, spirits, alum, charcoal, fenwort, fevermint — real-world grim medicine, no magic. These are why Brewing/Stitching can cure Infection.
 - **Preservation → spoil clock:** salt, brine, smoke, vinegar slow the meat/liquid timers ([SURVIVAL.md](SURVIVAL.md)).
 - **Plague risk:** harvesting human/plague parts (plaguebone, rotten sinew) raises Infection — a real risk/reward on stripping the dead.
-- **Charcoal ≠ ash:** charcoal is *only* a deliberate low-air char of good Deadwood (a charcoal pit/kiln) and **gates the forge**; an open fire yields **Ash**, never charcoal. Rotwood punk makes poor charcoal. See [CRAFTING.md](CRAFTING.md).
+- **Charcoal ≠ ash:** charcoal is *only* a deliberate low-air char of good Deadwood (a charcoal pit/kiln) and **gates the forge** — and it's a **discovered** recipe, not known at start. An open fire yields **Ash**, never charcoal; Rotwood punk makes poor charcoal. See [CRAFTING.md](CRAFTING.md).
 - **Currency:** any of these can be bartered ([ECONOMY.md](ECONOMY.md)); spending vs crafting is the choice.
 
 ---
