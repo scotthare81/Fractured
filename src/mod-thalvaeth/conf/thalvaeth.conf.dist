@@ -1,0 +1,24 @@
+#
+# Thalvaeth module — Step 2 stubs. Behavior lands in later steps.
+# Copy to the run-dir conf (live/ or dev/) as thalvaeth.conf when the
+# worldserver exists. Do not put secrets in git.
+#
+
+[worldserver]
+
+#
+# Thalvaeth.Enable
+# Description: Load Thalvaeth scripts (meters, Gate, death). Stubs only.
+# Default:     1 (enabled)
+#
+
+Thalvaeth.Enable = 1
+
+#
+# Thalvaeth.Gate.BlockBots
+# Description: Refuse playerbots at the Gate (L11). Stub until playerbots
+#              is on the Thalvaeth server; the hook still runs.
+# Default:     1
+#
+
+Thalvaeth.Gate.BlockBots = 1

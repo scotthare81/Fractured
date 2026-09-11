@@ -2,7 +2,7 @@
 
 **Revision:** 2026-09-10 — locked names (NAMES.md) + Rotwood run district  
 
-**Mobs:** [docs/CREATURES.md](docs/CREATURES.md)
+**Mobs:** [docs/CREATURES.md](../docs/CREATURES.md)
 
 ---
 
@@ -37,7 +37,7 @@
 | First run district | **Rotwood** | 0 (Duskwood worgen cluster, gated) |
 | Mid-run breather | **Ash Hollow** | volume in Rotwood |
 
-See [docs/NAMES.md](docs/NAMES.md), [docs/MAPS.md](docs/MAPS.md).
+See [docs/NAMES.md](../docs/NAMES.md), [docs/MAPS.md](../docs/MAPS.md).
 
 ## Other locked systems
 
@@ -54,14 +54,14 @@ Solo Wild, no magic heal, Vigor/Hustle, aptitudes, safe pockets, invisible Direc
 | POC spawns | Placeholder coords — edit before test |
 | MPQ Sleeper eyes | Doc only |
 
-See [docs/TODO.md](docs/TODO.md).
+See [docs/TODO.md](../docs/TODO.md).
 
 ---
 
 ## Agent rules
 
 - SQL: `pending_db_*` only  
-- **Git: Fractured** (`scotthare81/Fractured`) — not AiCraft-WotLK ([REPO.md](docs/REPO.md))  
+- **Git: Thal'vaeth** (`scotthare81/Thalvaeth`) — not AiCraft-WotLK ([REPO.md](../docs/REPO.md))  
 - No build unless Scott asks  
 
 **End.**

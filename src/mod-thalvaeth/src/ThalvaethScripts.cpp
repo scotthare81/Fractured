@@ -1,5 +1,5 @@
 /*
- * Fractured module stubs (Step 2).
+ * Thalvaeth module stubs (Step 2).
  * Survival meters, Gate (bots blocked), death → morgue.
  * No real meters, no teleport, no instance IDs yet.
  */
@@ -13,14 +13,14 @@
 
 namespace
 {
-    bool FracturedEnabled()
+    bool ThalvaethEnabled()
     {
-        return sConfigMgr->GetOption<bool>("Fractured.Enable", true);
+        return sConfigMgr->GetOption<bool>("Thalvaeth.Enable", true);
     }
 
     // Playerbots is not on this server yet. Keep the call site so Gate
     // can grow a real check without a new hook.
-    bool FracturedIsBot(Player const* player)
+    bool ThalvaethIsBot(Player const* player)
     {
         if (!player || !player->GetSession())
             return true;
@@ -29,10 +29,10 @@ namespace
     }
 }
 
-class FracturedWorldScript : public WorldScript
+class ThalvaethWorldScript : public WorldScript
 {
 public:
-    FracturedWorldScript() : WorldScript("FracturedWorldScript", {
+    ThalvaethWorldScript() : WorldScript("ThalvaethWorldScript", {
         WORLDHOOK_ON_STARTUP,
         WORLDHOOK_ON_BEFORE_CONFIG_LOAD
     }) { }
@@ -41,17 +41,17 @@ public:
 
     void OnStartup() override
     {
-        if (!FracturedEnabled())
+        if (!ThalvaethEnabled())
             return;
 
-        LOG_INFO("module", "Fractured: module loaded (stubs: survival, Gate, death).");
+        LOG_INFO("module", "Thal'vaeth: module loaded (stubs: survival, Gate, death).");
     }
 };
 
-class FracturedPlayerScript : public PlayerScript
+class ThalvaethPlayerScript : public PlayerScript
 {
 public:
-    FracturedPlayerScript() : PlayerScript("FracturedPlayerScript", {
+    ThalvaethPlayerScript() : PlayerScript("ThalvaethPlayerScript", {
         PLAYERHOOK_ON_LOGIN,
         PLAYERHOOK_ON_UPDATE,
         PLAYERHOOK_ON_PLAYER_JUST_DIED,
@@ -60,63 +60,63 @@ public:
 
     void OnPlayerLogin(Player* player) override
     {
-        if (!FracturedEnabled() || !player)
+        if (!ThalvaethEnabled() || !player)
             return;
 
         ChatHandler(player->GetSession()).PSendSysMessage(
-            "Fractured: survival meters, Gate, and morgue are stubs.");
+            "Thal'vaeth: survival meters, Gate, and morgue are stubs.");
     }
 
-    // Step 4 will tick Hunger / Thirst / Corruption here.
+    // Step 4 will tick Hunger / Thirst / Infection here.
     void OnPlayerUpdate(Player* /*player*/, uint32 /*p_time*/) override { }
 
     void OnPlayerJustDied(Player* player) override
     {
-        if (!FracturedEnabled() || !player)
+        if (!ThalvaethEnabled() || !player)
             return;
 
-        // L2: haul lost, Corruption spike, Fractured debuff — later.
-        LOG_DEBUG("module", "Fractured: {} died (morgue stub).", player->GetName());
+        // L2: haul lost, Infection spike, Fevered debuff — later.
+        LOG_DEBUG("module", "Thal'vaeth: {} died (morgue stub).", player->GetName());
     }
 
     void OnPlayerReleasedGhost(Player* player) override
     {
-        if (!FracturedEnabled() || !player)
+        if (!ThalvaethEnabled() || !player)
             return;
 
-        // Step 3 assigns Sanctuary map/instance IDs; then this teleports
+        // Step 3 assigns Monastery map/instance IDs; then this teleports
         // to the morgue instead of a corpse run.
         ChatHandler(player->GetSession()).PSendSysMessage(
-            "Fractured: you would wake in the Sanctuary morgue (stub).");
+            "Thal'vaeth: you would wake in the Monastery morgue (stub).");
     }
 };
 
-class FracturedGateScript : public GameObjectScript
+class ThalvaethGateScript : public GameObjectScript
 {
 public:
-    FracturedGateScript() : GameObjectScript("go_fractured_gate") { }
+    ThalvaethGateScript() : GameObjectScript("go_thalvaeth_gate") { }
 
     bool OnGossipHello(Player* player, GameObject* /*go*/) override
     {
-        if (!FracturedEnabled() || !player)
+        if (!ThalvaethEnabled() || !player)
             return true;
 
-        if (sConfigMgr->GetOption<bool>("Fractured.Gate.BlockBots", true) && FracturedIsBot(player))
+        if (sConfigMgr->GetOption<bool>("Thalvaeth.Gate.BlockBots", true) && ThalvaethIsBot(player))
         {
             ChatHandler(player->GetSession()).PSendSysMessage(
-                "Fractured: bots stop at the Gate.");
+                "Thal'vaeth: bots stop at the Gate.");
             return true;
         }
 
         ChatHandler(player->GetSession()).PSendSysMessage(
-            "Fractured: Gate would load Mouth (stub).");
+            "Thal'vaeth: Gate would load Rotwood (stub).");
         return true;
     }
 };
 
-void AddFracturedScripts()
+void AddThalvaethScripts()
 {
-    new FracturedWorldScript();
-    new FracturedPlayerScript();
-    new FracturedGateScript();
+    new ThalvaethWorldScript();
+    new ThalvaethPlayerScript();
+    new ThalvaethGateScript();
 }

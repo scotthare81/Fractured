@@ -1,62 +1,22 @@
-# Fractured — Agent instructions
+# Agent instructions
 
-Read this before touching the repo.
+**Repo:** Push to **Thal'vaeth** (`scotthare81/Thalvaeth`) only — never AiCraft-WotLK. See [REPO.md](REPO.md).
 
-## This is not AICraft
+Read [NAMES.md](NAMES.md) for locked player-facing labels. Read [CREATURES.md](CREATURES.md) for all mob work.
 
-Fractured (`scotthare81/Fractured`) is a separate private project. Do
-**not** touch AiCraft-WotLK. Do not add Fractured SQL, scripts, MPQ,
-or docs there. Do not mix deploy/ops. Follow `docs/SLICE.md` for when
-AzerothCore work is allowed (not during Step 1).
+## Creature rules
 
-## Do not paste giant handoff blocks
+- **Humanoid-first** roster (scavengers, drifters, brutes, sleepers)
+- Bodies **mundane** — no ghost/banshee/elemental as core species
+- **Abilities** may use spell IDs + VFX; journal names them plainly (*Throws a hook*)
+- **Sleeper:** display 22844, MPQ ash/grey + red eyes, kneel/disturb
 
-Long chat pastes break files: tables lose columns, code fences snap,
-sections truncate. Write files with tools or by editing `bootstrap.sh`.
-Never “fix” markdown by copying nested fences out of a conversation.
+## v1 POC
 
-## Source of truth
+Scavenger 10973 → Sleeper 22844 → Rafter 22843 or Caller 14537 → Brute 7858
 
-| File | Trust it for |
-|------|----------------|
-| `DESIGN.md` | Systems, locks L1–L15, gate flow, death, survival |
-| `WORLD.md` | District network, gates, expedition flow, map IDs |
-| `CONTENT.md` | Items, clones, chains, MPQ, implementation notes |
-| `docs/TODO.md` | Open work |
-| `docs/SLICE.md` | Build sequence; current step |
-| `docs/DEPLOY.md` | Server isolation from AICraft |
-| `docs/BRAINSTORM.md` | Why decisions happened; not a competing spec |
-| `README.md` | Pitch, status, index |
-| `src/mod-fractured` | Fractured AC module (stubs until later steps) |
+## Tags
 
-If two files disagree, fix them together and update the heredocs in
-`bootstrap.sh` so the next seed cannot resurrect the wrong version.
+Scavenger, Drifter, Stumbler, Ghoul, Sleeper, Rafter, Caller, Snare, Stalker, Brute
 
-## Repair
-
-```bash
-bash bootstrap.sh
-git add -A
-git status
-# commit only if Scott asked, unless the task explicitly says commit
-```
-
-`bootstrap.sh` is idempotent. Re-running overwrites the generated
-markdown and `.gitignore` with the heredoc copies. After a bad paste,
-run the seeder instead of hand-merging fragments.
-
-If you change design, change the heredocs in `bootstrap.sh` **and**
-regenerate, or the next repair will wipe your edit.
-
-## Scope
-
-- Follow `docs/SLICE.md`. Finish the current step before the next.
-- Module source lives in `src/mod-fractured`. Scott’s desktop is
-  Linux; compile there for now. On the game box the server tree is
-  `/home/scott/fractured-server` (live + dev). That path may be a
-  symlink onto the 2TB USB 3 SSD (`docs/DEPLOY.md`).
-  Never AICraft.
-- Clone AzerothCore only under `fractured-server/src/azerothcore`.
-- TBD only for numbers and IDs not yet decided.
-- If you change a generated markdown file, change the heredoc in
-  `bootstrap.sh` too.
+Not: Bull, Rat (except minor vermin), Husk, Shade, L4D names.

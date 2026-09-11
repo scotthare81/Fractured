@@ -1,59 +1,64 @@
-# Fractured — Open work
+# TODO — implementation status
 
-Build sequence lives in `docs/SLICE.md`. Do not skip ahead.
+## Maps
 
-TBD belongs on **numbers and IDs**, not on whether a system exists.
-Uncheck as documents (or later modules) actually land. Do not delete a
-line to make the project look finished.
+- [x] Home — **Thal'vaeth Monastery** at **Hearthglen** (map 0)
+- [x] Run — **Rotwood** outdoor Duskwood worgen cluster (map 0, gated)
+- [x] Gate SQL shell + segment + extract (91001+)
+- [ ] Phase 1/2 split (home vs run)
+- [ ] MPQ — Hearthglen Brill-grey
+- [ ] Strip vanilla spawns (incl. Nightbane worgen) inside Rotwood AT
+- [x] Director/run pacing sketched — `DIRECTOR.md` (rhythm, heat/noise, segments, hooks)
+- [ ] Director segment gate open hooks
+- [ ] Tune fence ring coords in GM mode
+- [ ] Future runs (proposed): snow/cold (warmth gate) + fog (visibility) — `MAPS.md`; decide if cold is tracked
 
-## Design still to write
+## Creatures
 
-- [ ] **Material graph** — full break/make table (every findable → use
-      or break→use). Fieldcraft and apothecary sketches in `CONTENT.md`
-      are spines, not the graph.
-- [ ] **Gate matrix** — journal flags + items → district. Expand the
-      example table in `WORLD.md` into a complete, testable matrix.
-- [ ] **Lead pool** — mystery beats + payoffs (Nursery and side leads).
-      Record logs facts after the fact; the pool is what those facts
-      are *about*.
-- [ ] **Sanctuary upgrade costs** — storage, crafting, morgue, Gate UI
-      as a progression, with costs that respect tiny bags.
-- [ ] **Corruption / stalker tuning** — rise rate, death spike, depth
-      scaling, Quiet vs later districts, whether the stalker crosses
-      gates.
-- [ ] **Corpse vs morgue recovery** — is the haul always gone, or is
-      there a corpse with teeth? L2 says haul is lost; the fiction of
-      the body is still open.
-- [ ] **Co-op Gate UX** — party leader opens; what everyone else sees;
-      ready check or not; someone connecting late.
-- [ ] **WotLK map / instance IDs per district** — fill the TBD columns
-      in `WORLD.md`. Including 12 underlayers.
-- [ ] **District bible** — one-pager each for Sanctuary, Mouth, 15
-      surface districts, and 12 underlayers (mood, hook, forage, gate
-      in/out, stalker pressure).
-- [ ] **12 underlayer names** — one under each Ring 1–3 surface.
-- [ ] **Threshold 4 paths layout** — how Cut / Ash / Salt / Quiet are
-      *seen* from the Mouth without becoming a tutorial quest.
-- [ ] **Item clone table with final names** — original IP names on the
-      `CONTENT.md` clone list; still no WoW names player-facing.
-- [ ] **Spoilage timers, final stack sizes** — meat / stew / water and
-      any tea/tincture/salve/ward stacks.
-- [ ] **MPQ Tier A file list** — actual filenames for load screens,
-      meter icons, core item icons.
+- [x] Catalog + C++ specials + fodder SmartAI
+- [x] POC spawns in Rotwood (phase 2)
+- [ ] Sleeper damage tune
+- [ ] MPQ Sleeper eyes
+- [ ] Persistent run health — `RegenHealth=0` (90001–90010); base AI keeps HP on evade/reset (Brute leash, Stalker flee); Director last-HP clamp; clear on `OnRunStart`
+- [ ] Animal layer (90101+) — Rotwood Boar / Hound (worg model) / Deer / Hare, rare Rotwood Tusker; drops feed Hunger + barter
+- [x] Animal naming convention `<District> <Kind>` locked in `NAMES.md`
 
-## Implementation (not AICraft)
+## Items & crafting
 
-- [x] **Deploy pipeline separate from AICraft** — spec in
-      `docs/DEPLOY.md`. Isolation agreed. Live/dev folders, ports,
-      and external-disk ops tree written. Clone/build AC still waits
-      for the rest of Step 2.
-- [ ] **AC module skeleton** — Step 2. Source in `src/mod-fractured`
-      (stubs: meters, Gate, morgue). Compile after AC clone +
-      `scripts/link-module.sh`.
+- [x] `MATERIALS.md` — raw catalog (dropped / foraged / mined / scavenged, incl. reclaimed metals)
+- [x] `CRAFTING.md` — recipes (food/drink/refining/smelt/forge), discovery (fragments + experiment/hints), stations, durability/mend
+- [x] Discovery tree pinned — Tier 0 given vs milestone gates (Charcoal→Forge spine; tanning, brewing, distilling, preservation, waterproofing)
+- [x] `GEAR.md` — upgrade-only (no drops): crude dagger + rags start; weapon styles (dual-wield vs 2H); armour classes cloth→plate; slots/axes
+- [x] `ITEMS.md` — made & found catalog (crafting→breaking), invisible quality tiers, + fishing, expanded forage/mushrooms, traps, poisons
+- [x] Armour ladder — full entry→endgame tiers per class (Leather: Boiled/Studded/Hardened; Mail: Ring/Riveted/Splinted; Plate: Half/Full); layering + endgame-per-playstyle
+- [x] Weapon ladder — entry→endgame (shared early blade → dual-wield vs 2H); iron/steel/bronze tradeoffs; weapon-as-tool utility (butcher/wood)
+- [ ] Gear tuning — per-slot wear rates, tier count (3 vs 4), diagram gating, skinning-knife slot for 2H builds
+- [ ] Item tuning — per-item IDs (60xxx), poison balance, fish/trap yields, mushroom tells
+- [x] Bulk model — items have bulk 1/2/4; bags/satchel are bulk pools (worn = free); v1 = capacity budget
+- [ ] Fancy grid inventory (future) — footprint UI in ThalvaethUI + server-side virtual inventory (bulk values become footprints)
+- [ ] Assign per-item IDs in the 61xxx material bands
 
-## Explicitly not on this list
+## Economy
 
-- Building AzerothCore during Step 1.
-- Fixing AutoBalance for “Scott + 9 bots in Molten Core” (AiCraft-WotLK
-  only).
-- Post-launch content patches as a substitute for L14.
+- [ ] `ECONOMY.md` — tiered barter (no coin), material ladder, Monastery keepers
+- [x] Corruption replaced by **Infection** (plague raises, Stitch/tincture cures)
+- [x] Survival interlock — `SURVIVAL.md` (Vigor hub; meters erode Vigor; collapse-only fail)
+- [ ] Survival tuning — Vigor field ceiling + walk trickle; Hunger/Thirst tick vs exertion; Infection rise/cure/Fevered thresholds
+- [ ] Gather satchel — allow-list, size + upgrade curve, lost-on-death
+- [ ] Survival clocks — Hunger + Thirst tuning; raw-meat spoil timer
+
+## Journal / UI
+
+- [x] Journal table + addon wire stub
+- [ ] Journal panel UI
+
+## Aptitudes & charms
+
+- [x] Charm/aptitude items — charms grant aptitudes (2 slots; aptitude vs passive); craft from materials; invisible quality; upgradeable
+- [ ] Confirm charm slot count; pick which proposed aptitudes (Night Eyes / Iron Gut / Deadened Step / Steady Hand / Second Wind) ship v1
+
+## Core
+
+- [ ] Spell strip + Remnant first login
+- [ ] Port Hearthglen ↔ Rotwood entry
+- [ ] Stress Director (full)

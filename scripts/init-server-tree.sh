@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Create Fractured live+dev folders. Idempotent.
-# Default logical path is /home/scott/fractured-server (may be a
+# Create Thalvaeth live+dev folders. Idempotent.
+# Default logical path is /home/scott/thalvaeth-server (may be a
 # symlink onto the always-on external disk; see docs/DEPLOY.md).
 # Does not clone AzerothCore. Does not touch AICraft.
 set -euo pipefail
 
-ROOT="${FRACTURED_SERVER_ROOT:-/home/scott/fractured-server}"
+ROOT="${FRACTURED_SERVER_ROOT:-/home/scott/thalvaeth-server}"
 
 mkdir -p \
   "$ROOT/src" \
@@ -25,9 +25,9 @@ mkdir -p \
   "$ROOT/build-dev"
 
 cat > "$ROOT/README" << 'EOF'
-Fractured server tree. Not AICraft.
+Thalvaeth server tree. Not AICraft.
 
-  Logical path: /home/scott/fractured-server
+  Logical path: /home/scott/thalvaeth-server
   Real tree may live on the 2TB USB 3 SSD (symlink).
 
   src/azerothcore   clone AzerothCore here (later)
@@ -38,10 +38,10 @@ Fractured server tree. Not AICraft.
   build-live/       CMake build (live)
   build-dev/        CMake build (dev)
 
-Module: /home/scott/fractured/src/mod-fractured
-Link:   bash /home/scott/fractured/scripts/link-module.sh
-Ports:  /home/scott/fractured/docs/DEPLOY.md
-Disk:   /home/scott/fractured/docs/DEPLOY.md (2TB USB 3 SSD)
+Module: /home/scott/thalvaeth/src/mod-thalvaeth
+Link:   bash /home/scott/thalvaeth/scripts/link-module.sh
+Ports:  /home/scott/thalvaeth/docs/DEPLOY.md
+Disk:   /home/scott/thalvaeth/docs/DEPLOY.md (2TB USB 3 SSD)
 EOF
 
 echo "Server tree ready under $ROOT"

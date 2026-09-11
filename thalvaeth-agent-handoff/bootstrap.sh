@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-AC_ROOT="${1:-../Fractured}"
+AC_ROOT="${1:-../Thalvaeth}"
 CLIENT_DIR="${2:-$HOME/Wow/Interface/AddOns}"
 
 echo "==> Thal'vaeth bootstrap"

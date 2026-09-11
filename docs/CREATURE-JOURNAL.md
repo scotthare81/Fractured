@@ -147,4 +147,4 @@ Wire format: `THALVAETH\t<opcode>~<payload>`. Only entries in the catalog band (
 - [CREATURES.md](CREATURES.md) — full roster, AI behavior, ability spell map
 - [NAMES.md](NAMES.md) — locked names
 - [APTITUDES.md](APTITUDES.md) — how the Remnant answers what the journal records
-- [HANDOFF.md](../HANDOFF.md)
+- [HANDOFF.md](../thalvaeth-agent-handoff/HANDOFF.md)

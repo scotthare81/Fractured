@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Push current branch to Fractured (not AiCraft).
+# Push current branch to Thalvaeth (not AiCraft).
 set -euo pipefail
 
-FRACTURED_URL="${FRACTURED_URL:-https://github.com/scotthare81/Fractured.git}"
+FRACTURED_URL="${FRACTURED_URL:-https://github.com/scotthare81/Thalvaeth.git}"
 BRANCH="${1:-$(git branch --show-current)}"
-REMOTE="${FRACTURED_REMOTE:-fractured}"
+REMOTE="${FRACTURED_REMOTE:-thalvaeth}"
 
 if ! git remote get-url "$REMOTE" &>/dev/null; then
   echo "==> Adding remote '$REMOTE' -> $FRACTURED_URL"
