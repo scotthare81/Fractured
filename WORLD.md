@@ -1,5 +1,9 @@
 # Fractured — World
 
+> **⚠ Status — superseded for the current build.** This describes the **multi-district co-op ring network** — the *earlier / possible-expansion* vision. The **current build is solo, single-run**: home = **Thal'vaeth Monastery**, first run = **Rotwood** (see [`MAPS.md`](thalvaeth-agent-handoff/docs/MAPS.md), [`CREATURES.md`](thalvaeth-agent-handoff/docs/CREATURES.md), [`DIRECTOR.md`](thalvaeth-agent-handoff/docs/DIRECTOR.md)). Whether this ring network is *dead* or a *future expansion* is [Scott's open call](DESIGN.md). Keep for reference; the Thal'vaeth docs win where they disagree.
+
+---
+
 The Wild is a **parallel district network**, not a linear corridor.
 
 The old line **Threshold → Thorn → Ruins → Deep** is retired. Do not

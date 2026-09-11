@@ -6,6 +6,31 @@ are marked TBD. Everything else is a lock or a working rule, not a stub.
 Fractured is a private friend-project on AzerothCore WotLK 3.3.5a (engine
 only). Player-facing names, lore, and UI copy are original IP.
 
+---
+
+> **⚠ Status — partly superseded.** The **current build direction is the Thal'vaeth layer** in [`thalvaeth-agent-handoff/docs/`](thalvaeth-agent-handoff/docs/) — solo, single-run Rotwood; Infection; Vigor; aptitudes; barter; upgrade-only gear. This file is the **earlier, broader Fractured vision**; where the two disagree, **the Thal'vaeth docs win.**
+
+**Old (this doc) → current (Thal'vaeth):**
+
+| Topic | This doc (earlier) | Current build |
+|-------|--------------------|---------------|
+| Home hub | Sanctuary | **Thal'vaeth Monastery** (Hearthglen) |
+| The Wild | 2–4 **co-op**, instanced **ring network** (~29 spaces) | **Solo**, single walled run district (**Rotwood**), map 0 |
+| Survival meters | Hunger / Thirst / **Corruption** | Hunger / Thirst / **Vigor** / **Infection** |
+| Creatures | forage beasts + magical **Shades** | **Humanoid** roster + **animal layer** (boar/hound); no magical species |
+| Player | class-agnostic survivor | **Remnant** (Human + Rogue chassis, spells stripped) |
+| Abilities | class spells / TBD | **Aptitudes** via **charms**; Vigor-powered |
+| Currency | (implied gold) | **No coin** — tiered barter off materials |
+| Gear | find loot | **Upgrade-only** (no drops); crafted/discovered |
+| Damage | standard | **Persists within a run** (no heal-back) |
+| Pressure | the stalker + Corruption | invisible **Director** ([DIRECTOR.md](thalvaeth-agent-handoff/docs/DIRECTOR.md)) |
+
+**Revised locks:** L11 (co-op → **solo**), L12 (AutoBalance → n/a for solo), and the Corruption parts of L2 / L13 (→ **Infection**).
+
+**Open — Scott's call:** is the multi-district **co-op ring network** *dead*, or *shelved as a future expansion*? Everything current assumes **solo, single-run**. Until you decide, treat the ring/co-op material below as historical/aspirational, not the build.
+
+---
+
 ## Pitch
 
 Survive the Wild. Corrupt. Break. Wake in Sanctuary and go again.
