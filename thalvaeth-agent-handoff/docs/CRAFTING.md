@@ -211,4 +211,4 @@ Every node here is a **choice**: the same Charcoal smelts a blade *or* filters w
 - [SURVIVAL.md](SURVIVAL.md) — Hunger / Thirst / Vigor / Infection these feed
 - [ECONOMY.md](ECONOMY.md) — materials are also currency; repair competes with barter
 - [CONTENT.md](CONTENT.md) — item band, trades, spawn kit
-- `GEAR.md` — upgrade-only gear/weapons + per-slot wear — *next pass*
+- [GEAR.md](GEAR.md) — upgrade-only gear/weapons + per-slot wear

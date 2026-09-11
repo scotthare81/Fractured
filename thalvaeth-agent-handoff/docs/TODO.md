@@ -26,7 +26,8 @@
 - [x] `MATERIALS.md` — raw catalog (dropped / foraged / mined / scavenged, incl. reclaimed metals)
 - [x] `CRAFTING.md` — recipes (food/drink/refining/smelt/forge), discovery (fragments + experiment/hints), stations, durability/mend
 - [x] Discovery tree pinned — Tier 0 given vs milestone gates (Charcoal→Forge spine; tanning, brewing, distilling, preservation, waterproofing)
-- [ ] `GEAR.md` — upgrade-only gear/weapons (no drops), slots, upgrade axes, per-slot wear rates
+- [x] `GEAR.md` — upgrade-only (no drops): crude dagger + rags start; weapon styles (dual-wield vs 2H); armour classes cloth→plate; slots/axes
+- [ ] Gear tuning — per-slot wear rates, tier count (3 vs 4), diagram gating, skinning-knife slot for 2H builds
 - [ ] Assign per-item IDs in the 61xxx material bands
 
 ## Economy

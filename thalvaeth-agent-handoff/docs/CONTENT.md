@@ -33,11 +33,14 @@ Raw **materials / currency** (hide, sinew, ashbloom, salt, resin, tusk, raw meat
 
 ## Spawn kit (Remnant)
 
+The whole start is crude — a blade and rags. Everything else is crafted/upgraded (**no gear drops**): [GEAR.md](GEAR.md).
+
 | Slot | Item | Ref |
 |------|------|-----|
-| Head | Hooded Cowl | 3732 display |
-| Body | Patchwork set | TBD entries |
-| Bag | Small Brown Pouch | 4496 |
+| Main hand | **Crude Dagger** | crude blade; first butcher tool |
+| Body | **Rag Armour** (cloth) | patchwork/rags — ~no protection |
+| Head | Rag Hood | 3732 display |
+| Bag | Small Brown Pouch (+ satchel) | 4496 |
 
 ## Race / class
 
