@@ -45,6 +45,21 @@ Player = **Remnant**. Class shown as Remnant in UI (Rogue chassis).
 
 ---
 
+## Animals (per-district)
+
+Fauna are named **`<District> <Kind>`** — the run you're in supplies the prefix. Mainstays are **Hound** (predator) and **Boar** (forage beast).
+
+| Kind | In Rotwood | Model |
+|------|-----------|-------|
+| Predator | **Rotwood Hound** | worg display (never "worg" in UI) |
+| Forage beast | **Rotwood Boar** | boar display |
+| Neutral | **Rotwood Deer**, **Rotwood Hare** | deer / hare display |
+| Rare / elite | **Rotwood Tusker** | apex boar |
+
+The same kind in a future run district takes that district's prefix (e.g. `<District> Hound`). Original IP holds (L15): the worg model always reads as a **Hound**.
+
+---
+
 ## Retired (do not use)
 
 | Old name | Reason |

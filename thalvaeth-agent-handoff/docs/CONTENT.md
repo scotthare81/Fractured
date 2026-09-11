@@ -21,7 +21,7 @@ Raw **materials / currency** (hide, sinew, ashbloom, salt, resin, tusk, raw meat
 | **Hunger** | In | Fed by cooked/raw meat from the animal layer; raw is worse than stew |
 | **Thirst** | In | Water is a main-bag consumable; Burn/heat makes it bite |
 | **Vigor** | In | Stamina pool per segment; no magic regen ([APTITUDES.md](APTITUDES.md)) |
-| **Corruption** | **Under review** | Considering replacing with **Rot** (infection meter), **Dread/Nerve**, or dropping it — [ECONOMY.md](ECONOMY.md) Open |
+| **Fester** (infection) | Replacing Corruption — name working | Plague creatures raise it; Stitching / tinctures cure it; too high = debuffs. Not "Rot" (Rotwood owns it) — [ECONOMY.md](ECONOMY.md) Open |
 
 ## Cooking, trades & the satchel
 

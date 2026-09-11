@@ -207,17 +207,19 @@ Not in the shipped catalog (would be **90011**). Neutral-until-provoked seated h
 
 A second roster runs alongside the humanoid castoffs: real beasts, mundane bodies — the wild that preys on both you and the dead. This does **not** demote the humanoid horror roster; it's a parallel ecology that feeds the **Hunger** clock (meat) and the **barter economy** (hide, sinew, tusk) — see [ECONOMY.md](ECONOMY.md). Persistent run health applies here too: a rare beast can be worn down across a run, not just one-shot.
 
-Proposed band **90101+** (kept clear of the humanoid `90001–90019`). Display IDs are stock boar / worg / deer models (TBD). Names are **working** until locked in [NAMES.md](NAMES.md).
+Proposed band **90101+** (kept clear of the humanoid `90001–90019`). Display IDs are stock boar / worg / deer models (TBD).
 
-| Tier | Working name | Kind | Behavior | Drops |
-|------|--------------|------|----------|-------|
+**Naming convention (locked):** animals are **`<District> <Kind>`** — the run supplies the prefix. Mainstays are **Hound** (predator) and **Boar** (forage beast); the same beast in a future district takes that district's prefix. See [NAMES.md](NAMES.md).
+
+| Tier | Name (in Rotwood) | Kind | Behavior | Drops |
+|------|-------------------|------|----------|-------|
 | Neutral | **Rotwood Deer** | deer | Flees; low threat | Venison (Hunger), Raw Hide, Sinew |
-| Neutral | **Hare** | small game | Bolts | Small meat, scrap hide |
-| Hostile | **Boar** | forage beast | Aggressive, esp. while you butcher | Pork (Hunger), Raw Hide, **Boar Tusk** |
-| Hostile | **Gaunt Hound** *(was "worg")* | predator | Territorial; guards nodes; packs | Raw Hide, Fang / Claw, Sinew |
-| Rare / elite | **Tusker** *(working)* | apex boar | A hunt — rare spawn, high HP | More / better Uncommon mats + gear (no unique mark) |
+| Neutral | **Rotwood Hare** | small game | Bolts | Small meat, scrap hide |
+| Hostile | **Rotwood Boar** | forage beast | Aggressive, esp. while you butcher | Pork (Hunger), Raw Hide, Tusk |
+| Hostile | **Rotwood Hound** | predator (worg model) | Territorial; guards nodes; packs | Raw Hide, Fang / Claw, Sinew |
+| Rare / elite | **Rotwood Tusker** | apex boar | A hunt — rare spawn, high HP | More / better Uncommon mats + gear (no unique mark) |
 
-Naming: **Boar** is fine player-facing (a real animal). **"Worg"** reads WoW/fantasy, so it's renamed **Gaunt Hound** (mundane, starvation/plague-flavored) — internal model stays a worg display. Original-IP holds (L15): no "worg" in the UI. Same mundane-body rule as the humanoids — no spectral or magical beasts.
+Original IP holds (L15): the **worg model ships as a Hound** — never "worg" in the UI. Same mundane-body rule as the humanoids — no spectral or magical beasts.
 
 Blades pull double duty again: the knife (5278) / cleaver **butcher** these for meat + hide *and* strip the human dead + salvage. Rare/elite beasts reward volume, quality, and gear — not a currency token (there is no rare mark; [ECONOMY.md](ECONOMY.md)).
 
@@ -337,7 +339,7 @@ Defer: Watcher, vermin rat, district alts.
 
 ## Retired tags (do not use)
 
-The **humanoid castoffs stay the primary horror roster**; animals are a *secondary* fauna layer (Boar, Gaunt Hound, deer/hare, rare Tusker — see [Animal layer](#animal-layer--neutral--hostile--rare)), not the identity of the Wild. Still off the table: **L4D names** (Husk, Vault, Gloam, …), **magical species as defaults** (Shade, Wraith, Banshee), and **"worg" in player-facing text** (use Gaunt Hound). Boar and worg-as-Gaunt-Hound are no longer retired.
+The **humanoid castoffs stay the primary horror roster**; animals are a *secondary* fauna layer (Rotwood Boar, Rotwood Hound, deer/hare, rare Rotwood Tusker — see [Animal layer](#animal-layer--neutral--hostile--rare)), not the identity of the Wild. Still off the table: **L4D names** (Husk, Vault, Gloam, …), **magical species as defaults** (Shade, Wraith, Banshee), and **"worg" in player-facing text** (use the district Hound). Boar and the worg model (now the district Hound) are no longer retired.
 
 ---
 

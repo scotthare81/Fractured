@@ -78,8 +78,8 @@ Documentation notes so nobody wires gold back in:
 
 | Item | Notes |
 |------|--------|
-| **Corruption's fate** | Hunger + Thirst are in. Corruption is **under review** — replace with **Rot** (infection meter: plague raises it, Stitch/tincture cures it), **Dread/Nerve**, or drop it. Affects what Brewing teas target. |
-| Worg name | Working journal name **Gaunt Hound** — pending lock in [NAMES.md](NAMES.md) |
+| **Infection meter** | Replaces Corruption (decided). Plague creatures raise it; Stitching / tinctures cure it; too high = debuffs. **Name working: Fester** (not "Rot" — Rotwood owns it); alts Canker / Gangrene / Miasma. Brewing teas now target it. |
+| Animal names | Convention **`<District> <Kind>`** locked (Rotwood Hound / Boar / Deer / Hare / Tusker) — [NAMES.md](NAMES.md) |
 | Node placement | Which gather nodes seed Rotwood, and density per segment ([RUN-GATES.md](RUN-GATES.md)) |
 | Satchel size / upgrade curve | Starting slots and Stitcher upgrade steps |
 | Spoil timers | Raw meat clock; render vs eat break-even |
