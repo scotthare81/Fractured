@@ -2,6 +2,8 @@
 
 **Survive the Wild. Corrupt. Break. Wake in Sanctuary and go again.**
 
+> **⚠ Status — partly superseded.** The current build direction is the **Thal'vaeth layer** in [`thalvaeth-agent-handoff/docs/`](thalvaeth-agent-handoff/docs/) — solo, single-run **Rotwood**; home **Thal'vaeth Monastery**; Infection; Vigor; aptitudes; barter; upgrade-only gear. Where this README's older framing (Sanctuary, co-op) disagrees, the Thal'vaeth docs win. Full mapping + the open co-op-vs-solo call: [DESIGN.md](DESIGN.md).
+
 Fractured is a private friend-project: horror survival on the AzerothCore
 Wrath of the Lich King 3.3.5a engine. Player-facing content is original IP.
 No Star Wars. No World of Warcraft names in what players see.

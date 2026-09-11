@@ -1,5 +1,7 @@
 # Fractured — Build sequence
 
+> **⚠ Status — superseded.** This step sequence targets the earlier **ring-network** vision (Sanctuary / Mouth / Cut). The **current build is the Thal'vaeth solo POC**: home **Thal'vaeth Monastery** → run **Rotwood** ([`../thalvaeth-agent-handoff/docs/MAPS.md`](../thalvaeth-agent-handoff/docs/MAPS.md), [`TODO.md`](../thalvaeth-agent-handoff/docs/TODO.md)). Reconciliation + open canon call: [`../DESIGN.md`](../DESIGN.md).
+
 Go **one step at a time**. Finish the current step before starting the
 next. The 29-space network, MPQ polish, and mystery leads wait until
 the loop is playable.

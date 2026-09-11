@@ -1,5 +1,7 @@
 # Fractured — Content
 
+> **⚠ Status — superseded.** The items / creatures / survival here are the **earlier Fractured model** (Hunger/Thirst/Corruption, forage beasts, Shades, clone IDs). The **current build** is the Thal'vaeth layer — see [`MATERIALS.md`](thalvaeth-agent-handoff/docs/MATERIALS.md), [`ITEMS.md`](thalvaeth-agent-handoff/docs/ITEMS.md), [`CRAFTING.md`](thalvaeth-agent-handoff/docs/CRAFTING.md), [`CREATURES.md`](thalvaeth-agent-handoff/docs/CREATURES.md). Mapping + open call: [DESIGN.md](DESIGN.md).
+
 Items, creatures, crafting chains, and client patch (MPQ) notes. Player-
 facing names and stats are original. Visuals may clone obscure WotLK
 assets.
