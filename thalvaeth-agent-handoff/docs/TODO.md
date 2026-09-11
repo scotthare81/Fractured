@@ -30,6 +30,7 @@
 - [x] `GEAR.md` — upgrade-only (no drops): crude dagger + rags start; weapon styles (dual-wield vs 2H); armour classes cloth→plate; slots/axes
 - [x] `ITEMS.md` — made & found catalog (crafting→breaking), invisible quality tiers, + fishing, expanded forage/mushrooms, traps, poisons
 - [x] Armour ladder — full entry→endgame tiers per class (Leather: Boiled/Studded/Hardened; Mail: Ring/Riveted/Splinted; Plate: Half/Full); layering + endgame-per-playstyle
+- [x] Weapon ladder — entry→endgame (shared early blade → dual-wield vs 2H); iron/steel/bronze tradeoffs; weapon-as-tool utility (butcher/wood)
 - [ ] Gear tuning — per-slot wear rates, tier count (3 vs 4), diagram gating, skinning-knife slot for 2H builds
 - [ ] Item tuning — per-item IDs (60xxx), poison balance, fish/trap yields, mushroom tells
 - [x] Bulk model — items have bulk 1/2/4; bags/satchel are bulk pools (worn = free); v1 = capacity budget

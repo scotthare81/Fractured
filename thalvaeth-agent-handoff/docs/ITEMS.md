@@ -186,7 +186,7 @@ Butcher Knife · Skinning Knife · Cleaver · Woodcutter's Axe · Pick (mine) ·
 
 ## 11. Weapons → [GEAR.md](GEAR.md)
 
-Crude Dagger (start) → Fitted Knife → Steel Blade → **fork:** dual-wield 1H swords/daggers *(fast; daggers butcher)* **or** Greatsword/Greataxe *(slow, heavy; needs a skinning knife)*. Variants by material + inlay.
+Crude Dagger (start) → Flint/Bone → Iron Knife → Steel Blade → **fork:** dual-wield 1H swords/daggers *(fast; daggers butcher)* **or** Greatsword/Greataxe *(slow, heavy; axe chops wood; needs a skinning knife)*. Full **entry-to-endgame ladder** + material tradeoffs (iron/steel/bronze) in [GEAR.md](GEAR.md).
 
 ---
 

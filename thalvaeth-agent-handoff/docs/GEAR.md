@@ -43,6 +43,45 @@ Everyone starts with the **crude dagger** and climbs a shared early line: `Crude
 
 ---
 
+### The weapon ladder — entry to endgame
+
+Weapons climb **material tiers** (gated by the discovery tree — metal needs Charcoal→Forge, keen edges need Steelworking) and **fork into a style** at the top. Every blade rolls an **invisible quality** (*"keen"* vs *"chipped"*) and **dulls with use** ([CRAFTING.md](CRAFTING.md)).
+
+**Shared early line (before you commit)**
+
+| Tier | Weapon | Made from | Note |
+|------|--------|-----------|------|
+| Start | **Crude Dagger** | bound scrap | Also your first butcher tool |
+| Pre-forge | **Flint / Bone Blade** | knapped flint / bone | Crude but sharp; no metal yet |
+| Iron | **Iron Knife / Short Blade** | iron + haft (needs Forge) | First real blade |
+| Steel | **Steel Blade** | steel + haft | Keen, holds an edge — commit to a style here |
+
+**Dual-wield line — fast** *(bulk 1–2)*
+
+| Tier | Weapon | Feel |
+|------|--------|------|
+| Entry | **Fighting Dagger / 1H Shortsword** (iron) | Quick, low per-hit |
+| Mid | **Paired Daggers / Steel Shortswords** | Flurry, bleed |
+| Endgame | **Twin Blades** (masterwork daggers or 1H swords) | Fast, mobile, bleed-heavy; **daggers also butcher** |
+
+**Two-handed line — heavy** *(bulk 4)*
+
+| Tier | Weapon | Feel |
+|------|--------|------|
+| Entry | **War Cleaver / Iron Greatblade** | Slow, big; cleaver also butchers heavy |
+| Mid | **Steel Greatsword / Greataxe** | Huge hits, stagger / cleave |
+| Endgame | **Masterwork Greatsword / Greataxe** | Max damage, reach, stagger; **poor butcher → carry a skinning knife**; the **greataxe also chops wood** (deadwood → charcoal) |
+
+**Material tradeoffs — a side choice, not just "up":**
+
+| Metal | Feel |
+|-------|------|
+| Iron | Reliable, common scrap |
+| Steel | Keen, holds its edge longest — best blades |
+| Bronze | **Lighter** (less Vigor per swing) but **softer** (dulls faster → more upkeep) — a Vigor-light side-grade |
+
+**Secondary utility (a weapon is also a survival tool):** daggers/knife **butcher**; the **greataxe chops wood**; the **cleaver** butchers heavy. A pure greatsword is combat-only — strongest in a fight, but you'll still haul a knife. Your weapon shapes your survival economy, not just your damage number.
+
 ## Armour — weight classes (rags → plate)
 
 Armour climbs **weight classes**, each gated by a discovery and each a **build identity** — heavier trades quiet and stamina for survivability. It is *not* just a bigger number.
