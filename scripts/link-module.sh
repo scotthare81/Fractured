@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# Symlink the Fractured git module into the Fractured AzerothCore tree.
+# Symlink the Thalvaeth git module into the Thalvaeth AzerothCore tree.
 # Never run this against AICraft.
 set -euo pipefail
 
 # FRACTURED_AC may follow a symlink onto the always-on external disk.
-REPO="${FRACTURED_REPO:-/home/scott/fractured}"
-AC="${FRACTURED_AC:-/home/scott/fractured-server/src/azerothcore}"
-MOD_SRC="$REPO/src/mod-fractured"
-MOD_DST="$AC/modules/mod-fractured"
+REPO="${FRACTURED_REPO:-/home/scott/thalvaeth}"
+AC="${FRACTURED_AC:-/home/scott/thalvaeth-server/src/azerothcore}"
+MOD_SRC="$REPO/src/mod-thalvaeth"
+MOD_DST="$AC/modules/mod-thalvaeth"
 
 if [[ "$AC" == *aicraft* ]]; then
   echo "Refusing to link into an AICraft path: $AC" >&2

@@ -7,7 +7,7 @@ Survival-horror extraction on AzerothCore 3.3.5a.
 ## Quick start
 
 ```bash
-chmod +x bootstrap.sh thalvaeth-agent-handoff/scripts/push-fractured.sh
+chmod +x bootstrap.sh thalvaeth-agent-handoff/scripts/push-thalvaeth.sh
 ./bootstrap.sh /path/to/Thalvaeth ~/Wow/Interface/AddOns
 ```
 

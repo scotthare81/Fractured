@@ -33,7 +33,7 @@ You are a **Remnant** — one of the last who still walks the Wild. Leave the **
 |------|------|
 | `docs/` | Design canon (above) + ops |
 | `thalvaeth-agent-handoff/` | Implementation package — C++ script stubs, pending SQL, ThalvaethUI addon (awaiting integration) |
-| `src/mod-fractured/` | AzerothCore module skeleton |
+| `src/mod-thalvaeth/` | AzerothCore module skeleton |
 | `scripts/` | Server-tree + module-link helpers |
 
 ## Build
