@@ -19,6 +19,9 @@ You are a **Remnant** — one of the last who still walks the Wild. Leave the **
 - [JOURNAL-CONTENT.md](docs/JOURNAL-CONTENT.md) — concrete v1 Journal entries and reveal states
 - [JOURNAL-HINTS.md](docs/JOURNAL-HINTS.md) — canonical near-miss hint library and persistence rules
 - [DISCOVERY-SOLUTIONS.md](docs/DISCOVERY-SOLUTIONS.md) — authoritative recipe truth, failure precedence, corrections, hint mappings and successful outcomes
+- [JOURNAL-IMPLEMENTATION-SPEC.md](docs/JOURNAL-IMPLEMENTATION-SPEC.md) — server authority, persistence, keys, sync protocol and experiment evaluator contract
+- [JOURNAL-UI-SPEC.md](docs/JOURNAL-UI-SPEC.md) — layout, silhouettes, tabs, field notes, gear trees and interaction rules
+- [JOURNAL-V1-SLICE.md](docs/JOURNAL-V1-SLICE.md) — exact first playable slice and acceptance scenarios
 - [CREATURE-JOURNAL.md](docs/CREATURE-JOURNAL.md) — creature-specific Unknown → Sighted → Engaged progression
 
 **Creatures**
