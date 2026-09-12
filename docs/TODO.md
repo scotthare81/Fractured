@@ -37,6 +37,7 @@
 - [x] Bulk model — items have bulk 1/2/4; bags/satchel are bulk pools (worn = free); v1 = capacity budget
 - [ ] Fancy grid inventory (future) — footprint UI in ThalvaethUI + server-side virtual inventory (bulk values become footprints)
 - [ ] Assign per-item IDs in the 61xxx material bands
+- [ ] Author meaningful near-miss rules + stable hint keys for v1 recipes (not generic random-combination hints)
 
 ## Economy
 
@@ -49,8 +50,19 @@
 
 ## Journal / UI
 
-- [x] Journal table + addon wire stub
-- [ ] Journal panel UI
+- [x] Creature journal table + addon wire stub
+- [x] Journal Record design — **Creatures / Survival / Gear** tabs, silhouettes/obscured knowledge, persistent near-miss hints (`JOURNAL-RECORD.md`)
+- [ ] Build tabbed Journal Record shell in `ThalvaethUI`
+- [ ] Full server→addon state sync after login and `/reload` (server authoritative; no SavedVariables discovery authority)
+- [ ] Render Creature tab: Unknown silhouette → Sighted → Engaged/observed
+- [ ] Wire `observed_abilities` spell→journal-key capture
+- [ ] Add generic per-character discovery persistence for recipe/material/gear/hint knowledge
+- [ ] Render Survival categories: Food / Water / Medicine / Herbs & Fungi / Fishing / Poisons / Traps & Fieldcraft
+- [ ] Implement near-miss craft evaluation → persistent diegetic hints; duplicate mistakes do not create duplicate knowledge
+- [ ] Render Gear categories: Weapons / Armour / Tools / Charms with partially obscured upgrade trees
+- [ ] Author/set unknown silhouettes and greyed icons so hidden names cannot leak through tooltips/search/sort data
+- [ ] Add restrained `Journal updated` notification levels (new entry / hint / observation)
+- [ ] Journal art polish only after functional discovery loop is proven
 
 ## Aptitudes & charms
 
