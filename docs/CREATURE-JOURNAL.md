@@ -1,6 +1,8 @@
 # Creature journal
 
-The creature journal is the **bestiary** — the Remnant's private field notes on what walks the Wild. It is a subset of the Journal Record and obeys the same law: it logs **what you learned**, after you learned it. It never tells you what to do next, never tracks an objective, never points at the designer-intended beat.
+The creature journal is the **bestiary** — the Remnant's private field notes on what walks the Wild. It is the **Creatures tab** of the broader [Journal Record](JOURNAL-RECORD.md) and obeys the same law: it logs **what you learned**, after you learned it. It never tells you what to do next, never tracks an objective, never points at the designer-intended beat.
+
+The shared Journal presentation rule applies here: **unknown creatures are silhouettes / greyed, unreadable entries**. Their identity is not shown behind a lock icon.
 
 **Bestiary content + roster:** [CREATURES.md](CREATURES.md) — humanoid-first, mundane bodies, spell-like **abilities** OK.
 
@@ -8,7 +10,7 @@ Shipped implementation this doc describes:
 `src/mod-thalvaeth/data/sql/updates/pending_db_world/rev_thalvaeth_creature_catalog.sql` (catalog),
 `src/mod-thalvaeth/data/sql/updates/pending_db_characters/rev_thalvaeth_creature_journal.sql` (per-player state),
 `src/mod-thalvaeth/src/ThalvaethCreatureJournal.cpp` (tier hooks + addon sync),
-`src/mod-thalvaeth/client/ThalvaethUI/` (panel).
+`src/mod-thalvaeth/client/ThalvaethUI/` (panel stub).
 
 ---
 
@@ -18,9 +20,9 @@ Knowledge is earned in three steps. A creature is not a checklist entry you tick
 
 | Tier | How you reach it | What the journal shows |
 |------|------------------|------------------------|
-| **Unknown** | No encounter yet | Silhouette only (`silhouette_icon`), tag hidden |
-| **Sighted** | Mouse over / target a catalog creature within **25y** | `journal_name` + `sighted_description` + tag |
-| **Engaged** | That creature **enters combat** with you | Adds observed max HP and (designed) the abilities you witnessed |
+| **Unknown** | No encounter yet | Grey silhouette / obscured icon; name masked |
+| **Sighted** | Mouse over / target a catalog creature within **25y** | `journal_name` + `sighted_description` + intentionally player-facing classification |
+| **Engaged** | That creature **enters combat** with you | Adds observed vitality/health and (designed) the abilities you witnessed |
 
 Triggers are grounded in `ThalvaethCreatureJournal.cpp`:
 
@@ -55,7 +57,7 @@ Two tables. The **catalog** is shared world content (what a creature *is*); the 
 | `creature_entry` | Catalog entry |
 | `sighted_at` | Unix time of first sight (0 = not yet) |
 | `engaged_at` | Unix time of first combat (NULL = never) |
-| `observed_health_max` | Max HP you saw — the journal reports what *you* witnessed, not a datamined value |
+| `observed_health_max` | Max HP you saw — retained as observed data; UI may render a diegetic vitality band instead of the raw number |
 | `observed_abilities` | Abilities you've seen it use *(designed; not yet written — see Open)* |
 
 Primary key `(guid, creature_entry)`; upserts are idempotent.
@@ -73,7 +75,7 @@ Intended loop:
 3. The key is appended to your `observed_abilities`.
 4. The journal shows the value's `name` (*"Throws a hook"*) and `note` (*"Drags you into the choke."*).
 
-Until you've witnessed it, the ability line stays blank — you know *that* it fights, not *how*, which preserves the first-encounter dread.
+Until you've witnessed it, the ability line stays absent or obscured — you know *that* it fights, not *how*, which preserves the first-encounter dread.
 
 > **Status:** the `observed_abilities` column and every creature's `ability_map` are the plumbing for this, but the Engaged hook currently records only `observed_health_max`. Wiring spell→key capture is open work (see Open, and the `ability_map` rows proposed in [CREATURES.md](CREATURES.md)).
 
@@ -98,11 +100,11 @@ Player = **Remnant**. Wild humanoids ≠ Remnants — the journal describes *the
 
 | Tier | Panel shows |
 |------|-------------|
-| Unknown | Grey silhouette (`silhouette_icon`), name masked ("— — —") |
-| Sighted | Name, sighted line, tag word; abilities hidden |
-| Engaged | Adds "Observed HP", and an ability list that fills in as you witness skills |
+| Unknown | Grey silhouette / obscured icon, name masked (`— — —`) |
+| Sighted | Name, sighted line, intentionally player-facing classification; abilities hidden |
+| Engaged | Adds observed vitality/health and an ability list that fills in as you witness skills |
 
-The panel lives in `src/mod-thalvaeth/client/ThalvaethUI/` (stub). It never renders a "next objective," a map ping, or a route — it is a notebook, not a quest tracker.
+The panel lives inside the **Creatures tab** of the [Journal Record](JOURNAL-RECORD.md). It never renders a "next objective," a map ping, a route, or a completion fraction — it is a notebook, not a quest tracker.
 
 ---
 
@@ -118,13 +120,20 @@ Server ↔ client sync uses hidden addon whispers (`LANG_ADDON`), prefix `THALVA
 
 Wire format: `THALVAETH\t<opcode>~<payload>`. Only entries in the catalog band (`90001–90010`) are accepted; everything else is ignored server-side.
 
+### Full-state sync requirement
+
+The existing `JOURNAL` message is an incremental update only. The finished Journal **must reconstruct the Remnant's complete persistent knowledge after login or `/reload`**. The server remains authoritative; addon SavedVariables are not the discovery database.
+
+The umbrella design in [JOURNAL-RECORD.md](JOURNAL-RECORD.md) specifies a begin/full-state/end handshake (exact wire format TBD during implementation).
+
 ---
 
 ## Rules (locked)
 
 - **Learned facts only.** No "Go to Rotwood and kill three Scavengers." No tracked objectives. No glowing path.
+- **Unknown means unreadable.** Silhouette / greyed icon / masked text, never the actual answer with a padlock over it.
 - **Thal'vaeth names for abilities.** *"Throws a hook,"* not *Grab*/*Shadow Word*. DBC spell names never reach the UI.
-- **You witnessed it.** HP and abilities are what *this Remnant* observed, not datamined truth.
+- **You witnessed it.** Health/vitality and abilities are what *this Remnant* observed, not datamined truth.
 - **Mundane framing.** Sighted/engaged prose stays human-scale horror; no magical-species language for the standard roster ([CREATURES.md](CREATURES.md)).
 - **Bestiary ≠ quest log.** Completeness is a soft, self-directed pull (you *want* to fill it), never a task list the game hands you.
 
@@ -133,17 +142,19 @@ Wire format: `THALVAETH\t<opcode>~<payload>`. Only entries in the catalog band (
 ## Open
 
 | Item | Notes |
-|------|--------|
+|------|-------|
 | Wire `observed_abilities` | Capture spell→`ability_map` key on cast/receipt at the Engaged tier |
 | Populate `ability_map` | Add the proposed rows (Sleeper/Brute/Stalker/fodder) in [CREATURES.md](CREATURES.md) |
-| Set `silhouette_icon` | Per-entry Unknown-tier icons (all default 0 today) |
-| Journal panel UI | `src/mod-thalvaeth/client/ThalvaethUI/` still a stub ([TODO.md](TODO.md)) |
+| Set `silhouette_icon` | Per-entry Unknown-tier silhouettes/icons (all default 0 today) |
+| Full-state sync | Restore complete persistent creature knowledge on login/reload |
+| Journal panel UI | Build inside the tabbed Journal Record shell ([JOURNAL-RECORD.md](JOURNAL-RECORD.md)) |
 | "Sighted" fidelity | Confirm mouseover vs target-only, and the 25y radius, feel right in play |
 
 ---
 
 ## Related
 
+- [JOURNAL-RECORD.md](JOURNAL-RECORD.md) — umbrella UI, Survival/Gear tabs, shared discovery language and hint system
 - [CREATURES.md](CREATURES.md) — full roster, AI behavior, ability spell map
 - [NAMES.md](NAMES.md) — locked names
 - [APTITUDES.md](APTITUDES.md) — how the Remnant answers what the journal records
