@@ -57,6 +57,15 @@
 - [x] Charm/aptitude items — charms grant aptitudes (2 slots; aptitude vs passive); craft from materials; invisible quality; upgradeable
 - [ ] Confirm charm slot count; pick which proposed aptitudes (Night Eyes / Iron Gut / Deadened Step / Steady Hand / Second Wind) ship v1
 
+## Client / branding
+
+- [x] Brand concept set — splash, wordmark logo, circular seal, red-eyes emblem (`docs/branding/`)
+- [x] `CLIENT-BRANDING.md` — login-reskin + patch-MPQ plan (concept-stage)
+- [ ] Rebuild the wordmark in real weathered-serif type (verify "Thal'vaeth" spelling; esp. the seal's curved ring)
+- [ ] Produce shippable assets (BLP export, login dimensions) + original login music
+- [ ] Decide: crest-only vs crest + corner wordmark; blood-red vs ash-orange accent
+- [ ] Build the login glue patch (hide 3D scene → static splash; strings/version/copyright)
+
 ## Core
 
 - [ ] Spell strip + Remnant first login

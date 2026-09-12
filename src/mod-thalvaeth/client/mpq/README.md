@@ -4,6 +4,12 @@ Pack everything as `patch-thalvaeth.MPQ` in `Data\`.
 
 ---
 
+## 0. Login / glue branding
+
+Strip WoW/WotLK branding from the login, realm list, and char screens and drop in Thal'vaeth (title logo, static Rotwood splash, login music, strings/version/copyright). Full plan + client file paths + tier checklist: [CLIENT-BRANDING.md](../../../../docs/CLIENT-BRANDING.md). Concept art: [`docs/branding/`](../../../../docs/branding/).
+
+---
+
 ## 1. Hearthglen — Brill-adjacent palette (home)
 
 Make **Thal'vaeth Monastery** (Hearthglen grounds) read like **Tirisfal** — grey sky, cold fog, dead grass — not green Argent crusader camp.
