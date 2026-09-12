@@ -14,8 +14,12 @@ You are a **Remnant** — one of the last who still walks the Wild. Leave the **
 - [MAPS.md](docs/MAPS.md) · [RUN-GATES.md](docs/RUN-GATES.md) — Monastery, Rotwood, gates
 - [CHAR-CREATE.md](docs/CHAR-CREATE.md) · [APTITUDES.md](docs/APTITUDES.md) — the Remnant + charms
 
+**Journal & discovery**
+- [JOURNAL-RECORD.md](docs/JOURNAL-RECORD.md) — tabbed Journal Record: Creatures · Survival · Gear; silhouettes, obscured knowledge, near-miss hints
+- [CREATURE-JOURNAL.md](docs/CREATURE-JOURNAL.md) — creature-specific Unknown → Sighted → Engaged progression
+
 **Creatures**
-- [CREATURES.md](docs/CREATURES.md) · [CREATURE-JOURNAL.md](docs/CREATURE-JOURNAL.md)
+- [CREATURES.md](docs/CREATURES.md) — roster, AI roles, journal prose
 
 **Items · crafting · gear · economy**
 - [MATERIALS.md](docs/MATERIALS.md) → [CRAFTING.md](docs/CRAFTING.md) → [ITEMS.md](docs/ITEMS.md) → [GEAR.md](docs/GEAR.md)
