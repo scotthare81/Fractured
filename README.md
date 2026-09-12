@@ -18,6 +18,7 @@ You are a **Remnant** — one of the last who still walks the Wild. Leave the **
 - [JOURNAL-RECORD.md](docs/JOURNAL-RECORD.md) — tabbed Journal Record: Creatures · Survival · Gear; silhouettes, obscured knowledge, near-miss hints
 - [JOURNAL-CONTENT.md](docs/JOURNAL-CONTENT.md) — concrete v1 Journal entries and reveal states
 - [JOURNAL-HINTS.md](docs/JOURNAL-HINTS.md) — canonical near-miss hint library and persistence rules
+- [DISCOVERY-SOLUTIONS.md](docs/DISCOVERY-SOLUTIONS.md) — authoritative failure predicates, corrections, success recipes, precedence and gate rules behind the hints
 - [CREATURE-JOURNAL.md](docs/CREATURE-JOURNAL.md) — creature-specific Unknown → Sighted → Engaged progression
 
 **Creatures**
