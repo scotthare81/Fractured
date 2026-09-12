@@ -37,7 +37,7 @@
 - [x] Bulk model — items have bulk 1/2/4; bags/satchel are bulk pools (worn = free); v1 = capacity budget
 - [ ] Fancy grid inventory (future) — footprint UI in ThalvaethUI + server-side virtual inventory (bulk values become footprints)
 - [ ] Assign per-item IDs in the 61xxx material bands
-- [ ] Author meaningful near-miss rules + stable hint keys for v1 recipes (not generic random-combination hints)
+- [x] Near-miss hint library + authoritative solution/failure matrix (`JOURNAL-HINTS.md`, `DISCOVERY-SOLUTIONS.md`)
 
 ## Economy
 
@@ -52,16 +52,30 @@
 
 - [x] Creature journal table + addon wire stub
 - [x] Journal Record design — **Creatures / Survival / Gear** tabs, silhouettes/obscured knowledge, persistent near-miss hints (`JOURNAL-RECORD.md`)
-- [ ] Build tabbed Journal Record shell in `ThalvaethUI`
-- [ ] Full server→addon state sync after login and `/reload` (server authoritative; no SavedVariables discovery authority)
+- [x] Concrete Journal content/reveal map (`JOURNAL-CONTENT.md`)
+- [x] Canonical hint library (`JOURNAL-HINTS.md`)
+- [x] Authoritative discovery/solution matrix (`DISCOVERY-SOLUTIONS.md`)
+- [x] Technical implementation contract — keys, persistence, sync, evaluator, security (`JOURNAL-IMPLEMENTATION-SPEC.md`)
+- [x] UI/interaction contract — tabs, silhouettes, Field Notes, gear-tree behaviour (`JOURNAL-UI-SPEC.md`)
+- [x] First playable slice + end-to-end acceptance scenarios (`JOURNAL-V1-SLICE.md`)
+
+### First implementation sequence
+
+- [ ] Generic per-character discovery persistence + discovery service
+- [ ] Versioned HELLO/READY + full Journal snapshot after login and `/reload`
+- [ ] GM/debug Journal tooling (dump/grant/revoke/reset/force-sync)
+- [ ] Build tabbed Journal shell in `ThalvaethUI` with loading state
 - [ ] Render Creature tab: Unknown silhouette → Sighted → Engaged/observed
-- [ ] Wire `observed_abilities` spell→journal-key capture
-- [ ] Add generic per-character discovery persistence for recipe/material/gear/hint knowledge
-- [ ] Render Survival categories: Food / Water / Medicine / Herbs & Fungi / Fishing / Poisons / Traps & Fieldcraft
-- [ ] Implement near-miss craft evaluation → persistent diegetic hints; duplicate mistakes do not create duplicate knowledge
-- [ ] Render Gear categories: Weapons / Armour / Tools / Charms with partially obscured upgrade trees
-- [ ] Author/set unknown silhouettes and greyed icons so hidden names cannot leak through tooltips/search/sort data
-- [ ] Add restrained `Journal updated` notification levels (new entry / hint / observation)
+- [ ] Wire observed creature abilities into persistent journal keys
+- [ ] Implement first Survival slice: born-known basics + Ashbloom/Ash Tea
+- [ ] Implement deterministic near-miss evaluator + one-hint-per-attempt persistence
+- [ ] Implement Charcoal discovery gate + filtration inference
+- [ ] Implement Stitch path, Ashbloom/Gravecap layered material knowledge
+- [ ] Implement one fishing catch (Eel), one Snare, Whetstone
+- [ ] Render Gear slice with Crude Dagger → Iron Knife → Steel Blade and obscured branch sibling
+- [ ] Implement one diagram-gated weapon branch that cannot be brute-forced
+- [ ] Implement Stillstone + Deep-Lung Token as active/passive charm examples
+- [ ] Run all `JOURNAL-V1-SLICE.md` acceptance scenarios, including random-spam resistance and character isolation
 - [ ] Journal art polish only after functional discovery loop is proven
 
 ## Aptitudes & charms
