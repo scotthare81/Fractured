@@ -22,6 +22,11 @@ You are a **Remnant** — one of the last who still walks the Wild. Leave the **
 - [JOURNAL-IMPLEMENTATION-SPEC.md](docs/JOURNAL-IMPLEMENTATION-SPEC.md) — server authority, persistence, keys, sync protocol and experiment evaluator contract
 - [JOURNAL-UI-SPEC.md](docs/JOURNAL-UI-SPEC.md) — layout, silhouettes, tabs, field notes, gear trees and interaction rules
 - [JOURNAL-V1-SLICE.md](docs/JOURNAL-V1-SLICE.md) — exact first playable slice and acceptance scenarios
+- [JOURNAL-DATA-MODEL.md](docs/JOURNAL-DATA-MODEL.md) — persistence split, monotonic grants, character isolation and migration rules
+- [JOURNAL-WIRE-PROTOCOL.md](docs/JOURNAL-WIRE-PROTOCOL.md) — v1 handshake, snapshots, deltas and resync behaviour
+- [JOURNAL-KEY-REGISTRY.md](docs/JOURNAL-KEY-REGISTRY.md) — canonical stable discovery/hint/gear keys
+- [JOURNAL-TEST-VECTORS.md](docs/JOURNAL-TEST-VECTORS.md) — deterministic backend, protocol and discovery test cases
+- [JOURNAL-CODING-PLAN.md](docs/JOURNAL-CODING-PLAN.md) — staged implementation milestones and PR strategy
 - [CREATURE-JOURNAL.md](docs/CREATURE-JOURNAL.md) — creature-specific Unknown → Sighted → Engaged progression
 
 **Creatures**
